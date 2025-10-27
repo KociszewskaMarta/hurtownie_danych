@@ -76,18 +76,17 @@ def random_cost(min_value: float, max_value: float) -> str:
     return format_float(random.uniform(min_value, max_value))
 
 
-def random_unique_id(length:int=8, existing_ids: set=None) -> str | None:
-    """Generate a unique trip id of given length"""
-    alphabet = string.ascii_letters + string.digits #a-z A-Z 0-9
-    chars = []
-    for _ in range(length):
-        chars.append(secrets.choice(alphabet))
-    random_id = ''.join(chars)
-    if random_id not in existing_ids:
-        existing_ids.add(random_id)
-        return random_id
-    else:
-        random_unique_id(length=length, existing_ids=existing_ids)
+def random_unique_id(length: int = 8, existing_ids: set | None = None) -> str:
+    """Generate a unique trip id of given length (fixed: loop zamiast rekursji)."""
+    if existing_ids is None:
+        existing_ids = set()
+    alphabet = string.ascii_letters + string.digits
+    for _ in range(100):  # max prób
+        random_id = ''.join(secrets.choice(alphabet) for _ in range(length))
+        if random_id not in existing_ids:
+            existing_ids.add(random_id)
+            return random_id
+    raise RuntimeError("Unable to generate unique id after 100 attempts")
 
 def get_keyword_for_campaign(campaign_name: str) -> Any | None:
     """ Get a random keyword for a given campaign name """
