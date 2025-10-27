@@ -110,8 +110,8 @@ def export_to_csv(path: str, header: list[str], rows: list[list[str]]) -> None:
 if __name__ == "__main__":
     existing_ids = set()
     rows=[]
-    for _ in range(10):
-        date = random_date(datetime.datetime(2023, 1, 1), datetime.datetime(2024, 12, 31)).strftime("%Y-%m-%d")
+    for _ in range(1000):
+        date = random_date(datetime.datetime(2015, 1, 1), datetime.datetime(2024, 12, 31)).strftime("%Y-%m-%d")
         campaign_name = random.choice(CAMPAIGNS)
         ad_group = random.choice(AD_GROUPS)
         trip_id = random_unique_id(8,existing_ids)
@@ -134,6 +134,6 @@ if __name__ == "__main__":
             cost,
             conversion_rate,
         ]
-        print(" , ".join(row))
+        # print(" , ".join(row))
         rows.append(row)
     export_to_csv("marketing_data.csv", HEADER, rows)
