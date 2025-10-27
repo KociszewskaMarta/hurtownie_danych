@@ -106,6 +106,13 @@ def export_to_csv(path: str, header: list[str], rows: list[list[str]]) -> None:
         writer.writerow(header)
         writer.writerows(rows)
 
+def extract_year_from_date(date_str: str) -> int:
+    """Extract year from date string in format YYYY-MM-DD."""
+    try:
+        return int(date_str.split("-")[0])
+    except (ValueError, IndexError):
+        return 0
+
 # test - generate in console 10 random rows
 if __name__ == "__main__":
     existing_ids = set()
@@ -113,7 +120,7 @@ if __name__ == "__main__":
     for _ in range(1000):
         date = random_date(datetime.datetime(2015, 1, 1), datetime.datetime(2024, 12, 31)).strftime("%Y-%m-%d")
         campaign_name = random.choice(CAMPAIGNS)
-        ad_group = random.choice(AD_GROUPS)
+        ad_group = f'{random.choice(AD_GROUPS)+" "+str(extract_year_from_date(date))}'
         trip_id = random_unique_id(8,existing_ids)
         keyword = get_keyword_for_campaign(campaign_name)
         impressions = random_number(1000, 100000)
