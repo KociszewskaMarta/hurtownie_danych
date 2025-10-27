@@ -2,6 +2,9 @@ import datetime
 import random
 import secrets
 import string
+from typing import Any
+
+# TODO: musi byl polaczenie z baza danych poprzez trip_id - znalezc rozwiazanie do tego
 
 HEADER = [
     "Date",
@@ -17,20 +20,36 @@ HEADER = [
 ]
 
 CAMPAIGNS=[
-    "Lato 2026 Hiszpania",
-    "Aktywna wiosna",
-    "Black Friday 2025",
+    "Rodzinne wakacje",
+    "Wakacje dla par",
+    "Przygoda i eksploracja",
+    "Luksusowe podróże",
+    "Wakacje budżetowe",
+    "Egzotyczne destynacje",
+    "Relaks i wellness",
+    "Wakacje dla seniorów",
+    "Wakacje z dziećmi"
 ]
 
 AD_GROUPS = [
-    "Grupa 1",
-    "Grupa 2"
+    "Last Minute",
+    "First Minute",
+    "Oferty Specjalne",
+    "Pakiety Wakacyjne",
+    "All Inclusive",
+    "Nowe Destynacje"
 ]
 
-KEYWORDS = [
-    "wakacje w Hiszpanii",
-    "last minute Hiszpania",
-    "oferty na lato 2026"
+KEYWORDS_FOR_CAMPAIGNS = [
+    ["rodzinne wakacje", "dla dzieci"], # Rodzinne wakacje
+    ["dla par", "luksusowe podróże", "relaks i wellness", "romantyczne"], # Wakacje dla par
+    ["przygoda", "egzotyka", "aktywne wakacje", "sport", "ekstremalne"], # Przygoda i eksploracja
+    ["luksusowe podróże", "relaks", "5-gwiazdek", "wysoki standard"], # Luksusowe podróże
+    ["budżetowe wakacje", "oferty specjalne", "oszczędne podróże"], # Wakacje budżetowe
+    ["egzotyczne destynacje", "przygoda", "eksploracja", "dzika przyroda", "plaże", "nieodkryte miejsca"], # Egzotyczne destynacje
+    ["relaks i wellness", "dla seniorów", "joga", "spa", "zdrowie"], # Relaks i wellness
+    ["dla seniorów", "relaks i wellness", "spokojne wakacje"], # Wakacje dla seniorów
+    ["dla dzieci", "rodzinne wakacje", "animacje dla dzieci"] # Wakacje z dziećmi
 ]
 
 def random_date(start: datetime, end: datetime) -> datetime:
@@ -55,16 +74,7 @@ def random_number(min_value: int, max_value: int) -> int:
 def random_cost(min_value: float, max_value: float) -> str:
     """Generate a random cost between min_value and max_value"""
     return format_float(random.uniform(min_value, max_value))
-#
-# def generate_unique_id(existing_ids: set) -> str:
-#     """Generate a unique trip id"""
-#     while True:
-#         trip_id = f"TRIP{random.randint(100000, 999999)}"
-#         if trip_id not in existing_ids:
-#             existing_ids.add(trip_id)
-#             return trip_id
-#         else :
-#             generate_unique_id(existing_ids) # recursive call in case of collision
+
 
 def random_unique_id(length:int=8, existing_ids: set=None) -> str | None:
     """Generate a unique trip id of given length"""
@@ -79,7 +89,15 @@ def random_unique_id(length:int=8, existing_ids: set=None) -> str | None:
     else:
         random_unique_id(length=length, existing_ids=existing_ids)
 
-
+def get_keyword_for_campaign(campaign_name: str) -> Any | None:
+    """ Get a random keyword for a given campaign name """
+    try:
+        idx = CAMPAIGNS.index(campaign_name)
+        candidates = KEYWORDS_FOR_CAMPAIGNS[idx]
+        if candidates:
+            return random.choice(candidates)
+    except ValueError:
+        pass
 
 # test - generate in console 10 random rows
 if __name__ == "__main__":
@@ -89,7 +107,7 @@ if __name__ == "__main__":
         campaign_name = random.choice(CAMPAIGNS)
         ad_group = random.choice(AD_GROUPS)
         trip_id = random_unique_id(8,existing_ids)
-        keyword = random.choice(KEYWORDS)
+        keyword = get_keyword_for_campaign(campaign_name)
         impressions = random_number(1000, 100000)
         clicks = random_number(100, impressions)
         ctr = format_float((clicks / impressions) * 100)
