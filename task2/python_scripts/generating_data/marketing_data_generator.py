@@ -1,3 +1,4 @@
+import csv
 import datetime
 import random
 import secrets
@@ -98,9 +99,17 @@ def get_keyword_for_campaign(campaign_name: str) -> Any | None:
     except ValueError:
         pass
 
+def export_to_csv(path: str, header: list[str], rows: list[list[str]]) -> None:
+    """Write header and rows to CSV file (UTF-8, comma separated)."""
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(header)
+        writer.writerows(rows)
+
 # test - generate in console 10 random rows
 if __name__ == "__main__":
     existing_ids = set()
+    rows=[]
     for _ in range(10):
         date = random_date(datetime.datetime(2023, 1, 1), datetime.datetime(2024, 12, 31)).strftime("%Y-%m-%d")
         campaign_name = random.choice(CAMPAIGNS)
@@ -126,3 +135,5 @@ if __name__ == "__main__":
             conversion_rate,
         ]
         print(" , ".join(row))
+        rows.append(row)
+    export_to_csv("marketing_data.csv", HEADER, rows)
