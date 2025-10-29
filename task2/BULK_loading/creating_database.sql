@@ -8,7 +8,6 @@ CREATE TABLE Tour /* wycieczka */
 (
     tour_id INT IDENTITY(1,1) PRIMARY KEY, /* Generates primery key, from 1 with step 1 */
 	name VARCHAR(255) NOT NULL,
-    description TEXT NOT NULL,
 	destination VARCHAR(255) NOT NULL,
 	tour_type NVARCHAR(20) 
 	    CHECK (tour_type IN ('All-inclusive', 'Rodzinna', 'Aktywna')), /* TODO : set different acceptable values or remove this constraint */
