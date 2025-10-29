@@ -10,6 +10,9 @@ number_of_workers=100
 number_of_clients=1000
 number_of_reservations=1000000
 number_of_payments=900000
+number_of_new_reservations=5000
+number_of_new_clients=1000
+number_of_new_workers=10
 
 
 def _safe(value, delimiter='|'):
@@ -81,7 +84,7 @@ def generate_tour_edition_obj(_id):
 def generate_reservation_obj(_id,  tour_editions_count):
     return {
         'id': _id,
-        'reservation_date': fake.date_between_dates(date(2015,1,1), date(2025,12,31)).isoformat(),
+        'reservation_date': fake.date_between_dates(date(2015,1,1), date(2025,7,1)).isoformat(),
         'status': generate_reservation_status(),
         'tour_edition_id': random.randint(1, tour_editions_count)
     }
@@ -90,7 +93,7 @@ def generate_payment_obj(_id):
         'id': _id,
         'amount': generate_price(),
         'payment_method': generate_payment_form(),
-        'payment_date': fake.date_between_dates(date(2015,1,1), date(2025,12,31)).isoformat(),
+        'payment_date': fake.date_between_dates(date(2015,1,1), date(2025,7,1)).isoformat(),
         'reservation_id': random.randint(1, number_of_reservations)
     }
 
@@ -118,6 +121,38 @@ def generate_unique_reservation_worker_objs(_workers_pesels, _number_of_reservat
             objs.append({'reservation_id': reservation_id, 'worker_pesel': worker_pesel})
     return objs
 
+def generate_unique_new_reservation_client_objs(_clients_pesels, _number_of_reservations):
+    unique_pairs = set()
+    objs = []
+    while len(objs) < _number_of_reservations:
+        reservation_id = random.randint(number_of_reservations+1, number_of_reservations+_number_of_reservations)
+        client_pesel = random.choice(_clients_pesels)
+        pair = (reservation_id, client_pesel)
+        if pair not in unique_pairs:
+            unique_pairs.add(pair)
+            objs.append({'reservation_id': reservation_id, 'client_pesel': client_pesel})
+    return objs
+
+def generate_unique_new_reservation_worker_objs(_workers_pesels, _number_of_reservations):
+    unique_pairs = set()
+    objs = []
+    while len(objs) < _number_of_reservations:
+        reservation_id = random.randint(number_of_reservations+1, number_of_reservations+_number_of_reservations)
+        worker_pesel = random.choice(_workers_pesels)
+        pair = (reservation_id, worker_pesel)
+        if pair not in unique_pairs:
+            unique_pairs.add(pair)
+            objs.append({'reservation_id': reservation_id, 'worker_pesel': worker_pesel})
+    return objs
+
+def generate_new_reservation_obj(_id,  tour_editions_count):
+    return {
+        'id': _id,
+        'reservation_date': fake.date_between_dates(date(2025,7,2), date(2025,10,28)).isoformat(),
+        'status': generate_reservation_status(),
+        'tour_edition_id': random.randint(1, tour_editions_count)
+    }
+
 if __name__ == '__main__':
     export_objects_to_delimited_file(
         path='data/workers.bulk',
@@ -136,13 +171,13 @@ if __name__ == '__main__':
     export_objects_to_delimited_file(
         path='data/tours.bulk',
         field_names=['id', 'trip_name', 'destination', 'tour_type', 'attractions'],
-        objects_iterable=(generate_tour_obj(i + 1) for i in range(number_of_tour)),
+        objects_iterable=(generate_tour_obj(l + 1) for l in range(number_of_tour)),
         include_header=False
     )
     export_objects_to_delimited_file(
         path='data/tour_editions.bulk',
         field_names=['id', 'start_date', 'end_date', 'price', 'available_seats', 'tour_id'],
-        objects_iterable=(generate_tour_edition_obj(i + 1) for i in range(number_of_tour_editions)),
+        objects_iterable=(generate_tour_edition_obj(k + 1) for k in range(number_of_tour_editions)),
         include_header=False
     )
     export_objects_to_delimited_file(
@@ -167,6 +202,38 @@ if __name__ == '__main__':
         path='data/reservation_workers.bulk',
         field_names=['reservation_id', 'worker_pesel'],
         objects_iterable=generate_unique_reservation_worker_objs(workers_pesels, number_of_reservations),
+        include_header=False
+    )
+    export_objects_to_delimited_file(
+        path='data/new_reservations.bulk',
+        field_names=['id', 'reservation_date', 'status', 'tour_edition_id'],
+        objects_iterable=(generate_new_reservation_obj(i+number_of_reservations + 1, number_of_tour_editions) for i in range(number_of_new_reservations)),
+        include_header=False
+    )
+    export_objects_to_delimited_file(
+        path='data/new_workers.bulk',
+        field_names=['pesel','first_name','last_name','email','phone_number','role'],
+        objects_iterable=(generate_worker_obj() for _ in range(number_of_new_workers)),
+        include_header=False
+    )
+    new_workers_pesels = extract_pesels('data/new_workers.bulk')
+    export_objects_to_delimited_file(
+        path='data/new_clients.bulk',
+        field_names=['pesel', 'first_name', 'last_name', 'email', 'phone_number'],
+        objects_iterable=(generate_client_obj() for _ in range(number_of_new_clients)),
+        include_header=False
+    )
+    new_clients_pesels = extract_pesels('data/new_clients.bulk')
+    export_objects_to_delimited_file(
+        path='data/new_reservation_clients.bulk',
+        field_names=['reservation_id', 'client_pesel'],
+        objects_iterable=generate_unique_new_reservation_client_objs(new_clients_pesels, number_of_new_reservations),
+        include_header=False
+    )
+    export_objects_to_delimited_file(
+        path='data/new_reservation_workers.bulk',
+        field_names=['reservation_id', 'worker_pesel'],
+        objects_iterable=generate_unique_new_reservation_worker_objs(new_workers_pesels, number_of_new_reservations),
         include_header=False
     )
 
