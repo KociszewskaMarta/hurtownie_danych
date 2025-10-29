@@ -54,7 +54,7 @@ CREATE TABLE Reservation /* rezerwacja */
 	reservation_id INT IDENTITY(1,1) PRIMARY KEY, /* Generates primery key, from 1 with step 1 */
 	reservation_date DATE NOT NULL,
 	reservation_status NVARCHAR(20) 
-	    CHECK (reservation_status IN ('Payed', 'Unpayed', 'Processing')),
+	    CHECK (reservation_status IN ('Paid', 'Unpaid', 'Processing')),
 	tour_edition_id INT NOT NULL,
 	FOREIGN KEY (tour_edition_id) REFERENCES TourEdition(tour_edition_id),
 )
