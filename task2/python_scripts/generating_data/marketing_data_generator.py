@@ -5,7 +5,7 @@ import secrets
 import string
 from typing import Any
 
-# TODO: musi byl polaczenie z baza danych poprzez trip_id - znalezc rozwiazanie do tego
+number_of_tour = 30
 
 HEADER = [
     "Date",
@@ -77,18 +77,6 @@ def random_cost(min_value: float, max_value: float) -> str:
     return format_float(random.uniform(min_value, max_value))
 
 
-def random_unique_id(length: int = 8, existing_ids: set | None = None) -> str:
-    """Generate a unique trip id of given length (fixed: loop zamiast rekursji)."""
-    if existing_ids is None:
-        existing_ids = set()
-    alphabet = string.ascii_letters + string.digits
-    for _ in range(100):  # max prób
-        random_id = ''.join(secrets.choice(alphabet) for _ in range(length))
-        if random_id not in existing_ids:
-            existing_ids.add(random_id)
-            return random_id
-    raise RuntimeError("Unable to generate unique id after 100 attempts")
-
 def get_keyword_for_campaign(campaign_name: str) -> Any | None:
     """ Get a random keyword for a given campaign name """
     try:
@@ -121,7 +109,7 @@ if __name__ == "__main__":
         date = random_date(datetime.datetime(2015, 1, 1), datetime.datetime(2024, 12, 31)).strftime("%Y-%m-%d")
         campaign_name = random.choice(CAMPAIGNS)
         ad_group = f'{random.choice(AD_GROUPS)+" "+str(extract_year_from_date(date))}'
-        trip_id = random_unique_id(8,existing_ids)
+        trip_id = random.randint(1, number_of_tour)
         keyword = get_keyword_for_campaign(campaign_name)
         impressions = random_number(1000, 100000)
         clicks = random_number(100, impressions)
