@@ -13,28 +13,30 @@ def _safe(value, delimiter='|'):
     return str(value).replace(delimiter, ' ')
 
 def export_objects_to_delimited_file(path, field_names, objects_iterable, delimiter='|', include_header=False, encoding='utf-8'):
+    import os
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, 'w', encoding=encoding, newline='') as f:
-        if include_header:
-            f.write(delimiter.join(field_names) + '\n')
-        for obj in objects_iterable:
-            row = delimiter.join(_safe(obj.get(field), delimiter) for field in field_names)
-            f.write(row + '\n')
+    rows = []
+    if include_header:
+        rows.append(delimiter.join(field_names))
+    for obj in objects_iterable:
+        rows.append(delimiter.join(_safe(obj.get(field), delimiter) for field in field_names))
+        rows.append('\n')
+
 
 def generate_worker_obj():
     return {
         'pesel': fake.pesel(),
         'first_name': fake.first_name(),
         'last_name': fake.last_name(),
-        'phone': phone_without_spaces_faker(),
         'email': fake.email(),
+        'phone_number': phone_without_spaces_faker(),
         'role': generate_worker_role()
     }
 
 if __name__ == '__main__':
     export_objects_to_delimited_file(
             path='data/workers.bulk',
-            field_names=['pesel','first_name','last_name','phone','email','role'],
+            field_names=['pesel','first_name','last_name','email','phone_number','role'],
             objects_iterable=(generate_worker_obj() for _ in range(5)),
             include_header=False
         )
