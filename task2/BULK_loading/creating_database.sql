@@ -33,8 +33,8 @@ CREATE TABLE Worker /* pracownik */
 	worker_pesel CHAR(11) PRIMARY KEY, /* Generates primery key, from 1 with step 1 */
 	first_name VARCHAR(100) NOT NULL,
 	last_name VARCHAR(100) NOT NULL,
-	email NVARCHAR(255) NOT NULL UNIQUE,
-	phone_number CHAR(9) NOT NULL UNIQUE,
+	email NVARCHAR(255) NOT NULL,
+	phone_number CHAR(9) NOT NULL,
 	role VARCHAR(100) NOT NULL
 )
 GO
@@ -44,8 +44,8 @@ CREATE TABLE Client /* klient */
 	client_pesel CHAR(11) PRIMARY KEY, /* Generates primery key, from 1 with step 1 */
 	first_name VARCHAR(100) NOT NULL,
 	last_name VARCHAR(100) NOT NULL,
-	email NVARCHAR(255) NOT NULL UNIQUE,
-	phone_number CHAR(9) NOT NULL UNIQUE
+	email NVARCHAR(255) NOT NULL,
+	phone_number CHAR(9) NOT NULL
 )
 GO
 
