@@ -1,4 +1,4 @@
-CREATE DATABASE go_explore_travel_agency /* exams */
+CREATE DATABASE go_explore_travel_agency 
 GO
 
 USE go_explore_travel_agency
@@ -6,18 +6,18 @@ GO
 
 CREATE TABLE Tour /* wycieczka */
 (
-    tour_id INT IDENTITY(1,1) PRIMARY KEY, /* Generates primery key, from 1 with step 1 */
+    tour_id INT IDENTITY(1,1) PRIMARY KEY, 
 	name VARCHAR(255) NOT NULL,
 	destination VARCHAR(255) NOT NULL,
 	tour_type NVARCHAR(20) 
-	    CHECK (tour_type IN ('Relax', 'Active', 'Family', 'City-break')), /* TODO : set different acceptable values or remove this constraint */
+	    CHECK (tour_type IN ('Relax', 'Active', 'Family', 'City-break')), 
 	attractions VARCHAR(255) NOT NULL
 )
 GO
 
 CREATE TABLE TourEdition /* turnus */
 (
-    tour_edition_id INT IDENTITY(1,1) PRIMARY KEY, /* Generates primery key, from 1 with step 1 */
+    tour_edition_id INT IDENTITY(1,1) PRIMARY KEY, 
 	start_date DATE NOT NULL,
 	end_date DATE NOT NULL,
 	price DECIMAL(10,2) NOT NULL,
@@ -30,7 +30,7 @@ GO
 
 CREATE TABLE Worker /* pracownik */
 (
-	worker_pesel CHAR(11) PRIMARY KEY, /* Generates primery key, from 1 with step 1 */
+	worker_pesel CHAR(11) PRIMARY KEY, 
 	first_name VARCHAR(100) NOT NULL,
 	last_name VARCHAR(100) NOT NULL,
 	email NVARCHAR(255) NOT NULL,
@@ -41,7 +41,7 @@ GO
 
 CREATE TABLE Client /* klient */
 (
-	client_pesel CHAR(11) PRIMARY KEY, /* Generates primery key, from 1 with step 1 */
+	client_pesel CHAR(11) PRIMARY KEY, 
 	first_name VARCHAR(100) NOT NULL,
 	last_name VARCHAR(100) NOT NULL,
 	email NVARCHAR(255) NOT NULL,
@@ -51,7 +51,7 @@ GO
 
 CREATE TABLE Reservation /* rezerwacja */
 (
-	reservation_id INT IDENTITY(1,1) PRIMARY KEY, /* Generates primery key, from 1 with step 1 */
+	reservation_id INT IDENTITY(1,1) PRIMARY KEY, 
 	reservation_date DATE NOT NULL,
 	reservation_status NVARCHAR(20) 
 	    CHECK (reservation_status IN ('Paid', 'Unpaid', 'Processing')),
@@ -62,7 +62,7 @@ GO
 
 CREATE TABLE Payment /* platnosc */
 (
-	payment_id INT IDENTITY(1,1) PRIMARY KEY, /* Generates primery key, from 1 with step 1 */
+	payment_id INT IDENTITY(1,1) PRIMARY KEY, 
 	amount DECIMAL(10, 2) NOT NULL 
 		CHECK (amount > 0),
 	form_of_payment NVARCHAR(50) NOT NULL	
