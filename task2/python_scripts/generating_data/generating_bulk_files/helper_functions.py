@@ -45,15 +45,10 @@ def generate_destination():
 
 def generate_tour_type():
     tour_types = [
-        "Guided Tour",
-        "Self-Guided Tour",
-        "Adventure Tour",
-        "Cultural Tour",
-        "Relaxation Tour",
-        "Wildlife Tour",
-        "Historical Tour",
-        "Gastronomic Tour",
-        "Artistic Tour"
+        "Relax",
+        "Active",
+        "Family",
+        "City-break"
     ]
     return random.choice(tour_types)
 
