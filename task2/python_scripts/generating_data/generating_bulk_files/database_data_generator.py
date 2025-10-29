@@ -1,9 +1,16 @@
 import os
-
 from faker import Faker
 from helper_functions import *
 
 fake = Faker('pl_PL')
+
+number_of_trips = 10
+number_of_trip_editions=500
+number_of_workers=100
+number_of_customers=2000
+number_of_reservations=1000000
+number_of_payments=number_of_trip_editions*number_of_workers*number_of_customers*number_of_reservations*0.9
+
 
 def _safe(value, delimiter='|'):
     if value is None:
@@ -12,15 +19,26 @@ def _safe(value, delimiter='|'):
         value = ','.join(map(str, value))
     return str(value).replace(delimiter, ' ')
 
-def export_objects_to_delimited_file(path, field_names, objects_iterable, delimiter='|', include_header=False, encoding='utf-8'):
+
+def export_objects_to_delimited_file(path, field_names, objects_iterable, delimiter='|', include_header=False,
+                                     encoding='utf-8'):
     import os
     os.makedirs(os.path.dirname(path), exist_ok=True)
     rows = []
     if include_header:
         rows.append(delimiter.join(field_names))
-    for obj in objects_iterable:
+
+    objects_list = list(objects_iterable)
+    for obj in objects_list:
         rows.append(delimiter.join(_safe(obj.get(field), delimiter) for field in field_names))
-        rows.append('\n')
+
+    # Łączymy wiersze z podwójnym \r\n i dodajemy \r\n na końcu
+    content = '\r\n'.join(rows)
+    content += '\r\n'  # Dodaj zakończenie na końcu pliku
+
+    with open(path, 'wb') as f:
+        f.write(content.encode(encoding))
+
 
 
 def generate_worker_obj():
@@ -37,7 +55,7 @@ if __name__ == '__main__':
     export_objects_to_delimited_file(
             path='data/workers.bulk',
             field_names=['pesel','first_name','last_name','email','phone_number','role'],
-            objects_iterable=(generate_worker_obj() for _ in range(5)),
+            objects_iterable=(generate_worker_obj() for _ in range(10)),
             include_header=False
         )
 
