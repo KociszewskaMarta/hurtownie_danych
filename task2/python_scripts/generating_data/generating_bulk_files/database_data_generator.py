@@ -4,8 +4,8 @@ from helper_functions import *
 
 fake = Faker('pl_PL')
 
-number_of_trips = 10
-number_of_trip_editions=500
+number_of_tour = 30
+number_of_tour_editions=500
 number_of_workers=100
 number_of_clients=1000
 number_of_reservations=1000000
@@ -60,75 +60,115 @@ def generate_client_obj():
         'phone_number': phone_without_spaces_faker(),
     }
 
+def generate_tour_obj(_id):
+    return {
+        'id': _id,
+        'trip_name': generate_trip_name(),
+        'destination': generate_destination(),
+        'tour_type': generate_tour_type(),
+        'attractions': generate_attractions(),
+    }
+def generate_tour_edition_obj(_id):
+    start_date, end_date = generate_start_end_dates()
+    return {
+        'id': _id,
+        'start_date': start_date,
+        'end_date': end_date,
+        'price': generate_price(),
+        'available_seats': generate_available_slots(),
+        'tour_id': random.randint(1, number_of_tour)
+    }
+def generate_reservation_obj(_id,  tour_editions_count):
+    return {
+        'id': _id,
+        'reservation_date': fake.date_between_dates(date(2015,1,1), date(2025,12,31)).isoformat(),
+        'status': generate_reservation_status(),
+        'tour_edition_id': random.randint(1, tour_editions_count)
+    }
+def generate_payment_obj(_id):
+    return {
+        'id': _id,
+        'amount': generate_price(),
+        'payment_method': generate_payment_form(),
+        'payment_date': fake.date_between_dates(date(2015,1,1), date(2025,12,31)).isoformat(),
+        'reservation_id': random.randint(1, number_of_reservations)
+    }
 
+def generate_unique_reservation_client_objs(_clients_pesels, _number_of_reservations):
+    unique_pairs = set()
+    objs = []
+    while len(objs) < _number_of_reservations:
+        reservation_id = random.randint(1, _number_of_reservations)
+        client_pesel = random.choice(_clients_pesels)
+        pair = (reservation_id, client_pesel)
+        if pair not in unique_pairs:
+            unique_pairs.add(pair)
+            objs.append({'reservation_id': reservation_id, 'client_pesel': client_pesel})
+    return objs
+
+def generate_unique_reservation_worker_objs(_workers_pesels, _number_of_reservations):
+    unique_pairs = set()
+    objs = []
+    while len(objs) < _number_of_reservations:
+        reservation_id = random.randint(1, _number_of_reservations)
+        worker_pesel = random.choice(_workers_pesels)
+        pair = (reservation_id, worker_pesel)
+        if pair not in unique_pairs:
+            unique_pairs.add(pair)
+            objs.append({'reservation_id': reservation_id, 'worker_pesel': worker_pesel})
+    return objs
 
 if __name__ == '__main__':
     export_objects_to_delimited_file(
-            path='data/workers.bulk',
-            field_names=['pesel','first_name','last_name','email','phone_number','role'],
-            objects_iterable=(generate_worker_obj() for _ in range(number_of_workers)),
-            include_header=False
-        )
+        path='data/workers.bulk',
+        field_names=['pesel','first_name','last_name','email','phone_number','role'],
+        objects_iterable=(generate_worker_obj() for _ in range(number_of_workers)),
+        include_header=False
+    )
+    workers_pesels = extract_pesels('data/workers.bulk')
     export_objects_to_delimited_file(
         path='data/clients.bulk',
         field_names=['pesel', 'first_name', 'last_name', 'email', 'phone_number'],
         objects_iterable=(generate_client_obj() for _ in range(number_of_clients)),
         include_header=False
     )
+    clients_pesels = extract_pesels('data/clients.bulk')
+    export_objects_to_delimited_file(
+        path='data/tours.bulk',
+        field_names=['id', 'trip_name', 'destination', 'tour_type', 'attractions'],
+        objects_iterable=(generate_tour_obj(i + 1) for i in range(number_of_tour)),
+        include_header=False
+    )
+    export_objects_to_delimited_file(
+        path='data/tour_editions.bulk',
+        field_names=['id', 'start_date', 'end_date', 'price', 'available_seats', 'tour_id'],
+        objects_iterable=(generate_tour_edition_obj(i + 1) for i in range(number_of_tour_editions)),
+        include_header=False
+    )
+    export_objects_to_delimited_file(
+        path='data/reservations.bulk',
+        field_names=['id', 'reservation_date', 'status', 'tour_edition_id'],
+        objects_iterable=(generate_reservation_obj(i + 1, number_of_tour_editions) for i in range(number_of_reservations)),
+        include_header=False
+    )
+    export_objects_to_delimited_file(
+        path='data/payments.bulk',
+        field_names=['id', 'amount', 'payment_method', 'payment_date', 'reservation_id'],
+        objects_iterable=(generate_payment_obj(i + 1) for i in range(number_of_payments)),
+        include_header=False
+    )
+    export_objects_to_delimited_file(
+        path='data/reservation_clients.bulk',
+        field_names=['reservation_id', 'client_pesel'],
+        objects_iterable=generate_unique_reservation_client_objs(clients_pesels, number_of_reservations),
+        include_header=False
+    )
+    export_objects_to_delimited_file(
+        path='data/reservation_workers.bulk',
+        field_names=['reservation_id', 'worker_pesel'],
+        objects_iterable=generate_unique_reservation_worker_objs(workers_pesels, number_of_reservations),
+        include_header=False
+    )
 
-    print('WORKERS DATA:')
-    for _ in range(5):
-        print({
-            'pesel': fake.pesel(),
-            'first_name': fake.first_name(),
-            'last_name': fake.last_name(),
-            'phone': phone_without_spaces_faker(),
-            'email': fake.email(),
-            'role': generate_worker_role()
-        })
 
-    print('\nCUSTOMERS DATA:')
-    for _ in range(5):
-        print({
-            'pesel': fake.pesel(),
-            'first_name': fake.first_name(),
-            'last_name': fake.last_name(),
-            'phone': phone_without_spaces_faker(),
-            'email': fake.email(),
-        })
 
-    print('\nTRIP:')
-    for _ in range(5):
-        print({
-            'trip_name': generate_trip_name(),
-            'description': fake.text(max_nb_chars=200),
-            'destination': generate_destination(),
-            'tour_type': generate_tour_type(),
-            'attractions': generate_attractions(),
-            'price': generate_price()
-        })
-
-    print('\nTOUREDITION:')
-    for _ in range(5):
-        start_date, end_date = generate_start_end_dates()
-        print({
-            'start_date': start_date,
-            'end_date': end_date,
-            'price': generate_price(),
-            'available_seats': generate_available_slots()
-        })
-
-    print('\nPAYMENT:')
-    for _ in range(5):
-        print({
-            'amount': generate_price(),
-            'payment_method': generate_payment_form(),
-            'payment_date': fake.date_between_dates(date(2015,1,1), date(2025,12,31)).isoformat(),
-        })
-
-    print('\nRESERVATION:')
-    for _ in range(5):
-        print({
-            'reservation_date': fake.date_between_dates(date(2015,1,1), date(2025,12,31)).isoformat(),
-            'status': generate_reservation_status(),
-        })

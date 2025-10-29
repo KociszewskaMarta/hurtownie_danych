@@ -95,3 +95,14 @@ def generate_payment_form():
 def generate_reservation_status():
     statuses = ['Paid', 'Unpaid', 'Processing']
     return random.choice(statuses)
+
+def extract_pesels(input_path):
+    pesels = []
+    with open(input_path, 'r', encoding='utf-8') as infile:
+        for line in infile:
+            line = line.strip()
+            if line:
+                pesel = line.split('|')[0]
+                pesels.append(pesel)
+    return pesels
+
