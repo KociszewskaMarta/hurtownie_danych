@@ -30,6 +30,4 @@ for _ in range(5):
         'last_name': fake.last_name(),
         'email': fake.email(),
         'phone': fake.phone_number(),
-        'address': fake.address(),
-        'date_of_birth': fake.date_of_birth(minimum_age=18, maximum_age=80)
     })
