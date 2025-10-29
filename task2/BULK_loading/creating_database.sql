@@ -10,7 +10,7 @@ CREATE TABLE Tour /* wycieczka */
 	name VARCHAR(255) NOT NULL,
 	destination VARCHAR(255) NOT NULL,
 	tour_type NVARCHAR(20) 
-	    CHECK (tour_type IN ('All-inclusive', 'Rodzinna', 'Aktywna')), /* TODO : set different acceptable values or remove this constraint */
+	    CHECK (tour_type IN ('Relax', 'Active', 'Family', 'City-break')), /* TODO : set different acceptable values or remove this constraint */
 	attractions VARCHAR(255) NOT NULL
 )
 GO
