@@ -39,8 +39,6 @@ def export_objects_to_delimited_file(path, field_names, objects_iterable, delimi
     with open(path, 'wb') as f:
         f.write(content.encode(encoding))
 
-
-
 def generate_worker_obj():
     return {
         'pesel': fake.pesel(),
@@ -51,6 +49,47 @@ def generate_worker_obj():
         'role': generate_worker_role()
     }
 
+def generate_customer_obj():
+    return {
+        'pesel': fake.pesel(),
+        'first_name': fake.first_name(),
+        'last_name': fake.last_name(),
+        'phone': phone_without_spaces_faker(),
+        'email': fake.email(),
+    }
+
+def generate_trip_obj():
+    return {
+        'trip_name': generate_trip_name(),
+        'description': fake.text(max_nb_chars=200),
+        'destination': generate_destination(),
+        'tour_type': generate_tour_type(),
+        'attractions': generate_attractions(),
+        'price': generate_price()
+    }
+
+def generate_tour_edition_obj():
+    start_date, end_date = generate_start_end_dates()
+    return {
+        'start_date': start_date,
+        'end_date': end_date,
+        'price': generate_price(),
+        'available_seats': generate_available_slots()
+    }
+
+def generate_payment_obj():
+    return {
+        'amount': generate_price(),
+        'payment_method': generate_payment_form(),
+        'payment_date': fake.date_between_dates(date(2015,1,1), date(2025,12,31)).isoformat(),
+    }
+
+def generate_reservation_obj():
+    return {
+        'reservation_date': fake.date_between_dates(date(2015,1,1), date(2025,12,31)).isoformat(),
+        'status': generate_reservation_status(),
+    }
+
 if __name__ == '__main__':
     export_objects_to_delimited_file(
             path='data/workers.bulk',
@@ -59,59 +98,37 @@ if __name__ == '__main__':
             include_header=False
         )
 
-    print('WORKERS DATA:')
-    for _ in range(5):
-        print({
-            'pesel': fake.pesel(),
-            'first_name': fake.first_name(),
-            'last_name': fake.last_name(),
-            'phone': phone_without_spaces_faker(),
-            'email': fake.email(),
-            'role': generate_worker_role()
-        })
+    export_objects_to_delimited_file(
+            path='task2\python_scripts\generating_data\generating_bulk_files\data\customers.bulk',
+            field_names=['pesel','first_name','last_name','phone','email'],
+            objects_iterable=(generate_customer_obj() for _ in range(5)),
+            include_header=False
+        )
 
-    print('\nCUSTOMERS DATA:')
-    for _ in range(5):
-        print({
-            'pesel': fake.pesel(),
-            'first_name': fake.first_name(),
-            'last_name': fake.last_name(),
-            'phone': phone_without_spaces_faker(),
-            'email': fake.email(),
-        })
+    export_objects_to_delimited_file(
+        path='task2\python_scripts\generating_data\generating_bulk_files\data\\trips.bulk',
+        field_names=['trip_name','description','destination','tour_type','attractions','price'],
+        objects_iterable=(generate_trip_obj() for _ in range(5)),
+        include_header=False
+    )
 
-    print('\nTRIP:')
-    for _ in range(5):
-        print({
-            'trip_name': generate_trip_name(),
-            'description': fake.text(max_nb_chars=200),
-            'destination': generate_destination(),
-            'tour_type': generate_tour_type(),
-            'attractions': generate_attractions(),
-            'price': generate_price()
-        })
+    export_objects_to_delimited_file(
+        path='task2\python_scripts\generating_data\generating_bulk_files\data\\tour_editions.bulk',
+        field_names=['start_date','end_date','price','available_seats'],
+        objects_iterable=(generate_tour_edition_obj() for _ in range(5)),
+        include_header=False
+    )
 
-    print('\nTOUREDITION:')
-    for _ in range(5):
-        start_date, end_date = generate_start_end_dates()
-        print({
-            'start_date': start_date,
-            'end_date': end_date,
-            'price': generate_price(),
-            'available_seats': generate_available_slots()
-        })
+    export_objects_to_delimited_file(
+        path='task2\python_scripts\generating_data\generating_bulk_files\data\payments.bulk',
+        field_names=['amount','payment_method','payment_date'],
+        objects_iterable=(generate_payment_obj() for _ in range(5)),
+        include_header=False
+    )
 
-    print('\nPAYMENT:')
-    for _ in range(5):
-        print({
-            'amount': generate_price(),
-            'payment_method': generate_payment_form(),
-            'payment_date': fake.date_between_dates(date(2015,1,1), date(2025,12,31)).isoformat(),
-        })
-
-    print('\nRESERVATION:')
-    for _ in range(5):
-        print({
-            'reservation_date': fake.date_between_dates(date(2015,1,1), date(2025,12,31)).isoformat(),
-            'status': generate_reservation_status(),
-        })
+    export_objects_to_delimited_file(
+        path='task2\python_scripts\generating_data\generating_bulk_files\data\\reservations.bulk',
+        field_names=['reservation_date','status'],
+        objects_iterable=(generate_reservation_obj() for _ in range(5)),
+        include_header=False
+    ) 
