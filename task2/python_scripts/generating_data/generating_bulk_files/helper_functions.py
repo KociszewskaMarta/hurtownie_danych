@@ -67,7 +67,7 @@ def generate_attractions():
     ]
     return random.choice(attractions_list)
 
-def generate_start_end_dates(start_year, end_year, min_days=5, max_days=20):
+def generate_start_end_dates(start_year=2015, end_year=2025, min_days=5, max_days=20):
     if start_year > end_year:
         raise ValueError("start_year must be <= end_year")
 
@@ -80,7 +80,7 @@ def generate_start_end_dates(start_year, end_year, min_days=5, max_days=20):
 
     start_date = fake.date_between(start_date=earliest_start, end_date=latest_start)
     end_date = start_date + timedelta(days=duration)
-    return start_date, end_date
+    return start_date.isoformat(), end_date.isoformat()
 
 def generate_price(min_price=1500, max_price=10000):
     return round(random.uniform(min_price, max_price), 2)
@@ -91,3 +91,7 @@ def generate_available_slots(min_slots=5, max_slots=30):
 def generate_payment_form():
     payment_forms = ['Paid', 'Unpaid', 'Processing']
     return random.choice(payment_forms)
+
+def generate_reservation_status():
+    statuses = ['Paid', 'Unpaid', 'Processing']
+    return random.choice(statuses)
