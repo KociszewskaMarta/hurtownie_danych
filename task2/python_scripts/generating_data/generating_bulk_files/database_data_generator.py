@@ -7,9 +7,9 @@ fake = Faker('pl_PL')
 number_of_trips = 10
 number_of_trip_editions=500
 number_of_workers=100
-number_of_customers=2000
+number_of_clients=1000
 number_of_reservations=1000000
-number_of_payments=number_of_trip_editions*number_of_workers*number_of_customers*number_of_reservations*0.9
+number_of_payments=900000
 
 
 def _safe(value, delimiter='|'):
@@ -51,13 +51,30 @@ def generate_worker_obj():
         'role': generate_worker_role()
     }
 
+def generate_client_obj():
+    return {
+        'pesel': fake.pesel(),
+        'first_name': fake.first_name(),
+        'last_name': fake.last_name(),
+        'email': fake.email(),
+        'phone_number': phone_without_spaces_faker(),
+    }
+
+
+
 if __name__ == '__main__':
     export_objects_to_delimited_file(
             path='data/workers.bulk',
             field_names=['pesel','first_name','last_name','email','phone_number','role'],
-            objects_iterable=(generate_worker_obj() for _ in range(10)),
+            objects_iterable=(generate_worker_obj() for _ in range(number_of_workers)),
             include_header=False
         )
+    export_objects_to_delimited_file(
+        path='data/clients.bulk',
+        field_names=['pesel', 'first_name', 'last_name', 'email', 'phone_number'],
+        objects_iterable=(generate_client_obj() for _ in range(number_of_clients)),
+        include_header=False
+    )
 
     print('WORKERS DATA:')
     for _ in range(5):
