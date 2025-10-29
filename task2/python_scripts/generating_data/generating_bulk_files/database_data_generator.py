@@ -35,3 +35,28 @@ for _ in range(5):
         'attractions': generate_attractions(),
         'price': generate_price()
     })
+
+print('\nTOUREDITION:')
+for _ in range(5):
+    start_date, end_date = generate_start_end_dates()
+    print({
+        'start_date': start_date,
+        'end_date': end_date,
+        'price': generate_price(),
+        'available_seats': generate_available_slots()
+    })
+
+print('\nPAYMENT:')
+for _ in range(5):
+    print({
+        'amount': generate_price(),
+        'payment_method': generate_payment_form(),
+        'payment_date': fake.date_between_dates(date(2015,1,1), date(2025,12,31)).isoformat(),
+    })
+
+print('\nRESERVATION:')
+for _ in range(5):
+    print({
+        'reservation_date': fake.date_between_dates(date(2015,1,1), date(2025,12,31)).isoformat(),
+        'status': generate_reservation_status(),
+    })
