@@ -1,0 +1,73 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table Rezerwacja_F {
+  id_rezerwacji integer [primary key]
+  id_wycieczki integer
+  id_klienta integer
+  id_daty integer
+  oplacona bool
+  kwota_transakcji integer
+  cena_turnusu integer
+}
+
+// Table Turnus_D {
+//   id_turnusu integer [primary key]
+//   id_wycieczki integer
+// }
+
+Table Wycieczka_D {
+  id_wycieczki integer
+  nazwa_wycieczki string
+  destynacja string
+  typ string
+}
+
+Table Data_D {
+  id_daty integer
+  rok string
+  pora_roku string
+  miesiac string
+  dzien string
+}
+
+Table Klient_D {
+  id_klienta integer
+  pesel_klienta BK_integer
+  czy_nowy bool
+  data_wpisania date
+  data_wygasniecia date
+}
+
+Table Slowo_kluczowe_D {
+  id_slowa_kluczowego integer
+  slowo_kluczowe string
+}
+
+Table Nazwa_kampanii_D {
+  id_nazwy_kampanii integer
+  nazwa_kampanii string
+}
+
+Table Kampania_F {
+  id_kampanii integer [primary key]
+  id_wycieczki integer
+  id_daty integer
+  id_slowa_kluczowego integer
+  id_nazwy_kampanii integer
+  wspolczynnik_konwersji decimal(5,2)
+  koszt_kampanii integer
+  liczba_klikniec integer
+  koszt_na_klikniecie integer
+}
+
+
+// Ref: Turnus_D.id_wycieczki > Wycieczka_D.id_wycieczki
+// Ref: Rezerwacja_F.id_turnusu > Turnus_D.id_turnusu
+Ref: Wycieczka_D.id_wycieczki < Rezerwacja_F.id_wycieczki
+Ref: Rezerwacja_F.id_daty > Data_D.id_daty
+Ref: Wycieczka_D.id_wycieczki < Kampania_F.id_wycieczki
+Ref: Kampania_F.id_daty > Data_D.id_daty
+Ref: Klient_D.id_klienta < Rezerwacja_F.id_klienta
+Ref: Kampania_F.id_slowa_kluczowego > Slowo_kluczowe_D.id_slowa_kluczowego
+Ref: Kampania_F.id_nazwy_kampanii > Nazwa_kampanii_D.id_nazwy_kampanii
