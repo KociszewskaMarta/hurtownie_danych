@@ -1,0 +1,89 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>DataWarhouseImplementation</Database>
+    <Server>localhost</Server>
+    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>k32TR3skr29dbGcypva+BqmFRiY=20.11.2025 14:52:3019.11.2025 23:50:27</TimeStamp>
+        <ID>
+          <String>Data Warehouse Implementation</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>99SVbF9HGLmrqkXDPwPTlRWFnWA=20.11.2025 00:06:3519.11.2025 23:50:42</TimeStamp>
+        <ID>
+          <String>Data Warehouse Implementation</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>8CHEvhqPC50QvuJVGnz81eucaDg=20.11.2025 00:15:2720.11.2025 00:06:35</TimeStamp>
+        <ID>
+          <String>Data D</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>r7bjHG9qufL5hBOajkbY57JimnE=20.11.2025 00:15:2720.11.2025 00:06:35</TimeStamp>
+        <ID>
+          <String>Wycieczka D</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>TVYS6KM9hnLeWaY7KJgJGmaEMfM=20.11.2025 00:15:2720.11.2025 00:06:35</TimeStamp>
+        <ID>
+          <String>Slowo Kluczowe D</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Q9wCiN/hhfB0DkkdLdSO3cNrVY4=20.11.2025 00:15:2720.11.2025 00:06:35</TimeStamp>
+        <ID>
+          <String>Nazwa Kampanii D</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>XBznJe5eVkpuAk1+A9RP8Ia68uw=20.11.2025 00:15:2720.11.2025 00:06:35</TimeStamp>
+        <ID>
+          <String>Klient D</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>o+mukIzSegiiR5vLNVc1gt4fWSo=25.11.2025 20:27:5620.11.2025 00:06:35oOCqyNkSJu0YGD9tjVeYdcBO3KY=25.11.2025 20:23:5520.11.2025 00:06:35</TimeStamp>
+        <ID>
+          <String>Data Warehouse Implementation</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>niDCjDjO2CV49gHZcA/B2VXkCms=19.11.2025 23:25:3919.11.2025 23:25:39</TimeStamp>
+      <ID>
+        <String>DataWarhouseImplementation</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2025-11-25T19:28:04.17Z</LastDeployed>
+</DeploymentSnapshot>
