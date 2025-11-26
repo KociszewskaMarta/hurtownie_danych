@@ -1,4 +1,5 @@
-
+USE data_warehouse
+GO
 
 DECLARE @StartDate date;
 DECLARE @EndDate date;
@@ -9,16 +10,14 @@ Declare @DateInProcess datetime = @StartDate;
 
 While @DateInProcess <= @EndDate
     BEGIN
-        Insert into [dbo].[DimDate] 
-        ( [Date]
-        , [Year]
-        , [Season]
-        , [Month]
-        , [Day]
+        Insert into [dbo].Data_D 
+        ( [rok]
+        , [pora_roku]
+        , [miesiac]
+        , [dzien]
         )
         Values ( 
-            @DateInProcess -- [Date]
-            , Cast( Year(@DateInProcess) as varchar(4)) -- [Year]
+              Cast( Year(@DateInProcess) as varchar(4)) -- [Year]
             , CASE 
                 WHEN Month(@DateInProcess) IN (12, 1, 2) THEN 'Winter'
                 WHEN Month(@DateInProcess) IN (3, 4, 5) THEN 'Spring'
