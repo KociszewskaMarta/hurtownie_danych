@@ -1,0 +1,10 @@
+-- Drop FACT tables
+DROP TABLE IF EXISTS Rezerwacja_F;
+DROP TABLE IF EXISTS Kampania_F;
+
+-- Drop DIMENSION tables
+DROP TABLE IF EXISTS Klient_D;
+DROP TABLE IF EXISTS Slowo_kluczowe_D;
+DROP TABLE IF EXISTS Nazwa_kampanii_D;
+DROP TABLE IF EXISTS Wycieczka_D;
+DROP TABLE IF EXISTS Data_D;
