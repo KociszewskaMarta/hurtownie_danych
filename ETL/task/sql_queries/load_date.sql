@@ -19,12 +19,25 @@ While @DateInProcess <= @EndDate
         Values ( 
               Cast( Year(@DateInProcess) as varchar(4)) -- [Year]
             , CASE 
-                WHEN Month(@DateInProcess) IN (12, 1, 2) THEN 'Winter'
-                WHEN Month(@DateInProcess) IN (3, 4, 5) THEN 'Spring'
-                WHEN Month(@DateInProcess) IN (6, 7, 8) THEN 'Summer'
-                WHEN Month(@DateInProcess) IN (9, 10, 11) THEN 'Autumn'
+                WHEN Month(@DateInProcess) IN (12, 1, 2) THEN 'Zima'
+                WHEN Month(@DateInProcess) IN (3, 4, 5) THEN 'Wiosna'
+                WHEN Month(@DateInProcess) IN (6, 7, 8) THEN 'Lato'
+                WHEN Month(@DateInProcess) IN (9, 10, 11) THEN 'Jesień'
               END -- [Season]
-            , Cast( DATENAME(month, @DateInProcess) as varchar(10)) -- [Month]
+            , CASE Month(@DateInProcess)
+                WHEN 1 THEN 'Styczeń'
+                WHEN 2 THEN 'Luty'
+                WHEN 3 THEN 'Marzec'
+                WHEN 4 THEN 'Kwiecień'
+                WHEN 5 THEN 'Maj'
+                WHEN 6 THEN 'Czerwiec'
+                WHEN 7 THEN 'Lipiec'
+                WHEN 8 THEN 'Sierpień'
+                WHEN 9 THEN 'Wrzesień'
+                WHEN 10 THEN 'Październik'
+                WHEN 11 THEN 'Listopad'
+                WHEN 12 THEN 'Grudzień'
+              END -- [Month]
             , Cast( Day(@DateInProcess) as int) -- [Day]
         );
         Set @DateInProcess = DateAdd(d, 1, @DateInProcess);
