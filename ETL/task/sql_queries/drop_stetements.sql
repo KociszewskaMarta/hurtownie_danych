@@ -1,3 +1,6 @@
+USE HD_warhouse
+GO
+
 -- Drop FACT tables
 DROP TABLE IF EXISTS Rezerwacja_F;
 DROP TABLE IF EXISTS Kampania_F;
@@ -8,3 +11,4 @@ DROP TABLE IF EXISTS Slowo_kluczowe_D;
 DROP TABLE IF EXISTS Nazwa_kampanii_D;
 DROP TABLE IF EXISTS Wycieczka_D;
 DROP TABLE IF EXISTS Data_D;
+DROP TABLE IF EXISTS Junk_D;
