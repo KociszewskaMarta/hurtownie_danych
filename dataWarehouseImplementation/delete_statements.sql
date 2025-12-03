@@ -1,3 +1,6 @@
+USE HD_warhouse
+GO
+
 DELETE FROM Rezerwacja_F;
 DELETE FROM Kampania_F;
 
@@ -6,3 +9,4 @@ DELETE FROM Data_D;
 DELETE FROM Slowo_kluczowe_D;
 DELETE FROM Nazwa_kampanii_D;
 DELETE FROM Wycieczka_D;
+DELETE FROM Junk_D;

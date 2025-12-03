@@ -42,15 +42,21 @@ VALUES
     ('Tatry Rodzinna Majówka'),
     ('Alpy Aktywnie 2025');
 
+INSERT INTO Junk_D 
+	(status_oplacenia) 
+VALUES
+	('Nie'),
+	('Tak');
+
 
 INSERT INTO Rezerwacja_F
-    (id_wycieczki, id_nazwy_kampanii, id_klienta, id_daty, oplacona, kwota_transakcji, cena_turnusu)
+    (id_wycieczki, id_nazwy_kampanii, id_klienta, id_daty, id_junk, kwota_transakcji, cena_turnusu)
 VALUES
-    (1, 1, 1, 1, 'Tak', 4200, 4200),
+    (1, 1, 1, 1, 1, 4200, 4200),
     -- Hiszpania, klient 1
-    (2, 2, 2, 3, 'Nie', 1800, 1800),
+    (2, 2, 2, 3, 2, 1800, 1800),
     -- Rzym, klient 2
-    (3, 3, 3, 4, 'Tak', 1500, 1500);
+    (3, 3, 3, 4, 2, 1500, 1500);
 -- Tatry, klient 3
 
 INSERT INTO Kampania_F
