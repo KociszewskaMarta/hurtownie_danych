@@ -1,3 +1,6 @@
+USE HD_warhouse
+GO
+
 --INSERTS
 
 INSERT INTO Wycieczka_D
