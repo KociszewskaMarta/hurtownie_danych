@@ -1,3 +1,9 @@
+CREATE DATABASE HD_warhouse
+GO
+
+USE HD_warhouse
+GO
+
 --DIMENSIONS
 
 CREATE TABLE Wycieczka_D
