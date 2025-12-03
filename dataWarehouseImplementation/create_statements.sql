@@ -20,8 +20,8 @@ CREATE TABLE Data_D
 CREATE TABLE Klient_D
 (
 	id_klienta INTEGER IDENTITY(1,1) PRIMARY KEY,
-	pesel_klienta BIGINT,
-	czy_nowy BIT,
+	pesel_klienta NVARCHAR(11),
+	czy_nowy NVARCHAR(3),
 	data_wpisania DATE,
 	data_wygasniecia DATE
 );
@@ -43,9 +43,10 @@ CREATE TABLE Nazwa_kampanii_D
 CREATE TABLE Rezerwacja_F
 (
 	id_wycieczki INTEGER NOT NULL,
+	id_nazwy_kampanii INTEGER NOT NULL,
 	id_klienta INTEGER NOT NULL,
 	id_daty INTEGER NOT NULL,
-	oplacona BIT,
+	oplacona NVARCHAR(3),
 	kwota_transakcji INT,
 	cena_turnusu INT,
 
@@ -56,6 +57,7 @@ CREATE TABLE Rezerwacja_F
 	),
 
 	FOREIGN KEY (id_wycieczki) REFERENCES Wycieczka_D(id_wycieczki),
+	FOREIGN KEY (id_nazwy_kampanii) REFERENCES Nazwa_kampanii_D(id_nazwy_kampanii),
 	FOREIGN KEY (id_klienta) REFERENCES Klient_D(id_klienta),
 	FOREIGN KEY (id_daty) REFERENCES Data_D(id_daty)
 );
