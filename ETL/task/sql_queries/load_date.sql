@@ -1,4 +1,4 @@
-USE data_warehouse
+USE HD_warhouse
 GO
 
 DECLARE @StartDate date;
