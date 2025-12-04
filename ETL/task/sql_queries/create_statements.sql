@@ -1,7 +1,7 @@
-CREATE DATABASE HD_warhouse_real_data
-GO
+-- CREATE DATABASE HD_warhouse_real_data
+-- GO
 
-USE HD_warhouse_real_data
+USE HD_warhouse
 GO
 
 --DIMENSIONS
