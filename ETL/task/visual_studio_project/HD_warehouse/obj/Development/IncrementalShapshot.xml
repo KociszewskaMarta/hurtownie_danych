@@ -19,63 +19,63 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>nbuQEpEyTRtAdFBzaFCVhd2sX9s=04.12.2025 02:40:0403.12.2025 23:58:32</TimeStamp>
+        <TimeStamp>iKU9byXgrNwFxPQjztq5ljJX7WA=04.12.2025 00:33:1604.12.2025 00:32:04</TimeStamp>
         <ID>
           <String>HD Warhouse</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>f4jWFnvOB0ndgs7EeNLuh7G8i7s=03.12.2025 23:59:3503.12.2025 23:59:35</TimeStamp>
+        <TimeStamp>f4jWFnvOB0ndgs7EeNLuh7G8i7s=03.12.2025 23:59:3504.12.2025 00:32:04</TimeStamp>
         <ID>
           <String>HD Warhouse</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>FUDyw/+g3I/tgbb7rd6ocEGQ96Y=04.12.2025 00:08:0603.12.2025 23:59:55</TimeStamp>
+        <TimeStamp>FUDyw/+g3I/tgbb7rd6ocEGQ96Y=04.12.2025 00:08:0604.12.2025 00:32:04</TimeStamp>
         <ID>
           <String>Nazwa Kampanii D</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>kOA0TbfeLG72GFwmGlANtAtQ6O8=04.12.2025 00:08:0603.12.2025 23:59:55</TimeStamp>
+        <TimeStamp>kOA0TbfeLG72GFwmGlANtAtQ6O8=04.12.2025 00:08:0604.12.2025 00:32:04</TimeStamp>
         <ID>
           <String>Data D</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>AtTlEgVmxSMDrQOf82rXT2NMYhs=04.12.2025 00:08:0603.12.2025 23:59:55</TimeStamp>
+        <TimeStamp>AtTlEgVmxSMDrQOf82rXT2NMYhs=04.12.2025 00:08:0604.12.2025 00:32:04</TimeStamp>
         <ID>
           <String>Slowo Kluczowe D</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>b5bAjHNU3p3SB5QZLoXjos04QFQ=04.12.2025 00:08:0603.12.2025 23:59:55</TimeStamp>
+        <TimeStamp>b5bAjHNU3p3SB5QZLoXjos04QFQ=04.12.2025 00:08:0604.12.2025 00:32:04</TimeStamp>
         <ID>
           <String>Wycieczka D</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>6WhTiiM/u+vnyinMXcLgJHRk3k0=04.12.2025 00:08:0603.12.2025 23:59:55</TimeStamp>
+        <TimeStamp>6WhTiiM/u+vnyinMXcLgJHRk3k0=04.12.2025 00:08:0604.12.2025 00:32:04</TimeStamp>
         <ID>
           <String>Junk D</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>AJZ7x7PY7SY0DvJSk/kHE0eLkAM=04.12.2025 00:08:0603.12.2025 23:59:55</TimeStamp>
+        <TimeStamp>AJZ7x7PY7SY0DvJSk/kHE0eLkAM=04.12.2025 00:08:0604.12.2025 00:32:04</TimeStamp>
         <ID>
           <String>Klient D</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>ck55aedbsvjgWKMXJ/2jZEOgecE=04.12.2025 00:22:1003.12.2025 23:59:55rkyJjFYedRqF0QVkqe18bt9PSJA=03.12.2025 23:59:5503.12.2025 23:59:55</TimeStamp>
+        <TimeStamp>ck55aedbsvjgWKMXJ/2jZEOgecE=04.12.2025 00:22:1004.12.2025 00:32:04rkyJjFYedRqF0QVkqe18bt9PSJA=03.12.2025 23:59:5504.12.2025 00:32:04</TimeStamp>
         <ID>
           <String>HD Warhouse</String>
         </ID>
@@ -83,7 +83,7 @@
     </ObjectSnapshots>
     <DatabaseSnapshot>
       <Type>Microsoft.AnalysisServices.Database</Type>
-      <TimeStamp>i78zcsGcFok2LIv0hnrAtZJyD/o=03.12.2025 23:57:4603.12.2025 23:57:46</TimeStamp>
+      <TimeStamp>i78zcsGcFok2LIv0hnrAtZJyD/o=03.12.2025 23:57:4604.12.2025 00:32:04</TimeStamp>
       <ID>
         <String>HD_warehouse</String>
       </ID>
@@ -92,5 +92,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2025-12-04T01:40:32.863333Z</LastDeployed>
+  <LastDeployed>2025-12-03T23:34:59.11Z</LastDeployed>
 </DeploymentSnapshot>
