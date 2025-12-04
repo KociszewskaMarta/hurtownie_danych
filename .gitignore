@@ -20,4 +20,4 @@ __pycache__/
 Thumbs.db
 
 # big data files
-data/
+# data/
