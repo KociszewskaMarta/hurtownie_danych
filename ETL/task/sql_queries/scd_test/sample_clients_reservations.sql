@@ -1,8 +1,8 @@
 -- Sample database for testing Client and Reservation logic
-CREATE DATABASE sample_travel_agency;
-GO
+-- CREATE DATABASE sample_travel_agency
+-- GO
 
-USE sample_travel_agency;
+USE sample_travel_agency
 GO
 
 -- Create Client table
