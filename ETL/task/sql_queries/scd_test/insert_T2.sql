@@ -1,4 +1,4 @@
-USE sample_travel_agency
+USE sample_client_reservation
 GO
 
 -- T2: Add new clients and update existing client Jan

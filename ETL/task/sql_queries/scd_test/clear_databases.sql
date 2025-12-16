@@ -1,5 +1,5 @@
--- Clear all data from sample_travel_agency (source database)
-USE sample_travel_agency;
+-- Clear all data from sample_client_reservation (source database)
+USE sample_client_reservation;
 GO
 
 -- Option 1: Clear data only (keeps table structure)

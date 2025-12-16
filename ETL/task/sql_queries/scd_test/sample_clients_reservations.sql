@@ -2,7 +2,7 @@
 -- CREATE DATABASE sample_travel_agency
 -- GO
 
-USE sample_travel_agency
+USE sample_client_reservation
 GO
 
 -- Create Client table

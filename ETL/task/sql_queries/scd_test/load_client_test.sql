@@ -6,8 +6,8 @@ WITH ClientReservations AS (
     SELECT 
         c.client_pesel,
         COUNT(rc.reservation_id) AS reservation_count
-    FROM sample_travel_agency.dbo.Client c
-    LEFT JOIN sample_travel_agency.dbo.ReservationClient rc ON c.client_pesel = rc.client_pesel
+    FROM sample_client_reservation.dbo.Client c
+    LEFT JOIN sample_client_reservation.dbo.ReservationClient rc ON c.client_pesel = rc.client_pesel
     GROUP BY c.client_pesel
 ),
 SourceClients AS (
@@ -17,7 +17,7 @@ SourceClients AS (
             WHEN cr.reservation_count = 1 THEN 'Tak'
             ELSE 'Nie'
         END AS czy_nowy
-    FROM sample_travel_agency.dbo.Client c
+    FROM sample_client_reservation.dbo.Client c
     LEFT JOIN ClientReservations cr ON c.client_pesel = cr.client_pesel
 )
 
@@ -37,8 +37,8 @@ WITH ClientReservations AS (
     SELECT 
         c.client_pesel,
         COUNT(rc.reservation_id) AS reservation_count
-    FROM sample_travel_agency.dbo.Client c
-    LEFT JOIN sample_travel_agency.dbo.ReservationClient rc ON c.client_pesel = rc.client_pesel
+    FROM sample_client_reservation.dbo.Client c
+    LEFT JOIN sample_client_reservation.dbo.ReservationClient rc ON c.client_pesel = rc.client_pesel
     GROUP BY c.client_pesel
 ),
 SourceClients AS (
@@ -48,7 +48,7 @@ SourceClients AS (
             WHEN cr.reservation_count = 1 THEN 'Tak'
             ELSE 'Nie'
         END AS czy_nowy
-    FROM sample_travel_agency.dbo.Client c
+    FROM sample_client_reservation.dbo.Client c
     LEFT JOIN ClientReservations cr ON c.client_pesel = cr.client_pesel
 )
 
