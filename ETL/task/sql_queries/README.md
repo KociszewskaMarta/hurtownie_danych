@@ -167,7 +167,11 @@ C:\Users\kocis\Desktop\SEM_5\Hurtownie_danych\Labolatoria\repo\hurtownie_danych\
 
 ### 1. `go_explore_travel_agency` - snapshot T1, original database from source system
 
+TODO: fix, load data from source system (problem with generated type od payment in payment table)
+
 ### 2. `go_explore_travel_agency_t2` - snapshot T2, original database from source system (T1 with additional data (new reservations, clients, workers with different statuses))
+
+TODO: fix, load data from source system (problem with generated type od payment in payment table)
 
 ### 3. `HD_warhouse` - data warehouse database for development and testing (used for Task 3 and 4, showing the implementation of data warehouse concepts)
 
@@ -176,6 +180,10 @@ C:\Users\kocis\Desktop\SEM_5\Hurtownie_danych\Labolatoria\repo\hurtownie_danych\
 ### 5. `sample_client_reservation` - sample database for tasting SCD Type 2 implementation, contains only Client, Reservation and ReservationClient tables with minimal data
 
 ### 6. `SCD_test` - sample database for testing SCD Type 2 concepts, contains only Client_D
+
+### 7. `sample_warehouse` - sample data warehouse database for testing
+
+### 8. `sample_travel_agency_database` - sample source database for testing, contains all tables from original source system with minimal data for testing
 
 ## Testing SCD Type 2
 
