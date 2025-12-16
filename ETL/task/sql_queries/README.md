@@ -173,13 +173,13 @@ C:\Users\kocis\Desktop\SEM_5\Hurtownie_danych\Labolatoria\repo\hurtownie_danych\
 
 ### 4. `HD_warhouse_real_data` - data warehouse database for production use (used for Task 5 with real data from source systems)
 
-### 5. `sample_travel_agency` - sample database for tasting SCD Type 2 implementation, contains only Client, Reservation and ReservationClient tables with minimal data
+### 5. `sample_client_reservation` - sample database for tasting SCD Type 2 implementation, contains only Client, Reservation and ReservationClient tables with minimal data
 
 ### 6. `SCD_test` - sample database for testing SCD Type 2 concepts, contains only Client_D
 
 ## Testing SCD Type 2
 
-- Run `sample_clients_reservations.sql` to create and populate `sample_travel_agency` database
+- Run `sample_clients_reservations.sql` to create and populate `sample_client_reservation` database
 
 - Run `sample_warehouse.sql` to create `sample_warehouse` database with `Client_D` table
 
