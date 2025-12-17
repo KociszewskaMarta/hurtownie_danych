@@ -1,0 +1,21 @@
+nazwa_wycieczki,pesel_klienta,reservation_date,status_oplacenia,kwota_transakcji,cena_turnusu,nazwa_kampanii
+Art and Architecture Walk,91090932109,2024-10-01,Nie,2900,2100,Luksusowe podróże
+City Explorer Package,92070754321,2024-08-10,Nie,1800,1800,Wakacje budżetowe
+City Explorer Package,95110145678,2024-12-25,Nie,1900,1900,Wakacje budżetowe
+City Explorer Package,98060612345,2024-08-01,Tak,1800,1800,Wakacje budżetowe
+Cultural Heritage Tour,00100098765,2024-12-20,Tak,2900,2900,Rodzinne wakacje
+Cultural Heritage Tour,93050598765,2024-07-15,Tak,2800,2800,Rodzinne wakacje
+Desert Discovery Tour,95010143210,2024-11-01,Tak,3500,2900,Wakacje budżetowe
+Historical Landmarks Journey,94030365432,2024-12-01,Tak,2600,2600,Rodzinne wakacje
+Historical Landmarks Journey,95010143210,2024-05-10,Tak,2500,2500,Rodzinne wakacje
+Historical Landmarks Journey,96020287654,2024-05-15,Tak,2500,2500,Rodzinne wakacje
+Historical Landmarks Journey,96020287654,2024-11-10,Tak,2500,2500,Rodzinne wakacje
+Island Hopping Adventure,00100098765,2024-10-20,Tak,2100,3500,Egzotyczne destynacje
+Mountain Adventure Expedition,95010143210,2024-12-15,Tak,4600,4600,Przygoda i eksploracja
+Mountain Adventure Expedition,96120234567,2024-12-30,Tak,4500,4500,Przygoda i eksploracja
+Mountain Adventure Expedition,97040423456,2024-06-20,Nie,1500,4500,Przygoda i eksploracja
+Northern Lights Quest,98060612345,2024-11-15,Nie,0,4800,Przygoda i eksploracja
+Tropical Paradise Getaway,00100098765,2024-12-10,Tak,3200,3200,Egzotyczne destynacje
+Tropical Paradise Getaway,94030365432,2024-06-01,Tak,3200,3200,Egzotyczne destynacje
+Tropical Paradise Getaway,99080876543,2024-12-05,Nie,0,3300,Egzotyczne destynacje
+Wildlife Safari Experience,99080876543,2024-09-05,Tak,5200,5200,Egzotyczne destynacje
