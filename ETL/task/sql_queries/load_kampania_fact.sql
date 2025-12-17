@@ -61,5 +61,5 @@ WHERE
     AND m.Keyword IS NOT NULL
     AND m.Campaing_Name IS NOT NULL;
 GO
-DROP TABLE Marketing_Temp;
-GO
+-- DROP TABLE Marketing_Temp;
+-- GO
