@@ -1,4 +1,4 @@
-USE HD_warhouse_real_data
+USE sample_warehouse;
 GO
 
 INSERT INTO [dbo].Junk_D 
