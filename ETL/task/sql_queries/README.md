@@ -141,25 +141,77 @@ C:\Users\kocis\Desktop\SEM_5\Hurtownie_danych\Labolatoria\repo\hurtownie_danych\
 
 **Usage**: Run to import marketing data. Update file path as needed. Prevents duplicates with NOT EXISTS checks.
 
-### 7. `delete_statements.sql`
-**Purpose**: Clears all data from tables while preserving structure
+### 8. `load_rezerwacja_fact_corrected.sql`
+**Purpose**: Loads reservation fact table by joining source data with dimension tables
 
 **What it does**:
-- Deletes all records from fact tables first (Rezerwacja_F, Kampania_F)
-- Then deletes all records from dimension tables
-- Maintains referential integrity by deleting in correct order
-- Does not drop tables, only clears data
+1. **Loads Marketing Data**: 
+   - Creates temporary table `Marketing_Temp`
+   - Uses BULK INSERT to load marketing campaign CSV data
+   
+2. **Inserts into Rezerwacja_F** using complex JOIN logic:
+   - **Source Tables** (from `sample_travel_agency_database`):
+     - `Reservation` - main reservation data
+     - `ReservationClient` - links reservations to clients
+     - `Client` - client information
+     - `TourEdition` - specific tour session details
+     - `Tour` - tour/trip information
+     - `Payment` - payment transactions (LEFT JOIN - may not exist yet)
+   
+3. **Dimension Lookups**:
+   - **Wycieczka_D**: Matches by trip name (`nazwa_wycieczki = t.name`)
+   - **Klient_D**: Matches by PESEL AND ensures active record (`data_wygasniecia IS NULL` for SCD Type 2)
+   - **Nazwa_kampanii_D**: Matches via Marketing_Temp CSV by joining `Trip_id` to `tour_id`, then to campaign name
+   - **Data_D**: Matches by year, month, and day from `reservation_date`
+   - **Junk_D**: Matches payment status - transforms `'Paid'` → `'Tak'`, others → `'Nie'`
+
+4. **Measures Calculation**:
+   - `kwota_transakcji`: Uses `ISNULL(p.amount, 0)` - returns 0 if no payment exists
+   - `cena_turnusu`: Direct copy from `TourEdition.price`
+
+5. **Marketing Campaign Logic**:
+   - Extracts campaign name from CSV by matching `Trip_id` to `tour_id`
+   - If multiple campaigns exist for same trip, uses `MIN(Campaing_Name)` to select first one
+   - Uses LEFT JOIN so records without campaigns can be filtered
+
+6. **Filtering**:
+   - Only includes reservations where ALL dimensions exist (NOT NULL checks)
+   - **Critical**: `kamp.id_nazwy_kampanii IS NOT NULL` - only loads reservations with marketing campaigns
+   - Ensures referential integrity with dimension tables
+
+7. **SCD Type 2 Handling**:
+   - Client dimension lookup includes `data_wygasniecia IS NULL` to get current/active client record
+   - Ensures historical client changes don't create duplicate facts
+
+**Data Flow**:
+```
+Source DB Reservation → Join Client (via ReservationClient)
+                     → Join Tour (via TourEdition)
+                     → Join Payment (optional)
+                     → Match Wycieczka_D by name
+                     → Match Klient_D by PESEL (active record only)
+                     → Match Campaign via CSV Trip_id
+                     → Match Nazwa_kampanii_D by campaign name
+                     → Match Data_D by date components
+                     → Match Junk_D by payment status
+                     → Insert into Rezerwacja_F
+```
+
+**Important Notes**:
+- Uses `DISTINCT` to prevent duplicate rows
+- Marketing_Temp is dropped after loading
+- Only loads reservations that have associated marketing campaigns
+- Handles missing payments gracefully with `ISNULL`
+
+**Usage**: Run after loading all dimensions. Can be run incrementally with WHERE clauses to load only new reservations. Uncomment `TRUNCATE TABLE Rezerwacja_F` for full reload.
+
+### 9. `delete_statements.sql`
+**Purpose**: Clears all data from tables while preserving structure
 
 **Usage**: Use when you need to reload all data from scratch or reset the warehouse.
 
-### 8. `drop_stetements.sql`
+### 10. `drop_stetements.sql`
 **Purpose**: Completely removes all tables from the database
-
-**What it does**:
-- Drops fact tables first (Rezerwacja_F, Kampania_F)
-- Then drops all dimension tables
-- Uses `IF EXISTS` for safe execution
-- Completely removes table structures
 
 **Usage**: Use for complete teardown before recreating schema with `create_statements.sql`.
 
@@ -197,6 +249,11 @@ TODO: fix, load data from source system (problem with generated type od payment 
 
 - In `sample_warehouse` ypu can see that only changed clients are updated with SCD Type 2 logic (only those rows are affected) and new records are inserted accordingly
 
+## Testing Rezerwacja_F Fact Table
+- Use `verify_rezerwacja_fact.sql` to export data from `Rezerwacja_F` fact table in data warehouse to CSV file
+- Use `ETL/task/sql_queries/facts_test/compare_exports.py` script to compare data exported from source system and data from `Rezerwacja_F` fact table in data warehouse
+
+
 
 ## ETL Process Flow
 
@@ -211,6 +268,7 @@ TODO: fix, load data from source system (problem with generated type od payment 
    - Run `load_marketing_data.sql` (Keywords and Campaign names from CSV)
    - Run `load_clients.sql` (Client dimension with SCD Type 2)
 4. **Load Facts**: (Scripts not included - load Rezerwacja_F and Kampania_F)
+   - Run `load_rezerwacja_fact_corrected.sql` (loads reservation facts)
 
 ### Incremental Load (Regular Updates)
 
