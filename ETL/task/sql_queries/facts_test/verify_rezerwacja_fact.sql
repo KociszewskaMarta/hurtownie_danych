@@ -1,11 +1,7 @@
--- =============================================================================
--- Skrypt weryfikacyjny: Rezerwacja_F vs źródłowa baza danych
--- =============================================================================
 
 USE sample_warehouse;
 GO
 
--- Tworzenie tymczasowej tabeli dla danych CSV (do weryfikacji)
 IF OBJECT_ID('dbo.Marketing_Temp', 'U') IS NOT NULL
     DROP TABLE dbo.Marketing_Temp;
 GO
@@ -24,7 +20,6 @@ CREATE TABLE Marketing_Temp (
 );
 GO
 
--- Ładowanie danych z CSV
 BULK INSERT Marketing_Temp
 FROM 'C:\Users\kocis\Desktop\SEM_5\Hurtownie_danych\Labolatoria\repo\hurtownie_danych\ETL\task\sql_queries\sample_sources\sample_marketing_data.csv'
 WITH (
@@ -36,11 +31,6 @@ WITH (
 );
 GO
 
-PRINT '========================================';
-PRINT '1. PORÓWNANIE LICZBY REKORDÓW';
-PRINT '========================================';
-
--- Liczba rezerwacji w źródle (z kampaniami)
 SELECT 
     COUNT(DISTINCT r.reservation_id) AS liczba_rezerwacji_zrodlo
 FROM sample_travel_agency_database.dbo.Reservation r
@@ -50,17 +40,9 @@ WHERE EXISTS (
     SELECT 1 FROM sample_warehouse.dbo.Marketing_Temp mt 
     WHERE CAST(mt.Trip_id AS INT) = t.tour_id
 );
-
--- Liczba rekordów w hurtowni
 SELECT COUNT(*) AS liczba_rekordow_hurtownia
 FROM Rezerwacja_F;
 
-PRINT '';
-PRINT '========================================';
-PRINT '2. PORÓWNANIE SUM KWOT';
-PRINT '========================================';
-
--- Suma kwot transakcji ze źródła
 SELECT 
     SUM(ISNULL(p.amount, 0)) AS suma_kwot_zrodlo
 FROM sample_travel_agency_database.dbo.Reservation r
@@ -71,18 +53,10 @@ WHERE EXISTS (
     SELECT 1 FROM sample_warehouse.dbo.Marketing_Temp mt 
     WHERE CAST(mt.Trip_id AS INT) = t.tour_id
 );
-
--- Suma kwot w hurtowni
 SELECT 
     SUM(kwota_transakcji) AS suma_kwot_hurtownia
 FROM Rezerwacja_F;
 
-PRINT '';
-PRINT '========================================';
-PRINT '3. PORÓWNANIE SZCZEGÓŁOWE - EKSPORT DO CSV';
-PRINT '========================================';
-
--- Tworzenie tymczasowej tabeli dla danych źródłowych (tabela rzeczywista, nie #temp)
 IF OBJECT_ID('dbo.ZrodloTemp_Export') IS NOT NULL DROP TABLE dbo.ZrodloTemp_Export;
 SELECT 
     r.reservation_id,
@@ -108,8 +82,6 @@ LEFT JOIN (
 ) mt ON mt.Trip_id = t.tour_id
 WHERE mt.Campaing_Name IS NOT NULL
 ORDER BY r.reservation_id;
-
--- Tworzenie tymczasowej tabeli dla danych z hurtowni (tabela rzeczywista, nie #temp)
 IF OBJECT_ID('dbo.HurtowniaTemp_Export') IS NOT NULL DROP TABLE dbo.HurtowniaTemp_Export;
 SELECT 
     w.nazwa_wycieczki,
@@ -127,21 +99,11 @@ INNER JOIN Data_D d ON d.id_daty = r.id_daty
 INNER JOIN Junk_D j ON j.id_junk = r.id_junk
 INNER JOIN Nazwa_kampanii_D k ON k.id_nazwy_kampanii = r.id_nazwy_kampanii
 ORDER BY w.nazwa_wycieczki, kl.pesel_klienta, reservation_date;
-
--- Wyświetlenie danych
 SELECT * FROM dbo.ZrodloTemp_Export;
 SELECT * FROM dbo.HurtowniaTemp_Export;
-
--- Usunięcie tabel tymczasowych
 DROP TABLE dbo.ZrodloTemp_Export;
 DROP TABLE dbo.HurtowniaTemp_Export;
 
-PRINT '';
-PRINT '========================================';
-PRINT '4. SPRAWDZENIE INTEGRALNOŚCI WYMIARÓW';
-PRINT '========================================';
-
--- Czy wszystkie wycieczki z faktów istnieją w wymiarze
 SELECT 
     CASE 
         WHEN COUNT(*) = 0 THEN 'OK - Wszystkie wycieczki istnieją w wymiarze'
@@ -150,8 +112,6 @@ SELECT
 FROM Rezerwacja_F r
 LEFT JOIN Wycieczka_D w ON w.id_wycieczki = r.id_wycieczki
 WHERE w.id_wycieczki IS NULL;
-
--- Czy wszystkie klienci z faktów istnieją w wymiarze
 SELECT 
     CASE 
         WHEN COUNT(*) = 0 THEN 'OK - Wszyscy klienci istnieją w wymiarze'
@@ -160,8 +120,6 @@ SELECT
 FROM Rezerwacja_F r
 LEFT JOIN Klient_D kl ON kl.id_klienta = r.id_klienta
 WHERE kl.id_klienta IS NULL;
-
--- Czy wszystkie daty z faktów istnieją w wymiarze
 SELECT 
     CASE 
         WHEN COUNT(*) = 0 THEN 'OK - Wszystkie daty istnieją w wymiarze'
@@ -170,8 +128,6 @@ SELECT
 FROM Rezerwacja_F r
 LEFT JOIN Data_D d ON d.id_daty = r.id_daty
 WHERE d.id_daty IS NULL;
-
--- Czy wszystkie kampanie z faktów istnieją w wymiarze
 SELECT 
     CASE 
         WHEN COUNT(*) = 0 THEN 'OK - Wszystkie kampanie istnieją w wymiarze'
@@ -181,12 +137,6 @@ FROM Rezerwacja_F r
 LEFT JOIN Nazwa_kampanii_D k ON k.id_nazwy_kampanii = r.id_nazwy_kampanii
 WHERE k.id_nazwy_kampanii IS NULL;
 
-PRINT '';
-PRINT '========================================';
-PRINT '5. STATYSTYKI OPISOWE';
-PRINT '========================================';
-
--- Statystyki z hurtowni
 SELECT 
     'Rezerwacja_F' AS tabela,
     COUNT(*) AS liczba_rekordow,
@@ -198,12 +148,6 @@ SELECT
     AVG(cena_turnusu) AS srednia_cena_turnusu
 FROM Rezerwacja_F;
 
-PRINT '';
-PRINT '========================================';
-PRINT '6. ROZKŁAD PO STATUSIE OPŁACENIA';
-PRINT '========================================';
-
--- Źródło
 SELECT 
     'ŹRÓDŁO' AS zrodlo,
     CASE WHEN r.reservation_status = 'Paid' THEN 'Tak' ELSE 'Nie' END AS status_oplacenia,
@@ -216,8 +160,6 @@ WHERE EXISTS (
     WHERE CAST(mt.Trip_id AS INT) = t.tour_id
 )
 GROUP BY CASE WHEN r.reservation_status = 'Paid' THEN 'Tak' ELSE 'Nie' END;
-
--- Hurtownia
 SELECT 
     'HURTOWNIA' AS zrodlo,
     j.status_oplacenia,
@@ -225,10 +167,5 @@ SELECT
 FROM Rezerwacja_F r
 INNER JOIN Junk_D j ON j.id_junk = r.id_junk
 GROUP BY j.status_oplacenia;
-
-PRINT '';
-PRINT 'Weryfikacja zakończona!';
-
--- Usunięcie tymczasowej tabeli Marketing_Temp
 DROP TABLE dbo.Marketing_Temp;
 GO
