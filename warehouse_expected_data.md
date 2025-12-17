@@ -313,16 +313,16 @@ After first reservation: some clients will have **czy_nowy = 'Nie'** (multiple r
 
 | id_klienta | pesel_klienta | czy_nowy | data_wpisania | data_wygasniecia |
 |------------|---------------|----------|---------------|------------------|
-| 1 | 95010143210 | Tak | GETDATE() | NULL |
-| 2 | 96020287654 | Tak | GETDATE() | NULL |
-| 3 | 94030365432 | Tak | GETDATE() | NULL |
+| 1 | 95010143210 | Nie | GETDATE() | NULL |
+| 2 | 96020287654 | Nie | GETDATE() | NULL |
+| 3 | 94030365432 | Nie | GETDATE() | NULL |
 | 4 | 97040423456 | Tak | GETDATE() | NULL |
 | 5 | 93050598765 | Tak | GETDATE() | NULL |
-| 6 | 98060612345 | Tak | GETDATE() | NULL |
+| 6 | 98060612345 | Nie | GETDATE() | NULL |
 | 7 | 92070754321 | Tak | GETDATE() | NULL |
-| 8 | 99080876543 | Tak | GETDATE() | NULL |
+| 8 | 99080876543 | Nie | GETDATE() | NULL |
 | 9 | 91090932109 | Tak | GETDATE() | NULL |
-| 10 | 00100098765 | Tak | GETDATE() | NULL |
+| 10 | 00100098765 | Nie | GETDATE() | NULL |
 | 11 | 95110145678 | Tak | GETDATE() | NULL |
 | 12 | 96120234567 | Tak | GETDATE() | NULL |
 
@@ -378,7 +378,6 @@ These 6 clients will have their old record expired and a new record:
 | 22 | eksploracja |
 | 23 | dla par |
 | 24 | oszczędne podróże |
-| 25 | (and others from CSV) |
 
 **Source:** `load_marketing_data.sql` extracts unique keywords from `Marketing_Temp.Keyword` column
 
