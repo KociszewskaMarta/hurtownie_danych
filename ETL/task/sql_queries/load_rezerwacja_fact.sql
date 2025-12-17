@@ -1,47 +1,35 @@
--- Set source and warehouse databases
-USE sample_warehouse;
+USE sample_warehouse
 GO
 
--- Create Reservation_Fact in warehouse if not exists
-IF OBJECT_ID('dbo.Reservation_Fact') IS NULL
-BEGIN
-    CREATE TABLE dbo.Reservation_Fact (
-        reservation_id INT PRIMARY KEY,
-        reservation_date DATE NOT NULL,
-        reservation_status NVARCHAR(20) NOT NULL,
-        tour_edition_id INT NOT NULL,
-        client_pesel CHAR(11) NOT NULL,
-        amount DECIMAL(10,2) NULL,
-        payment_id INT NULL
-    );
-END
-GO
-
--- Insert or update Reservation_Fact from source tables in sample_travel_Agency_data
-MERGE INTO dbo.Reservation_Fact AS TT
-USING (
-    SELECT 
-        r.reservation_id,
-        r.reservation_date,
-        r.reservation_status,
-        r.tour_edition_id,
-        rc.client_pesel,
-        p.amount,
-        p.payment_id
-    FROM sample_travel_agency_database.dbo.Reservation r
-    JOIN sample_travel_agency_database.dbo.ReservationClient rc ON r.reservation_id = rc.reservation_id
-    LEFT JOIN sample_travel_agency_database.dbo.Payment p ON r.reservation_id = p.reservation_id
-) AS ST
-ON TT.reservation_id = ST.reservation_id
-WHEN NOT MATCHED THEN
-    INSERT (reservation_id, reservation_date, reservation_status, tour_edition_id, client_pesel, amount, payment_id)
-    VALUES (ST.reservation_id, ST.reservation_date, ST.reservation_status, ST.tour_edition_id, ST.client_pesel, ST.amount, ST.payment_id)
-WHEN MATCHED THEN
-    UPDATE SET 
-        reservation_date = ST.reservation_date,
-        reservation_status = ST.reservation_status,
-        tour_edition_id = ST.tour_edition_id,
-        client_pesel = ST.client_pesel,
-        amount = ST.amount,
-        payment_id = ST.payment_id;
+-- INSERT INTO Rezerwacja_F (
+--    id_wycieczki,
+--    id_nazwy_kampanii,
+--    id_klienta,
+--    id_daty,
+--    id_junk,
+--    kwota_transakcji,
+--    cena_turnusu
+--)
+SELECT
+    r.reservation_id,
+    t.name AS tour_name,
+    wyc.id_wycieczki,
+    c.client_pesel,
+    kl.id_klienta,
+    r.reservation_date,
+    dat.id_daty,
+    te.price,
+    p.amount,
+    CASE WHEN p.payment_id IS NOT NULL THEN 'TAK' ELSE 'NIE' END AS status_oplacenia,
+    junk.id_junk
+FROM sample_travel_agency_database.dbo.Reservation r
+INNER JOIN sample_travel_agency_database.dbo.ReservationClient rc ON rc.reservation_id = r.reservation_id
+INNER JOIN sample_travel_agency_database.dbo.Client c ON c.client_pesel = rc.client_pesel
+LEFT JOIN Klient_D kl ON kl.pesel_klienta = c.client_pesel
+INNER JOIN sample_travel_agency_database.dbo.TourEdition te ON te.tour_edition_id = r.tour_edition_id
+INNER JOIN sample_travel_agency_database.dbo.Tour t ON t.tour_id = te.tour_id
+LEFT JOIN Wycieczka_D wyc ON wyc.nazwa_wycieczki = t.name
+LEFT JOIN sample_travel_agency_database.dbo.Payment p ON p.reservation_id = r.reservation_id
+LEFT JOIN Data_D dat ON dat.rok = CAST(YEAR(r.reservation_date) AS NVARCHAR(4)) AND dat.miesiac = CAST(MONTH(r.reservation_date) AS NVARCHAR(10)) AND dat.dzien = CAST(DAY(r.reservation_date) AS NVARCHAR(10))
+LEFT JOIN Junk_D junk ON junk.status_oplacenia = CASE WHEN p.payment_id IS NOT NULL THEN 'TAK' ELSE 'NIE' END
 GO
