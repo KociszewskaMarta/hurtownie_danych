@@ -1,10 +1,10 @@
-USE HD_warhouse_real_data
+USE sample_warehouse;
 GO
 
 DECLARE @StartDate date;
 DECLARE @EndDate date;
 
-SELECT @StartDate = '2015-1-1', @EndDate = '2025-7-1';
+SELECT @StartDate = '2015-1-1', @EndDate = '2025-12-31';
 
 Declare @DateInProcess datetime = @StartDate;
 
@@ -24,20 +24,7 @@ While @DateInProcess <= @EndDate
                 WHEN Month(@DateInProcess) IN (6, 7, 8) THEN 'Lato'
                 WHEN Month(@DateInProcess) IN (9, 10, 11) THEN 'Jesień'
               END -- [Season]
-            , CASE Month(@DateInProcess)
-                WHEN 1 THEN 'Styczeń'
-                WHEN 2 THEN 'Luty'
-                WHEN 3 THEN 'Marzec'
-                WHEN 4 THEN 'Kwiecień'
-                WHEN 5 THEN 'Maj'
-                WHEN 6 THEN 'Czerwiec'
-                WHEN 7 THEN 'Lipiec'
-                WHEN 8 THEN 'Sierpień'
-                WHEN 9 THEN 'Wrzesień'
-                WHEN 10 THEN 'Październik'
-                WHEN 11 THEN 'Listopad'
-                WHEN 12 THEN 'Grudzień'
-              END -- [Month]
+            , Cast(Month(@DateInProcess) as varchar(2)) -- [Month]
             , Cast( Day(@DateInProcess) as int) -- [Day]
         );
         Set @DateInProcess = DateAdd(d, 1, @DateInProcess);
