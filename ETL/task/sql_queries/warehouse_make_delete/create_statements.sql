@@ -84,7 +84,7 @@ CREATE TABLE Kampania_F
 	id_slowa_kluczowego INTEGER NOT NULL,
 	id_nazwy_kampanii INTEGER NOT NULL,
 	wspolczynnik_konwersji DECIMAL(5,2),
-	koszt_kampanii INT,
+	koszt_kampanii DECIMAL(18,2),
 	liczba_klikniec INT,
 	-- koszt_na_klikniecie został usunięty - to calculated measure (koszt_kampanii / liczba_klikniec)
 
