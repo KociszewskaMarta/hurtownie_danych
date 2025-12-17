@@ -86,7 +86,7 @@ CREATE TABLE Kampania_F
 	wspolczynnik_konwersji DECIMAL(5,2),
 	koszt_kampanii INT,
 	liczba_klikniec INT,
-	koszt_na_klikniecie INT,
+	-- koszt_na_klikniecie został usunięty - to calculated measure (koszt_kampanii / liczba_klikniec)
 
 	CONSTRAINT id_kampanii PRIMARY KEY (
 		id_wycieczki,
