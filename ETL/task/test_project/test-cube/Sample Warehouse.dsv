@@ -1,0 +1,283 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="ecc34a23-5357-415b-952f-e59b44c03213" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Sample Warehouse</ID>
+  <Name>Sample Warehouse</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Sample Warehouse</DataSourceID>
+  <Schema>
+    <xs:schema id="Sample_x0020_Warehouse" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Sample_x0020_Warehouse" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="ca9276d8-ea30-4345-bb67-8ae908b2b7ff">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_Data_D" msprop:DbTableName="Data_D" msprop:FriendlyName="Data_D" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="756f5e20-9f59-4bf4-9ce9-ab2b70d33dd0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="id_daty" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="id_daty" msprop:DbColumnName="id_daty" msprop:design-time-name="533c9462-68b9-4f36-8911-28a46fa58b4f" type="xs:int" />
+                  <xs:element name="rok" msprop:FriendlyName="rok" msprop:DbColumnName="rok" msprop:design-time-name="524a5c94-3b8e-47c3-9e3a-2cf39807d9f6" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="4" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="pora_roku" msprop:FriendlyName="pora_roku" msprop:DbColumnName="pora_roku" msprop:design-time-name="4d2a01bb-3635-4881-b776-a643658a034b" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="miesiac" msprop:FriendlyName="miesiac" msprop:DbColumnName="miesiac" msprop:design-time-name="46e64409-7d1e-4507-b643-f16ab0f88e2e" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="dzien" msprop:FriendlyName="dzien" msprop:DbColumnName="dzien" msprop:design-time-name="db40e642-d3fe-485c-96a6-844ad8b25a25" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Junk_D" msprop:DbTableName="Junk_D" msprop:FriendlyName="Junk_D" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="3ac941af-c08c-4a11-b189-5daf5277025d">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="id_junk" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="id_junk" msprop:DbColumnName="id_junk" msprop:design-time-name="cf702fc2-c744-4a43-93ed-43e733297770" type="xs:int" />
+                  <xs:element name="status_oplacenia" msprop:FriendlyName="status_oplacenia" msprop:DbColumnName="status_oplacenia" msprop:design-time-name="1ceef6c1-a05f-49ed-879c-b83936dcc4db" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Kampania_F" msprop:DbTableName="Kampania_F" msprop:FriendlyName="Kampania_F" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="3cd2c831-b7e0-4ddf-a101-b74295031c28">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="id_wycieczki" msprop:FriendlyName="id_wycieczki" msprop:DbColumnName="id_wycieczki" msprop:design-time-name="7a028033-b6b7-4a3a-9716-b37ae45f9a9f" type="xs:int" />
+                  <xs:element name="id_daty" msprop:FriendlyName="id_daty" msprop:DbColumnName="id_daty" msprop:design-time-name="97d659a6-c3ee-4d46-b03b-6cc8f65f0491" type="xs:int" />
+                  <xs:element name="id_slowa_kluczowego" msprop:FriendlyName="id_slowa_kluczowego" msprop:DbColumnName="id_slowa_kluczowego" msprop:design-time-name="f3042e54-faad-4ab1-af3a-feeabb55a55f" type="xs:int" />
+                  <xs:element name="id_nazwy_kampanii" msprop:FriendlyName="id_nazwy_kampanii" msprop:DbColumnName="id_nazwy_kampanii" msprop:design-time-name="313be89a-0094-4477-ad25-d00c51230f78" type="xs:int" />
+                  <xs:element name="wspolczynnik_konwersji" msprop:FriendlyName="wspolczynnik_konwersji" msprop:DbColumnName="wspolczynnik_konwersji" msprop:design-time-name="dea19c2e-8513-4465-814d-e1327e4f1f33" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="koszt_kampanii" msprop:FriendlyName="koszt_kampanii" msprop:DbColumnName="koszt_kampanii" msprop:design-time-name="4f31a5c2-ad9a-492e-a2d0-fba6230bb440" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="liczba_klikniec" msprop:FriendlyName="liczba_klikniec" msprop:DbColumnName="liczba_klikniec" msprop:design-time-name="ce8ab68f-47df-4a18-912b-4c7cf2faa4d6" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Klient_D" msprop:DbTableName="Klient_D" msprop:FriendlyName="Klient_D" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="ebf3d584-d1bc-4e3c-994c-6e22c4d2f2d1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="id_klienta" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="id_klienta" msprop:DbColumnName="id_klienta" msprop:design-time-name="7f9fdcb0-0222-43fb-9f36-a7aa75878ae7" type="xs:int" />
+                  <xs:element name="pesel_klienta" msprop:FriendlyName="pesel_klienta" msprop:DbColumnName="pesel_klienta" msprop:design-time-name="13cd45b5-dd7e-4448-9220-b5a086d55f6b" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="11" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="czy_nowy" msprop:FriendlyName="czy_nowy" msprop:DbColumnName="czy_nowy" msprop:design-time-name="8f53ee03-0242-4a09-bb16-ca687865c98e" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="data_wpisania" msprop:FriendlyName="data_wpisania" msprop:DbColumnName="data_wpisania" msprop:design-time-name="c1b48384-b1fc-41ed-ae0b-233091f0bb9a" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="data_wygasniecia" msprop:FriendlyName="data_wygasniecia" msprop:DbColumnName="data_wygasniecia" msprop:design-time-name="45081a03-6c90-42ea-848c-7b9c6911668f" type="xs:dateTime" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Nazwa_kampanii_D" msprop:DbTableName="Nazwa_kampanii_D" msprop:FriendlyName="Nazwa_kampanii_D" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="91e5f4a1-7e7d-422e-8da7-bd72ce307d0d">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="id_nazwy_kampanii" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="id_nazwy_kampanii" msprop:DbColumnName="id_nazwy_kampanii" msprop:design-time-name="4c558740-3065-4238-a4ab-c7c19d82d77f" type="xs:int" />
+                  <xs:element name="nazwa_kampanii" msprop:FriendlyName="nazwa_kampanii" msprop:DbColumnName="nazwa_kampanii" msprop:design-time-name="2392b9cd-359a-4582-b2ef-d1661dce49e0" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Rezerwacja_F" msprop:DbTableName="Rezerwacja_F" msprop:FriendlyName="Rezerwacja_F" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="4e8340ec-6cdf-4dd3-90ef-e782f9157ddd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="id_wycieczki" msprop:FriendlyName="id_wycieczki" msprop:DbColumnName="id_wycieczki" msprop:design-time-name="d765155f-fa74-452e-af62-86dfcb316974" type="xs:int" />
+                  <xs:element name="id_nazwy_kampanii" msprop:FriendlyName="id_nazwy_kampanii" msprop:DbColumnName="id_nazwy_kampanii" msprop:design-time-name="09c5e993-d1b3-43c4-aaf7-ea89c00bf3a0" type="xs:int" />
+                  <xs:element name="id_klienta" msprop:FriendlyName="id_klienta" msprop:DbColumnName="id_klienta" msprop:design-time-name="6f8e0ba3-4d26-47f9-93bf-2c8f9e95a1d5" type="xs:int" />
+                  <xs:element name="id_daty" msprop:FriendlyName="id_daty" msprop:DbColumnName="id_daty" msprop:design-time-name="7321f6c7-58b4-46ac-bb7c-94602de2ec47" type="xs:int" />
+                  <xs:element name="id_junk" msprop:FriendlyName="id_junk" msprop:DbColumnName="id_junk" msprop:design-time-name="b5567cda-a4be-431a-8a78-8e9448f74824" type="xs:int" />
+                  <xs:element name="kwota_transakcji" msprop:FriendlyName="kwota_transakcji" msprop:DbColumnName="kwota_transakcji" msprop:design-time-name="f5bb7afa-22cf-409a-af3d-cbd67e90eaf1" type="xs:int" minOccurs="0" />
+                  <xs:element name="cena_turnusu" msprop:FriendlyName="cena_turnusu" msprop:DbColumnName="cena_turnusu" msprop:design-time-name="0f27aab2-724b-48ba-97ff-d5a59d669d14" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Slowo_kluczowe_D" msprop:DbTableName="Slowo_kluczowe_D" msprop:FriendlyName="Slowo_kluczowe_D" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="53416df1-4c41-469a-97c5-37e36cd7839d">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="id_slowa_kluczowego" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="id_slowa_kluczowego" msprop:DbColumnName="id_slowa_kluczowego" msprop:design-time-name="f74a3ea5-58c0-468a-9325-7ae73293a305" type="xs:int" />
+                  <xs:element name="slowo_kluczowe" msprop:FriendlyName="slowo_kluczowe" msprop:DbColumnName="slowo_kluczowe" msprop:design-time-name="7f2a0116-6b85-4fc0-91d8-24921f828c02" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Wycieczka_D" msprop:DbTableName="Wycieczka_D" msprop:FriendlyName="Wycieczka_D" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="12abd9cb-a072-4085-b84a-239793e4a04b">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="id_wycieczki" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="id_wycieczki" msprop:DbColumnName="id_wycieczki" msprop:design-time-name="f9d61279-32e5-44da-9bb6-bb1f15ccfa0c" type="xs:int" />
+                  <xs:element name="nazwa_wycieczki" msprop:FriendlyName="nazwa_wycieczki" msprop:DbColumnName="nazwa_wycieczki" msprop:design-time-name="cbf1c209-a7bc-4e8e-ac40-b6989f6742ea" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="destynacja" msprop:FriendlyName="destynacja" msprop:DbColumnName="destynacja" msprop:design-time-name="1bd353b4-475c-47e3-bf80-50b207ef161b" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="typ" msprop:FriendlyName="typ" msprop:DbColumnName="typ" msprop:design-time-name="7503432c-8b2b-4f66-83b9-80cc973f6258" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Data_D" />
+          <xs:field xpath="id_daty" />
+        </xs:unique>
+        <xs:unique name="dbo_Junk_D_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Junk_D" />
+          <xs:field xpath="id_junk" />
+        </xs:unique>
+        <xs:unique name="dbo_Kampania_F_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Kampania_F" />
+          <xs:field xpath="id_wycieczki" />
+          <xs:field xpath="id_daty" />
+          <xs:field xpath="id_slowa_kluczowego" />
+          <xs:field xpath="id_nazwy_kampanii" />
+        </xs:unique>
+        <xs:unique name="dbo_Klient_D_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Klient_D" />
+          <xs:field xpath="id_klienta" />
+        </xs:unique>
+        <xs:unique name="dbo_Nazwa_kampanii_D_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Nazwa_kampanii_D" />
+          <xs:field xpath="id_nazwy_kampanii" />
+        </xs:unique>
+        <xs:unique name="dbo_Rezerwacja_F_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Rezerwacja_F" />
+          <xs:field xpath="id_wycieczki" />
+          <xs:field xpath="id_nazwy_kampanii" />
+          <xs:field xpath="id_klienta" />
+          <xs:field xpath="id_daty" />
+          <xs:field xpath="id_junk" />
+        </xs:unique>
+        <xs:unique name="dbo_Slowo_kluczowe_D_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Slowo_kluczowe_D" />
+          <xs:field xpath="id_slowa_kluczowego" />
+        </xs:unique>
+        <xs:unique name="dbo_Wycieczka_D_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Wycieczka_D" />
+          <xs:field xpath="id_wycieczki" />
+        </xs:unique>
+        <xs:keyref name="FK__Rezerwacj__id_na__7E37BEF6" refer="dbo_Nazwa_kampanii_D_Constraint1">
+          <xs:selector xpath=".//dbo_Rezerwacja_F" />
+          <xs:field xpath="id_nazwy_kampanii" />
+        </xs:keyref>
+        <xs:keyref name="FK__Rezerwacj__id_kl__7F2BE32F" refer="dbo_Klient_D_Constraint1">
+          <xs:selector xpath=".//dbo_Rezerwacja_F" />
+          <xs:field xpath="id_klienta" />
+        </xs:keyref>
+        <xs:keyref name="FK__Rezerwacj__id_wy__7D439ABD" refer="dbo_Wycieczka_D_Constraint1">
+          <xs:selector xpath=".//dbo_Rezerwacja_F" />
+          <xs:field xpath="id_wycieczki" />
+        </xs:keyref>
+        <xs:keyref name="FK__Rezerwacj__id_da__00200768" refer="Constraint1">
+          <xs:selector xpath=".//dbo_Rezerwacja_F" />
+          <xs:field xpath="id_daty" />
+        </xs:keyref>
+        <xs:keyref name="FK__Rezerwacj__id_ju__01142BA1" refer="dbo_Junk_D_Constraint1">
+          <xs:selector xpath=".//dbo_Rezerwacja_F" />
+          <xs:field xpath="id_junk" />
+        </xs:keyref>
+        <xs:keyref name="FK__Kampania___id_sl__05D8E0BE" refer="dbo_Slowo_kluczowe_D_Constraint1">
+          <xs:selector xpath=".//dbo_Kampania_F" />
+          <xs:field xpath="id_slowa_kluczowego" />
+        </xs:keyref>
+        <xs:keyref name="FK__Kampania___id_wy__03F0984C" refer="dbo_Wycieczka_D_Constraint1">
+          <xs:selector xpath=".//dbo_Kampania_F" />
+          <xs:field xpath="id_wycieczki" />
+        </xs:keyref>
+        <xs:keyref name="FK__Kampania___id_na__06CD04F7" refer="dbo_Nazwa_kampanii_D_Constraint1">
+          <xs:selector xpath=".//dbo_Kampania_F" />
+          <xs:field xpath="id_nazwy_kampanii" />
+        </xs:keyref>
+        <xs:keyref name="FK__Kampania___id_da__04E4BC85" refer="Constraint1">
+          <xs:selector xpath=".//dbo_Kampania_F" />
+          <xs:field xpath="id_daty" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <Sample_x0020_Warehouse xmlns="" />
+  </Schema>
+</DataSourceView>

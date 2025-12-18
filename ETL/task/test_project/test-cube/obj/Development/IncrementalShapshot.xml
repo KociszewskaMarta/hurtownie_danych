@@ -1,0 +1,96 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>test-cube</Database>
+    <Server>localhost</Server>
+    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>O/TdhFXq/COfaz20xal9rstoUrg=18.12.2025 01:13:2618.12.2025 00:54:04</TimeStamp>
+        <ID>
+          <String>Sample Warehouse</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>rQbJrFLuQ4bQmMSpPzVIeZMk8oI=18.12.2025 00:54:4418.12.2025 00:54:44</TimeStamp>
+        <ID>
+          <String>Sample Warehouse</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>t+R9FR918AfEqKOBK/X5QqorSgc=18.12.2025 01:11:3118.12.2025 00:57:44</TimeStamp>
+        <ID>
+          <String>Data D</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>dUlX7X1/HMRijaTGM87yz+d+KNI=18.12.2025 01:11:3118.12.2025 00:57:44</TimeStamp>
+        <ID>
+          <String>Nazwa Kampanii D</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>RT+E8U8IBFMU+4xotw/xsTG5zII=18.12.2025 01:11:3118.12.2025 00:57:44</TimeStamp>
+        <ID>
+          <String>Wycieczka D</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Vb89Z+4V10LkVb40U8QFTY8HNiE=18.12.2025 01:11:3218.12.2025 00:57:44</TimeStamp>
+        <ID>
+          <String>Slowo Kluczowe D</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>M2ozvBoe0xpFwnODseSjGZlLxo8=18.12.2025 01:11:3218.12.2025 00:57:44</TimeStamp>
+        <ID>
+          <String>Junk D</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>BLbNRFiBT4VPmeWwwZvFvM/YrP8=18.12.2025 01:11:3218.12.2025 00:57:44</TimeStamp>
+        <ID>
+          <String>Klient D</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>JAw3yczbRTJycfU0zO75TepP/1w=18.12.2025 01:20:1518.12.2025 00:57:44OIkW+iskdc0p4qTE/8vzwf4SAX4=18.12.2025 00:57:4418.12.2025 00:57:44</TimeStamp>
+        <ID>
+          <String>Sample Warehouse</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>wFR5nBA6VDU7nXvb7GosLwL8xMM=18.12.2025 00:51:3518.12.2025 00:51:35</TimeStamp>
+      <ID>
+        <String>test-cube</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2025-12-18T00:20:17.27Z</LastDeployed>
+</DeploymentSnapshot>
