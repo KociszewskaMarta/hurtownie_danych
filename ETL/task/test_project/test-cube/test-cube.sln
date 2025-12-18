@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "test-cube", "test-cube.dwproj", "{7A80D745-144A-456A-80BA-0EAC6E51F11C}"
 EndProject
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "loadETL", "..\loadETL\loadETL.dtproj", "{230A4D2F-8C1E-4829-B9C1-15C838D13177}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
@@ -13,6 +15,8 @@ Global
 		{7A80D745-144A-456A-80BA-0EAC6E51F11C}.Development|Default.ActiveCfg = Development
 		{7A80D745-144A-456A-80BA-0EAC6E51F11C}.Development|Default.Build.0 = Development
 		{7A80D745-144A-456A-80BA-0EAC6E51F11C}.Development|Default.Deploy.0 = Development
+		{230A4D2F-8C1E-4829-B9C1-15C838D13177}.Development|Default.ActiveCfg = Development
+		{230A4D2F-8C1E-4829-B9C1-15C838D13177}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,7 +8,7 @@
     <TransactionalDeployment>false</TransactionalDeployment>
     <PartitionDeployment>DeployPartitions</PartitionDeployment>
     <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
-    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <ProcessingOption>Default</ProcessingOption>
     <OutputScript></OutputScript>
     <ImpactAnalysisFile></ImpactAnalysisFile>
     <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
@@ -33,7 +33,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>t+R9FR918AfEqKOBK/X5QqorSgc=18.12.2025 01:11:3118.12.2025 00:57:44</TimeStamp>
+        <TimeStamp>x4+6BFS5mDgRufzJsneGFPjHPho=18.12.2025 02:17:2118.12.2025 00:57:44</TimeStamp>
         <ID>
           <String>Data D</String>
         </ID>
@@ -75,7 +75,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>JAw3yczbRTJycfU0zO75TepP/1w=18.12.2025 01:20:1518.12.2025 00:57:44OIkW+iskdc0p4qTE/8vzwf4SAX4=18.12.2025 00:57:4418.12.2025 00:57:44</TimeStamp>
+        <TimeStamp>Pykph/5/HS6qDpXK1WX9xHj3lWo=18.12.2025 01:22:2118.12.2025 00:57:44OIkW+iskdc0p4qTE/8vzwf4SAX4=18.12.2025 00:57:4418.12.2025 00:57:44</TimeStamp>
         <ID>
           <String>Sample Warehouse</String>
         </ID>
@@ -92,5 +92,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2025-12-18T00:20:17.27Z</LastDeployed>
+  <LastDeployed>2025-12-18T01:17:34.71Z</LastDeployed>
 </DeploymentSnapshot>
