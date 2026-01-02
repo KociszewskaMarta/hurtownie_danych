@@ -35,3 +35,6 @@ GO
 -- Maria: 1 reservation → NEW (unchanged)
 -- Piotr: 1 reservation → NEW (new client)
 -- Katarzyna: 2 reservations → NOT NEW (new client)
+
+-- firstly one row affected - Jan's record should be expired and new one inserted
+-- secondly three rows affected - Piotr and Katarzyna new records and Jan's new version

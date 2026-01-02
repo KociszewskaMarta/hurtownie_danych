@@ -1,4 +1,4 @@
-USE HD_warhouse
+USE sample_warehouse
 GO
 
 DELETE FROM Rezerwacja_F;
