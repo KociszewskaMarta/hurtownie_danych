@@ -22,7 +22,7 @@ GO
 
 -- Ładowanie danych z CSV
 BULK INSERT Marketing_Temp
-FROM 'C:\Users\kocis\Desktop\SEM_5\Hurtownie_danych\Labolatoria\repo\hurtownie_danych\ETL\task\sql_queries\facts_test\sample_marketing_data.csv'
+FROM 'C:\Users\kocis\Desktop\SEM_5\Hurtownie_danych\Labolatoria\repo\hurtownie_danych\ETL\task\sql_queries\sample_sources\sample_marketing_data_ready.csv'
 WITH (
     FIRSTROW = 2,
     FIELDTERMINATOR = ',',
