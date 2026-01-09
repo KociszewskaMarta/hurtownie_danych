@@ -1,12 +1,6 @@
 USE sample_warehouse;
 GO
 
-IF NOT EXISTS (SELECT 1 FROM Klient_D WHERE pesel_klienta = 'UNKNOWN')
-BEGIN
-    INSERT INTO Klient_D (pesel_klienta, czy_nowy, data_wpisania, data_wygasniecia)
-    VALUES ('UNKNOWN', 'NIE', NULL, NULL)
-END
-
 WITH ClientReservations AS (
     SELECT 
         c.client_pesel,
@@ -62,4 +56,10 @@ LEFT JOIN sample_warehouse.dbo.Klient_D dwh
 WHERE dwh.pesel_klienta IS NULL -- new client
     OR dwh.czy_nowy <> sc.czy_nowy; -- changed 'czy_nowy'
 
+
+IF NOT EXISTS (SELECT 1 FROM Klient_D WHERE pesel_klienta = 'UNKNOWN')
+BEGIN
+    INSERT INTO Klient_D (pesel_klienta, czy_nowy, data_wpisania, data_wygasniecia)
+    VALUES ('UNKNOWN', 'NIE', NULL, NULL)
+END
 
