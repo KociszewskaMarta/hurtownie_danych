@@ -49,6 +49,13 @@ AND NOT EXISTS (
 );
 GO
 
+-- Ensure UNKNOWN row exists in Slowo_kluczowe_D
+IF NOT EXISTS (SELECT 1 FROM Slowo_kluczowe_D WHERE slowo_kluczowe = 'UNKNOWN')
+BEGIN
+    INSERT INTO Slowo_kluczowe_D (slowo_kluczowe) VALUES ('UNKNOWN')
+END
+GO
+
 -- ładowanie unikalnych nazw kampanii z CSV
 INSERT INTO Nazwa_kampanii_D (nazwa_kampanii)
 SELECT DISTINCT m.Campaing_Name
@@ -57,6 +64,13 @@ WHERE m.Campaing_Name IS NOT NULL
 AND NOT EXISTS (
     SELECT 1 FROM Nazwa_kampanii_D nk WHERE nk.nazwa_kampanii = m.Campaing_Name
 );
+GO
+
+-- Ensure UNKNOWN row exists in Nazwa_kampanii_D
+IF NOT EXISTS (SELECT 1 FROM Nazwa_kampanii_D WHERE nazwa_kampanii = 'UNKNOWN')
+BEGIN
+    INSERT INTO Nazwa_kampanii_D (nazwa_kampanii) VALUES ('UNKNOWN')
+END
 GO
 
 -- usunięcie tymczasowej tabeli

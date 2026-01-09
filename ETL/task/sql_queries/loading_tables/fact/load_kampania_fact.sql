@@ -96,6 +96,13 @@ WHERE mt.Trip_id IS NOT NULL
     AND kamp.id_nazwy_kampanii IS NOT NULL;
 GO
 
+-- Dodanie nieznanej kampanii, jeśli nie istnieje
+IF NOT EXISTS (SELECT 1 FROM Nazwa_kampanii_D WHERE nazwa_kampanii = 'UNKNOWN')
+BEGIN
+    INSERT INTO Nazwa_kampanii_D (nazwa_kampanii)
+    VALUES ('UNKNOWN')
+END
+GO
 
 -- Usunięcie tymczasowej tabeli Marketing_Temp
 DROP TABLE dbo.Marketing_Temp;

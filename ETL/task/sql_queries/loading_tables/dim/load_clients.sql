@@ -1,13 +1,18 @@
 USE sample_warehouse;
 GO
 
+IF NOT EXISTS (SELECT 1 FROM Klient_D WHERE pesel_klienta = 'UNKNOWN')
+BEGIN
+    INSERT INTO Klient_D (pesel_klienta, czy_nowy, data_wpisania, data_wygasniecia)
+    VALUES ('UNKNOWN', 'NIE', NULL, NULL)
+END
 
 WITH ClientReservations AS (
     SELECT 
         c.client_pesel,
         COUNT(rc.reservation_id) AS reservation_count
-    FROM sample_travel_agency_database.dbo.Client c
-    LEFT JOIN sample_travel_agency_database.dbo.ReservationClient rc ON c.client_pesel = rc.client_pesel
+    FROM sample_travel_agency_database_2.dbo.Client c
+    LEFT JOIN sample_travel_agency_database_2.dbo.ReservationClient rc ON c.client_pesel = rc.client_pesel
     GROUP BY c.client_pesel
 ),
 SourceClients AS (
@@ -17,7 +22,7 @@ SourceClients AS (
             WHEN cr.reservation_count = 1 THEN 'Tak'
             ELSE 'Nie'
         END AS czy_nowy
-    FROM sample_travel_agency_database.dbo.Client c
+    FROM sample_travel_agency_database_2.dbo.Client c
     LEFT JOIN ClientReservations cr ON c.client_pesel = cr.client_pesel
 )
 UPDATE dwh
@@ -30,8 +35,8 @@ WITH ClientReservations AS (
     SELECT 
         c.client_pesel,
         COUNT(rc.reservation_id) AS reservation_count
-    FROM sample_travel_agency_database.dbo.Client c
-    LEFT JOIN sample_travel_agency_database.dbo.ReservationClient rc ON c.client_pesel = rc.client_pesel
+    FROM sample_travel_agency_database_2.dbo.Client c
+    LEFT JOIN sample_travel_agency_database_2.dbo.ReservationClient rc ON c.client_pesel = rc.client_pesel
     GROUP BY c.client_pesel
 ),
 SourceClients AS (
@@ -41,7 +46,7 @@ SourceClients AS (
             WHEN cr.reservation_count = 1 THEN 'Tak'
             ELSE 'Nie'
         END AS czy_nowy
-    FROM sample_travel_agency_database.dbo.Client c
+    FROM sample_travel_agency_database_2.dbo.Client c
     LEFT JOIN ClientReservations cr ON c.client_pesel = cr.client_pesel
 )
 INSERT INTO sample_warehouse.dbo.Klient_D (pesel_klienta, czy_nowy, data_wpisania, data_wygasniecia)

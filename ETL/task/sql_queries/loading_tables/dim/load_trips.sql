@@ -20,3 +20,9 @@ WHERE NOT EXISTS (
     AND w.destynacja = t.destination
 );
 GO
+
+IF NOT EXISTS (SELECT 1 FROM Wycieczka_D WHERE nazwa_wycieczki = 'UNKNOWN')
+BEGIN
+    INSERT INTO Wycieczka_D (nazwa_wycieczki, destynacja, typ)
+    VALUES ('UNKNOWN', 'UNKNOWN', 'UNKNOWN')
+END

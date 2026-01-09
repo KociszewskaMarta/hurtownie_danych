@@ -35,10 +35,6 @@ WITH (
 );
 GO
 
--- Czyszczenie tabeli faktów (opcjonalnie)
--- TRUNCATE TABLE Rezerwacja_F;
--- GO
-
 INSERT INTO Rezerwacja_F (
     id_wycieczki,
     id_nazwy_kampanii,
@@ -49,34 +45,34 @@ INSERT INTO Rezerwacja_F (
     cena_turnusu
 )
 SELECT DISTINCT
-    wyc.id_wycieczki,
-    kamp.id_nazwy_kampanii,
-    kl.id_klienta,
-    dat.id_daty,
-    junk.id_junk,
+    ISNULL(wyc.id_wycieczki, (SELECT TOP 1 id_wycieczki FROM Wycieczka_D WHERE nazwa_wycieczki = 'UNKNOWN')),
+    ISNULL(kamp.id_nazwy_kampanii, (SELECT TOP 1 id_nazwy_kampanii FROM Nazwa_kampanii_D WHERE nazwa_kampanii = 'UNKNOWN')),
+    ISNULL(kl.id_klienta, (SELECT TOP 1 id_klienta FROM Klient_D WHERE pesel_klienta = 'UNKNOWN')),
+    ISNULL(dat.id_daty, (SELECT TOP 1 id_daty FROM Data_D WHERE rok = 'UNKNOWN' AND miesiac = 'UNKNOWN' AND dzien = 'UNKNOWN')),
+    ISNULL(junk.id_junk, (SELECT TOP 1 id_junk FROM Junk_D WHERE status_oplacenia = 'UNKNOWN')),
     ISNULL(p.amount, 0) AS kwota_transakcji,  -- Jeśli brak płatności, wartość 0
     te.price AS cena_turnusu
 FROM sample_travel_agency_database_2.dbo.Reservation r
 
 -- Połączenie z klientem przez tabelę ReservationClient
-INNER JOIN sample_travel_agency_database_2.dbo.ReservationClient rc 
+LEFT JOIN sample_travel_agency_database_2.dbo.ReservationClient rc 
     ON rc.reservation_id = r.reservation_id
-INNER JOIN sample_travel_agency_database_2.dbo.Client c 
+LEFT JOIN sample_travel_agency_database_2.dbo.Client c 
     ON c.client_pesel = rc.client_pesel
 
 -- Dopasowanie do wymiaru Klient_D po PESEL
-INNER JOIN Klient_D kl 
+LEFT JOIN Klient_D kl 
     ON kl.pesel_klienta = c.client_pesel
     AND kl.data_wygasniecia IS NULL  -- aktywny rekord (SCD Type 2)
 
 -- Połączenie z turnusem i wycieczką
-INNER JOIN sample_travel_agency_database_2.dbo.TourEdition te 
+LEFT JOIN sample_travel_agency_database_2.dbo.TourEdition te 
     ON te.tour_edition_id = r.tour_edition_id
-INNER JOIN sample_travel_agency_database_2.dbo.Tour t 
+LEFT JOIN sample_travel_agency_database_2.dbo.Tour t 
     ON t.tour_id = te.tour_id
 
 -- Dopasowanie do wymiaru Wycieczka_D po nazwie wycieczki
-INNER JOIN Wycieczka_D wyc 
+LEFT JOIN Wycieczka_D wyc 
     ON wyc.nazwa_wycieczki = t.name
 
 -- Płatność (LEFT JOIN bo może nie być jeszcze płatności)
@@ -99,14 +95,14 @@ LEFT JOIN Nazwa_kampanii_D kamp
     ON kamp.nazwa_kampanii = mt.Campaing_Name
 
 -- Dopasowanie do wymiaru Data_D po roku, miesiącu i dniu
-INNER JOIN Data_D dat 
+LEFT JOIN Data_D dat 
     ON dat.rok = CAST(YEAR(r.reservation_date) AS NVARCHAR(4)) 
     AND dat.miesiac = CAST(MONTH(r.reservation_date) AS NVARCHAR(2))
     AND dat.dzien = CAST(DAY(r.reservation_date) AS NVARCHAR(10))
 
 -- Dopasowanie do wymiaru Junk_D (status opłacenia)
 -- 'Paid' -> 'Tak', 'Unpaid'/'Processing' -> 'Nie'
-INNER JOIN Junk_D junk 
+LEFT JOIN Junk_D junk 
     ON junk.status_oplacenia = CASE 
         WHEN r.reservation_status = 'Paid' THEN 'Tak'
         ELSE 'Nie'
