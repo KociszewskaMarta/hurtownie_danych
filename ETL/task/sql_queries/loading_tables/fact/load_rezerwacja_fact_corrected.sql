@@ -45,11 +45,11 @@ INSERT INTO Rezerwacja_F (
     cena_turnusu
 )
 SELECT DISTINCT
-    ISNULL(wyc.id_wycieczki, (SELECT TOP 1 id_wycieczki FROM Wycieczka_D WHERE nazwa_wycieczki = 'UNKNOWN')),
-    ISNULL(kamp.id_nazwy_kampanii, (SELECT TOP 1 id_nazwy_kampanii FROM Nazwa_kampanii_D WHERE nazwa_kampanii = 'UNKNOWN')),
-    ISNULL(kl.id_klienta, (SELECT TOP 1 id_klienta FROM Klient_D WHERE pesel_klienta = 'UNKNOWN')),
-    ISNULL(dat.id_daty, (SELECT TOP 1 id_daty FROM Data_D WHERE rok = 'UNKNOWN' AND miesiac = 'UNKNOWN' AND dzien = 'UNKNOWN')),
-    ISNULL(junk.id_junk, (SELECT TOP 1 id_junk FROM Junk_D WHERE status_oplacenia = 'UNKNOWN')),
+    wyc.id_wycieczki,
+    kamp.id_nazwy_kampanii,
+    kl.id_klienta,
+    dat.id_daty,
+    junk.id_junk,
     ISNULL(p.amount, 0) AS kwota_transakcji,  -- Jeśli brak płatności, wartość 0
     te.price AS cena_turnusu
 FROM sample_travel_agency_database_2.dbo.Reservation r
