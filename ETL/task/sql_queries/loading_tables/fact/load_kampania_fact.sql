@@ -48,52 +48,38 @@ INSERT INTO Kampania_F (
     liczba_klikniec
 )
 SELECT DISTINCT
-    wyc.id_wycieczki,
-    dat.id_daty,
-    slowo.id_slowa_kluczowego,
-    kamp.id_nazwy_kampanii,
-    -- Prosta konwersja, bo dane są już poprawnie sformatowane
+    ISNULL(wyc.id_wycieczki, (SELECT TOP 1 id_wycieczki FROM Wycieczka_D WHERE nazwa_wycieczki = 'UNKNOWN')),
+    ISNULL(dat.id_daty, (SELECT TOP 1 id_daty FROM Data_D WHERE rok = 'UNKNOWN' AND miesiac = 'UNKNOWN' AND dzien = 'UNKNOWN')),
+    ISNULL(slowo.id_slowa_kluczowego, (SELECT TOP 1 id_slowa_kluczowego FROM Slowo_kluczowe_D WHERE slowo_kluczowe = 'UNKNOWN')),
+    ISNULL(kamp.id_nazwy_kampanii, (SELECT TOP 1 id_nazwy_kampanii FROM Nazwa_kampanii_D WHERE nazwa_kampanii = 'UNKNOWN')),
     TRY_CAST(mt.Conversion_Rate AS DECIMAL(5,2)) AS wspolczynnik_konwersji,
     TRY_CAST(mt.Cost AS DECIMAL(18,2)) AS koszt_kampanii,
     TRY_CAST(mt.Clicks AS INT) AS liczba_klikniec
 FROM Marketing_Temp mt
 
 -- Dopasowanie do wycieczki:
--- Trip_id z CSV -> Tour.tour_id -> Tour.name -> Wycieczka_D.nazwa_wycieczki
-INNER JOIN sample_travel_agency_database_2.dbo.Tour t 
+LEFT JOIN sample_travel_agency_database_2.dbo.Tour t 
     ON t.tour_id = CAST(mt.Trip_id AS INT)
-
-INNER JOIN Wycieczka_D wyc 
+LEFT JOIN Wycieczka_D wyc 
     ON wyc.nazwa_wycieczki = t.name
 
 -- Dopasowanie do daty:
--- Parsowanie daty z CSV (format: YYYY-MM-DD) i dopasowanie do Data_D
-INNER JOIN Data_D dat 
+LEFT JOIN Data_D dat 
     ON dat.rok = CAST(YEAR(CAST(mt.Date AS DATE)) AS NVARCHAR(4))
     AND dat.miesiac = CAST(MONTH(CAST(mt.Date AS DATE)) AS NVARCHAR(2))
     AND dat.dzien = CAST(DAY(CAST(mt.Date AS DATE)) AS NVARCHAR(10))
 
 -- Dopasowanie do słowa kluczowego
-INNER JOIN Slowo_kluczowe_D slowo 
+LEFT JOIN Slowo_kluczowe_D slowo 
     ON slowo.slowo_kluczowe = mt.Keyword
 
 -- Dopasowanie do nazwy kampanii
-INNER JOIN Nazwa_kampanii_D kamp 
-    ON kamp.nazwa_kampanii = mt.Campaing_Name
+LEFT JOIN Nazwa_kampanii_D kamp 
+    ON kamp.nazwa_kampanii = mt.Campaing_Name;
+GO
 
--- Warunki filtrujące - wszystkie wymiary muszą istnieć
-WHERE mt.Trip_id IS NOT NULL 
-    AND mt.Trip_id <> ''
-    AND mt.Date IS NOT NULL 
-    AND mt.Date <> ''
-    AND mt.Keyword IS NOT NULL 
-    AND mt.Keyword <> ''
-    AND mt.Campaing_Name IS NOT NULL 
-    AND mt.Campaing_Name <> ''
-    AND wyc.id_wycieczki IS NOT NULL 
-    AND dat.id_daty IS NOT NULL 
-    AND slowo.id_slowa_kluczowego IS NOT NULL 
-    AND kamp.id_nazwy_kampanii IS NOT NULL;
+SELECT COUNT(*) AS liczba_rekordow_w_Kampania_F 
+FROM Kampania_F;
 GO
 
 -- Usunięcie tymczasowej tabeli Marketing_Temp

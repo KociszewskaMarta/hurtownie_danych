@@ -45,42 +45,29 @@ INSERT INTO Rezerwacja_F (
     cena_turnusu
 )
 SELECT DISTINCT
-    wyc.id_wycieczki,
-    kamp.id_nazwy_kampanii,
-    kl.id_klienta,
-    dat.id_daty,
-    junk.id_junk,
+    ISNULL(wyc.id_wycieczki, (SELECT TOP 1 id_wycieczki FROM Wycieczka_D WHERE nazwa_wycieczki = 'UNKNOWN')),
+    ISNULL(kamp.id_nazwy_kampanii, (SELECT TOP 1 id_nazwy_kampanii FROM Nazwa_kampanii_D WHERE nazwa_kampanii = 'UNKNOWN')),
+    ISNULL(kl.id_klienta, (SELECT TOP 1 id_klienta FROM Klient_D WHERE pesel_klienta = 'UNKNOWN')),
+    ISNULL(dat.id_daty, (SELECT TOP 1 id_daty FROM Data_D WHERE rok = 'UNK' AND miesiac = 'UNK' AND dzien = 'UNK')),
+    ISNULL(junk.id_junk, (SELECT TOP 1 id_junk FROM Junk_D WHERE status_oplacenia = 'UNKNOWN')),
     ISNULL(p.amount, 0) AS kwota_transakcji,  -- Jeśli brak płatności, wartość 0
     te.price AS cena_turnusu
 FROM sample_travel_agency_database_2.dbo.Reservation r
-
--- Połączenie z klientem przez tabelę ReservationClient
 LEFT JOIN sample_travel_agency_database_2.dbo.ReservationClient rc 
     ON rc.reservation_id = r.reservation_id
 LEFT JOIN sample_travel_agency_database_2.dbo.Client c 
     ON c.client_pesel = rc.client_pesel
-
--- Dopasowanie do wymiaru Klient_D po PESEL
 LEFT JOIN Klient_D kl 
     ON kl.pesel_klienta = c.client_pesel
-    AND kl.data_wygasniecia IS NULL  -- aktywny rekord (SCD Type 2)
-
--- Połączenie z turnusem i wycieczką
+    AND kl.data_wygasniecia IS NULL
 LEFT JOIN sample_travel_agency_database_2.dbo.TourEdition te 
     ON te.tour_edition_id = r.tour_edition_id
 LEFT JOIN sample_travel_agency_database_2.dbo.Tour t 
     ON t.tour_id = te.tour_id
-
--- Dopasowanie do wymiaru Wycieczka_D po nazwie wycieczki
 LEFT JOIN Wycieczka_D wyc 
     ON wyc.nazwa_wycieczki = t.name
-
--- Płatność (LEFT JOIN bo może nie być jeszcze płatności)
 LEFT JOIN sample_travel_agency_database_2.dbo.Payment p 
     ON p.reservation_id = r.reservation_id
-
--- Dopasowanie nazwy kampanii z CSV przez Trip_id
--- Bierzemy pierwszą kampanię dla danego Trip_id jeśli jest wiele
 LEFT JOIN (
     SELECT DISTINCT 
         CAST(Trip_id AS INT) AS Trip_id, 
@@ -89,31 +76,18 @@ LEFT JOIN (
     WHERE Trip_id IS NOT NULL AND Trip_id <> ''
     GROUP BY CAST(Trip_id AS INT)
 ) mt ON mt.Trip_id = t.tour_id
-
--- Dopasowanie do wymiaru Nazwa_kampanii_D
 LEFT JOIN Nazwa_kampanii_D kamp 
     ON kamp.nazwa_kampanii = mt.Campaing_Name
-
--- Dopasowanie do wymiaru Data_D po roku, miesiącu i dniu
 LEFT JOIN Data_D dat 
     ON dat.rok = CAST(YEAR(r.reservation_date) AS NVARCHAR(4)) 
     AND dat.miesiac = CAST(MONTH(r.reservation_date) AS NVARCHAR(2))
     AND dat.dzien = CAST(DAY(r.reservation_date) AS NVARCHAR(10))
-
--- Dopasowanie do wymiaru Junk_D (status opłacenia)
--- 'Paid' -> 'Tak', 'Unpaid'/'Processing' -> 'Nie'
 LEFT JOIN Junk_D junk 
     ON junk.status_oplacenia = CASE 
         WHEN r.reservation_status = 'Paid' THEN 'Tak'
         ELSE 'Nie'
     END
-
--- Warunki filtrujące - wszystkie wymiary muszą istnieć
-WHERE wyc.id_wycieczki IS NOT NULL 
-    AND kl.id_klienta IS NOT NULL 
-    AND dat.id_daty IS NOT NULL 
-    AND junk.id_junk IS NOT NULL
-    AND kamp.id_nazwy_kampanii IS NOT NULL;  -- Tylko rezerwacje z kampanią
+WHERE rc.reservation_id IS NOT NULL
 GO
 
 -- Sprawdzenie liczby załadowanych rekordów
