@@ -7,7 +7,7 @@ GO
 
 -- Update Worker Roles (promotions/role changes)
 UPDATE Worker 
-SET role = 'Senior Travel Consultant'
+SET role = 'Travel Consultant'
 WHERE worker_pesel = '85020298765'; -- Anna Nowak promoted
 
 UPDATE Worker 
@@ -15,25 +15,12 @@ SET role = 'Sales Director'
 WHERE worker_pesel = '92030354321'; -- Piotr Wiśniewski promoted
 
 UPDATE Worker 
-SET role = 'Senior Travel Consultant'
+SET role = 'Travel Consultant'
 WHERE worker_pesel = '93070734567'; -- Michał Zieliński promoted
 
 GO
 
--- Update Client Information (changed phone numbers and emails)
-UPDATE Client
-SET phone_number = '111222444', email = 'anna.kowalska.new@email.com'
-WHERE client_pesel = '95010143210'; -- Anna Kowalska updated contact
 
-UPDATE Client
-SET phone_number = '333444666', email = 'maria.w@email.com'
-WHERE client_pesel = '94030365432'; -- Maria Wiśniewska updated contact
-
-UPDATE Client
-SET phone_number = '666777999'
-WHERE client_pesel = '98060612345'; -- Adam Piotrowski updated phone
-
-GO
 
 -- INSERT NEW CLIENTS
 
