@@ -1,6 +1,9 @@
 USE sample_warehouse;
 GO
 
+TRUNCATE TABLE dbo.Rezerwacja_F;
+GO
+
 -- Tworzenie tymczasowej tabeli dla danych CSV
 IF OBJECT_ID('dbo.Marketing_Temp', 'U') IS NOT NULL
     DROP TABLE dbo.Marketing_Temp;
@@ -53,12 +56,12 @@ SELECT DISTINCT
     junk.id_junk,
     ISNULL(p.amount, 0) AS kwota_transakcji,  -- Jeśli brak płatności, wartość 0
     te.price AS cena_turnusu
-FROM sample_travel_agency_database.dbo.Reservation r
+FROM sample_travel_agency_database_2.dbo.Reservation r
 
 -- Połączenie z klientem przez tabelę ReservationClient
-INNER JOIN sample_travel_agency_database.dbo.ReservationClient rc 
+INNER JOIN sample_travel_agency_database_2.dbo.ReservationClient rc 
     ON rc.reservation_id = r.reservation_id
-INNER JOIN sample_travel_agency_database.dbo.Client c 
+INNER JOIN sample_travel_agency_database_2.dbo.Client c 
     ON c.client_pesel = rc.client_pesel
 
 -- Dopasowanie do wymiaru Klient_D po PESEL
@@ -67,9 +70,9 @@ INNER JOIN Klient_D kl
     AND kl.data_wygasniecia IS NULL  -- aktywny rekord (SCD Type 2)
 
 -- Połączenie z turnusem i wycieczką
-INNER JOIN sample_travel_agency_database.dbo.TourEdition te 
+INNER JOIN sample_travel_agency_database_2.dbo.TourEdition te 
     ON te.tour_edition_id = r.tour_edition_id
-INNER JOIN sample_travel_agency_database.dbo.Tour t 
+INNER JOIN sample_travel_agency_database_2.dbo.Tour t 
     ON t.tour_id = te.tour_id
 
 -- Dopasowanie do wymiaru Wycieczka_D po nazwie wycieczki
@@ -77,7 +80,7 @@ INNER JOIN Wycieczka_D wyc
     ON wyc.nazwa_wycieczki = t.name
 
 -- Płatność (LEFT JOIN bo może nie być jeszcze płatności)
-LEFT JOIN sample_travel_agency_database.dbo.Payment p 
+LEFT JOIN sample_travel_agency_database_2.dbo.Payment p 
     ON p.reservation_id = r.reservation_id
 
 -- Dopasowanie nazwy kampanii z CSV przez Trip_id
