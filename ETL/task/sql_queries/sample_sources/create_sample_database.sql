@@ -1,7 +1,7 @@
-CREATE DATABASE go_explore_travel_agency 
+CREATE DATABASE sample_travel_agency_database_2
 GO
 
-USE go_explore_travel_agency
+USE sample_travel_agency_database_2
 GO
 
 CREATE TABLE Tour /* wycieczka */
