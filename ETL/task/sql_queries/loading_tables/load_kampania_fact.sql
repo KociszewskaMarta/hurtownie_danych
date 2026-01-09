@@ -1,6 +1,9 @@
 USE sample_warehouse;
 GO
 
+TRUNCATE TABLE dbo.Kampania_F;
+GO
+
 -- Tworzenie tymczasowej tabeli dla danych CSV
 IF OBJECT_ID('dbo.Marketing_Temp', 'U') IS NOT NULL
     DROP TABLE dbo.Marketing_Temp;
@@ -57,7 +60,7 @@ FROM Marketing_Temp mt
 
 -- Dopasowanie do wycieczki:
 -- Trip_id z CSV -> Tour.tour_id -> Tour.name -> Wycieczka_D.nazwa_wycieczki
-INNER JOIN sample_travel_agency_database.dbo.Tour t 
+INNER JOIN sample_travel_agency_database_2.dbo.Tour t 
     ON t.tour_id = CAST(mt.Trip_id AS INT)
 
 INNER JOIN Wycieczka_D wyc 
@@ -93,25 +96,6 @@ WHERE mt.Trip_id IS NOT NULL
     AND kamp.id_nazwy_kampanii IS NOT NULL;
 GO
 
--- Sprawdzenie liczby załadowanych rekordów
-SELECT COUNT(*) AS liczba_rekordow_w_Kampania_F 
-FROM Kampania_F;
-GO
-
--- Podgląd załadowanych danych
-SELECT TOP 10 
-    k.*,
-    w.nazwa_wycieczki,
-    d.rok + '-' + d.miesiac + '-' + d.dzien AS data,
-    s.slowo_kluczowe,
-    n.nazwa_kampanii
-FROM Kampania_F k
-INNER JOIN Wycieczka_D w ON w.id_wycieczki = k.id_wycieczki
-INNER JOIN Data_D d ON d.id_daty = k.id_daty
-INNER JOIN Slowo_kluczowe_D s ON s.id_slowa_kluczowego = k.id_slowa_kluczowego
-INNER JOIN Nazwa_kampanii_D n ON n.id_nazwy_kampanii = k.id_nazwy_kampanii
-ORDER BY k.id_daty;
-GO
 
 -- Usunięcie tymczasowej tabeli Marketing_Temp
 DROP TABLE dbo.Marketing_Temp;
