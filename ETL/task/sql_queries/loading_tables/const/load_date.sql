@@ -29,10 +29,11 @@ While @DateInProcess <= @EndDate
         );
         Set @DateInProcess = DateAdd(d, 1, @DateInProcess);
     END
+    GO
 
-IF NOT EXISTS (SELECT 1 FROM Data_D WHERE rok = 'UNKNOWN' AND miesiac = 'UNKNOWN' AND dzien = 'UNKNOWN')
-BEGIN
-    INSERT INTO Data_D (rok, pora_roku, miesiac, dzien)
-    VALUES ('UNKNOWN', 'UNKNOWN', 'UNKNOWN', 'UNKNOWN')
-END
-go
+    IF NOT EXISTS (SELECT 1 FROM Data_D WHERE rok = 'UNK' AND miesiac = 'UNK' AND dzien = 'UNK')
+    BEGIN
+        INSERT INTO Data_D (rok, pora_roku, miesiac, dzien)
+        VALUES ('UNK', 'UNK', 'UNK', 'UNK')
+    END
+    go
