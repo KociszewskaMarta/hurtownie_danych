@@ -16,12 +16,12 @@ Scripts:
 - Check if the number of rows in fact tables corresponds to the number of related rows in the sources 
 - Run ETL again and check if rows in the fact table were not duplicated (there is still the same number of facts and corresponding source rows)
 
-[ ] TEST CASE 2
+[x] TEST CASE 2
 - Load T2 snapshot to the source db/file - `sample_travel_agency_t2_updates`
 - Run ETL all loading scripts in correct sequence
 - Check if the number of rows in fact tables corresponds to the number of related rows in the sources
 
-[x] TEST CASE 3 - tested with simpler database only clients and reservations
+[ ] TEST CASE 3 - tested with simpler database only clients and reservations
 - Load T2 snapshot to the source db/file.
 - Run ETL.
 - Check if the new row is added to the SCD2 dimension.
@@ -37,7 +37,7 @@ Scripts:
 [ ] TEST CASE 5
 - Process the cube. See if it finishes without any errors.
 
-[ ] TEST CASE 6
+[x] TEST CASE 6
 - Add new fact to the SOURCE that wouldn't refer to any entity from one chosen dimension (e.g. we don't know the sale date of one new bill)
 - Run ETL.
 - Check if 'UNKNOWN' row is being referred by this new fact in the DW.
