@@ -18,6 +18,7 @@ SourceClients AS (
         END AS czy_nowy
     FROM sample_travel_agency_database_2.dbo.Client c
     LEFT JOIN ClientReservations cr ON c.client_pesel = cr.client_pesel
+    WHERE c.client_pesel <> '00000000000'
 )
 UPDATE dwh
 SET dwh.data_wygasniecia = GETDATE() -- set expiration date to now
@@ -42,6 +43,7 @@ SourceClients AS (
         END AS czy_nowy
     FROM sample_travel_agency_database_2.dbo.Client c
     LEFT JOIN ClientReservations cr ON c.client_pesel = cr.client_pesel
+    WHERE c.client_pesel <> '00000000000'
 )
 INSERT INTO sample_warehouse.dbo.Klient_D (pesel_klienta, czy_nowy, data_wpisania, data_wygasniecia)
 SELECT 
