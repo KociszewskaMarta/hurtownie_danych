@@ -40,3 +40,7 @@ GO
 -- count number of fact reservations
 SELECT COUNT(*) AS reservation_count_warehouse FROM Rezerwacja_F;
 GO
+
+-- count number of campaign reservations
+SELECT COUNT(*) AS campaign_count_warehouse FROM Kampania_F;
+GO
