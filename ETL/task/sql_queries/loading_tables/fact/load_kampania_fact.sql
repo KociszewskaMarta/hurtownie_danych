@@ -1,8 +1,8 @@
 USE sample_warehouse;
 GO
 
-TRUNCATE TABLE dbo.Kampania_F;
-GO
+-- TRUNCATE TABLE dbo.Kampania_F;
+-- GO
 
 -- Tworzenie tymczasowej tabeli dla danych CSV
 IF OBJECT_ID('dbo.Marketing_Temp', 'U') IS NOT NULL
