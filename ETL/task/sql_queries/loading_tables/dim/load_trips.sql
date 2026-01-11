@@ -13,7 +13,7 @@ SELECT DISTINCT
         WHEN 'City-break' THEN 'city-break'
         ELSE 'relaks'
     END AS typ
-FROM sample_travel_agency_database.dbo.Tour t
+FROM sample_travel_agency_database_2.dbo.Tour t
 WHERE NOT EXISTS (
     SELECT 1 FROM Wycieczka_D w
     WHERE w.nazwa_wycieczki = t.name

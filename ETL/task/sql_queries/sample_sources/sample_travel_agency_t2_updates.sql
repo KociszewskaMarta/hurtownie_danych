@@ -7,19 +7,18 @@ GO
 
 -- Update Worker Roles (promotions/role changes)
 UPDATE Worker 
-SET role = 'Travel Consultant'
+SET role = 'Senior Travel Consultant'
 WHERE worker_pesel = '85020298765'; -- Anna Nowak promoted
 
 UPDATE Worker 
-SET role = 'Sales Director'
+SET role = 'Senior Sales Director'
 WHERE worker_pesel = '92030354321'; -- Piotr Wiśniewski promoted
 
 UPDATE Worker 
-SET role = 'Travel Consultant'
+SET role = 'Senior Travel Consultant'
 WHERE worker_pesel = '93070734567'; -- Michał Zieliński promoted
 
 GO
-
 
 
 -- INSERT NEW CLIENTS

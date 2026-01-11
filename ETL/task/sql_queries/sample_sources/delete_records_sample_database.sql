@@ -1,4 +1,4 @@
-USE sample_travel_agency_database
+USE sample_travel_agency_database_2
 GO
 
 DELETE FROM dbo.Payment;
