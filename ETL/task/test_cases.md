@@ -21,7 +21,7 @@ Scripts:
 - Run ETL all loading scripts in correct sequence
 - Check if the number of rows in fact tables corresponds to the number of related rows in the sources
 
-[ ] TEST CASE 3 - tested with simpler database only clients and reservations
+[x] TEST CASE 3 
 - Load T2 snapshot to the source db/file.
 - Run ETL.
 - Check if the new row is added to the SCD2 dimension.
