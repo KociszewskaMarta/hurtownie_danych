@@ -1,3 +1,11 @@
+/*
+TEST CASE 4
+- Update the entity in the source (e.g. education status for one Employee). This entity should be the one that is being loaded to the dimension with SCD2.
+- Add new fact to the SOURCE that would refer to the updated entity (e.g. add new bill for the sale made by an Employee that has recently changed the education status)
+- run ETL.
+- Check if the new fact in DW is referring to the updated dimension row (e.g. sales fact refers to the employee with the updated education status)
+*/
+
 USE sample_travel_agency_database_2
 GO
 
@@ -8,7 +16,6 @@ GO
 
 USE sample_warehouse;
 GO
-
 
 SELECT * FROM Klient_D WHERE pesel_klienta = '00040654321' ORDER BY data_wpisania;
 GO

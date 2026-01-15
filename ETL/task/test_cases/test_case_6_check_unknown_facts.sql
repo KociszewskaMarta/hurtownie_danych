@@ -1,3 +1,10 @@
+/*
+TEST CASE 6
+- Add new fact to the SOURCE that wouldn't refer to any entity from one chosen dimension (e.g. we don't know the sale date of one new bill)
+- Run ETL.
+- Check if 'UNKNOWN' row is being referred by this new fact in the DW.
+*/
+
 -- Check if facts in DW reference the 'UNKNOWN' row in any dimension
 USE sample_warehouse;
 GO

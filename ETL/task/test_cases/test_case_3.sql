@@ -1,3 +1,11 @@
+/*
+TEST CASE 3 
+- Load T2 snapshot to the source db/file.
+- Run ETL.
+- Check if the new row is added to the SCD2 dimension.
+- Check if the old row is updated (experiation date is added or isCurrent is set to 0).
+- Run ETL once again and check if there was no change in the DW.
+*/
 USE sample_travel_agency_database_2
 GO
 
