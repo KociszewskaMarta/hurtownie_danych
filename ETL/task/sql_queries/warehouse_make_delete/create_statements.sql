@@ -1,7 +1,7 @@
--- CREATE DATABASE HD_warhouse_real_data
--- GO
+CREATE DATABASE warehouse_travel_agency
+GO
 
-USE HD_warhouse
+USE warehouse_travel_agency
 GO
 
 --DIMENSIONS

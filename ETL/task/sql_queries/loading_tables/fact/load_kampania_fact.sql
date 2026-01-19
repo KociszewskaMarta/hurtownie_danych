@@ -25,7 +25,7 @@ GO
 
 -- Ładowanie danych z CSV
 BULK INSERT Marketing_Temp
-FROM 'C:\Users\kocis\Desktop\SEM_5\Hurtownie_danych\Labolatoria\repo\hurtownie_danych\ETL\task\sql_queries\sample_sources\sample_marketing_data_ready.csv'
+FROM 'C:\Users\kocis\Desktop\SEM_5\Hurtownie_danych\Labolatoria\repo\hurtownie_danych\dataSourcesGenerator\python_scripts\generating_data\marketing_data.csv'
 WITH (
     FIRSTROW = 2,
     FIELDTERMINATOR = ',',
@@ -58,7 +58,7 @@ SELECT DISTINCT
 FROM Marketing_Temp mt
 
 -- Dopasowanie do wycieczki:
-LEFT JOIN sample_travel_agency_database_2.dbo.Tour t 
+LEFT JOIN database_travel_agency.dbo.Tour t 
     ON t.tour_id = CAST(mt.Trip_id AS INT)
 LEFT JOIN Wycieczka_D wyc 
     ON wyc.nazwa_wycieczki = t.name

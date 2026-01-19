@@ -1,12 +1,12 @@
-USE sample_warehouse;
+USE warehouse_travel_agency;
 GO
 
 WITH ClientReservations AS (
     SELECT 
         c.client_pesel,
         COUNT(rc.reservation_id) AS reservation_count
-    FROM sample_travel_agency_database_2.dbo.Client c
-    LEFT JOIN sample_travel_agency_database_2.dbo.ReservationClient rc ON c.client_pesel = rc.client_pesel
+    FROM database_travel_agency.dbo.Client c
+    LEFT JOIN database_travel_agency.dbo.ReservationClient rc ON c.client_pesel = rc.client_pesel
     GROUP BY c.client_pesel
 ),
 SourceClients AS (
@@ -16,7 +16,7 @@ SourceClients AS (
             WHEN cr.reservation_count = 1 THEN 'Tak'
             ELSE 'Nie'
         END AS czy_nowy
-    FROM sample_travel_agency_database_2.dbo.Client c
+    FROM database_travel_agency.dbo.Client c
     LEFT JOIN ClientReservations cr ON c.client_pesel = cr.client_pesel
     WHERE c.client_pesel <> '00000000000'
 )
@@ -30,8 +30,8 @@ WITH ClientReservations AS (
     SELECT 
         c.client_pesel,
         COUNT(rc.reservation_id) AS reservation_count
-    FROM sample_travel_agency_database_2.dbo.Client c
-    LEFT JOIN sample_travel_agency_database_2.dbo.ReservationClient rc ON c.client_pesel = rc.client_pesel
+    FROM database_travel_agency.dbo.Client c
+    LEFT JOIN database_travel_agency.dbo.ReservationClient rc ON c.client_pesel = rc.client_pesel
     GROUP BY c.client_pesel
 ),
 SourceClients AS (
@@ -41,7 +41,7 @@ SourceClients AS (
             WHEN cr.reservation_count = 1 THEN 'Tak'
             ELSE 'Nie'
         END AS czy_nowy
-    FROM sample_travel_agency_database_2.dbo.Client c
+    FROM database_travel_agency.dbo.Client c
     LEFT JOIN ClientReservations cr ON c.client_pesel = cr.client_pesel
     WHERE c.client_pesel <> '00000000000'
 )

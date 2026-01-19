@@ -1,4 +1,4 @@
-USE sample_warehouse;
+USE warehouse_travel_agency
 GO
 
 INSERT INTO [dbo].Junk_D 

@@ -1,4 +1,4 @@
-USE sample_warehouse
+USE warehouse_travel_agency
 GO
 
 -- ładowanie wymiaru Wycieczka_D z bazy źródłowej
@@ -13,7 +13,7 @@ SELECT DISTINCT
         WHEN 'City-break' THEN 'city-break'
         ELSE 'relaks'
     END AS typ
-FROM sample_travel_agency_database_2.dbo.Tour t
+FROM database_travel_agency.dbo.Tour t
 WHERE NOT EXISTS (
     SELECT 1 FROM Wycieczka_D w
     WHERE w.nazwa_wycieczki = t.name

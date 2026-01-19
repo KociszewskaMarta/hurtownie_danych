@@ -1,4 +1,4 @@
-USE sample_warehouse
+USE warehouse_travel_agency
 GO
 
 -- tymczasowa tabela dla danych CSV
@@ -22,7 +22,7 @@ GO
 
 --  ładowanie danych z CSV
 BULK INSERT Marketing_Temp
-FROM 'C:\Users\kocis\Desktop\SEM_5\Hurtownie_danych\Labolatoria\repo\hurtownie_danych\ETL\task\sql_queries\sample_sources\sample_marketing_data_ready.csv'
+FROM 'C:\Users\kocis\Desktop\SEM_5\Hurtownie_danych\Labolatoria\repo\hurtownie_danych\dataSourcesGenerator\python_scripts\generating_data\marketing_data.csv'
 WITH (
     FIRSTROW = 2,
     FIELDTERMINATOR = ',',
