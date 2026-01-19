@@ -1,4 +1,4 @@
-USE sample_warehouse;
+USE warehouse_travel_agency;
 GO
 
 TRUNCATE TABLE dbo.Rezerwacja_F;
@@ -25,11 +25,10 @@ GO
 
 -- Ładowanie danych z CSV
 BULK INSERT Marketing_Temp
-FROM 'C:\Users\kocis\Desktop\SEM_5\Hurtownie_danych\Labolatoria\repo\hurtownie_danych\ETL\task\sql_queries\sample_sources\sample_marketing_data_ready.csv'
+FROM 'C:\Users\kocis\Desktop\SEM_5\Hurtownie_danych\Labolatoria\repo\hurtownie_danych\dataSourcesGenerator\python_scripts\generating_data\marketing_data.csv'
 WITH (
     FIRSTROW = 2,
     FIELDTERMINATOR = ',',
-    ROWTERMINATOR = '\n',
     TABLOCK,
     CODEPAGE = '65001'
 );
@@ -52,27 +51,27 @@ SELECT DISTINCT
     ISNULL(junk.id_junk, (SELECT TOP 1 id_junk FROM Junk_D WHERE status_oplacenia = 'UNKNOWN')),
     ISNULL(p.amount, 0) AS kwota_transakcji,  -- Jeśli brak płatności, wartość 0
     te.price AS cena_turnusu
-FROM sample_travel_agency_database_2.dbo.Reservation r
-LEFT JOIN sample_travel_agency_database_2.dbo.ReservationClient rc 
+FROM database_travel_agency.dbo.Reservation r
+LEFT JOIN database_travel_agency.dbo.ReservationClient rc 
     ON rc.reservation_id = r.reservation_id
-LEFT JOIN sample_travel_agency_database_2.dbo.Client c 
+LEFT JOIN database_travel_agency.dbo.Client c 
     ON c.client_pesel = rc.client_pesel
 LEFT JOIN Klient_D kl 
     ON kl.pesel_klienta = c.client_pesel
     AND kl.data_wygasniecia IS NULL
-LEFT JOIN sample_travel_agency_database_2.dbo.TourEdition te 
+LEFT JOIN database_travel_agency.dbo.TourEdition te 
     ON te.tour_edition_id = r.tour_edition_id
-LEFT JOIN sample_travel_agency_database_2.dbo.Tour t 
+LEFT JOIN database_travel_agency.dbo.Tour t 
     ON t.tour_id = te.tour_id
 LEFT JOIN Wycieczka_D wyc 
     ON wyc.nazwa_wycieczki = t.name
-LEFT JOIN sample_travel_agency_database_2.dbo.Payment p 
+LEFT JOIN database_travel_agency.dbo.Payment p 
     ON p.reservation_id = r.reservation_id
 LEFT JOIN (
     SELECT DISTINCT 
         CAST(Trip_id AS INT) AS Trip_id, 
         MIN(Campaing_Name) AS Campaing_Name
-    FROM sample_warehouse.dbo.Marketing_Temp
+    FROM Marketing_Temp
     WHERE Trip_id IS NOT NULL AND Trip_id <> ''
     GROUP BY CAST(Trip_id AS INT)
 ) mt ON mt.Trip_id = t.tour_id
