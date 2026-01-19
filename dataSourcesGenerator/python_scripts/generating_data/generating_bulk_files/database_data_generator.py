@@ -64,13 +64,9 @@ def generate_client_obj():
     }
 
 def generate_tour_obj(_id):
-    return {
-        'id': _id,
-        'trip_name': generate_trip_name(),
-        'destination': generate_destination(),
-        'tour_type': generate_tour_type(),
-        'attractions': generate_attractions(),
-    }
+
+    # This function is now only used for structure, not for random name selection
+    raise NotImplementedError("Use unique trip name logic in main block.")
 def generate_tour_edition_obj(_id):
     start_date, end_date = generate_start_end_dates()
     return {
@@ -168,10 +164,56 @@ if __name__ == '__main__':
         include_header=False
     )
     clients_pesels = extract_pesels('data/clients.bulk')
+
+    # Ensure unique trip names for tours
+    from helper_functions import generate_trip_name
+    trip_names = [
+        "Discover the Ancient Ruins",
+        "Tropical Paradise Getaway",
+        "Cultural Heritage Tour",
+        "Mountain Adventure Expedition",
+        "City Lights Exploration",
+        "Wildlife Safari Experience",
+        "Historical Landmarks Journey",
+        "Beachside Relaxation Retreat",
+        "Gastronomic Delights Tour",
+        "Art and Architecture Walk",
+        "Scenic Nature Trails",
+        "Desert Discovery Expedition",
+        "Northern Lights Adventure",
+        "Island Hopping Experience",
+        "Volcano Explorer Tour",
+        "Rainforest Wildlife Safari",
+        "Mediterranean Culinary Journey",
+        "Historic Castles and Palaces",
+        "Lakes and Waterfalls Retreat",
+        "Wine Country Exploration",
+        "Coastal Road Trip",
+        "Mountain Biking Challenge",
+        "Winter Wonderland Escape",
+        "Sunset Sailing Cruise",
+        "Ancient Temples Trail",
+        "National Parks Grand Tour",
+        "Hot Springs Relaxation",
+        "Cultural Capitals Tour",
+        "Photography Expedition",
+        "Adventure Sports Getaway",
+    ]
+    assert len(trip_names) == number_of_tour, "Trip names count must match number_of_tour!"
+    random.shuffle(trip_names)
+    def unique_tour_objs():
+        for i, trip_name in enumerate(trip_names):
+            yield {
+                'id': i + 1,
+                'trip_name': trip_name,
+                'destination': generate_destination(),
+                'tour_type': generate_tour_type(),
+                'attractions': generate_attractions(),
+            }
     export_objects_to_delimited_file(
         path='data/tours.bulk',
         field_names=['id', 'trip_name', 'destination', 'tour_type', 'attractions'],
-        objects_iterable=(generate_tour_obj(l + 1) for l in range(number_of_tour)),
+        objects_iterable=unique_tour_objs(),
         include_header=False
     )
     export_objects_to_delimited_file(

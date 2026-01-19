@@ -24,7 +24,27 @@ def generate_trip_name():
         "Historical Landmarks Journey",
         "Beachside Relaxation Retreat",
         "Gastronomic Delights Tour",
-        "Art and Architecture Walk"
+        "Art and Architecture Walk",
+        "Scenic Nature Trails",
+        "Desert Discovery Expedition",
+        "Northern Lights Adventure",
+        "Island Hopping Experience",
+        "Volcano Explorer Tour",
+        "Rainforest Wildlife Safari",
+        "Mediterranean Culinary Journey",
+        "Historic Castles and Palaces",
+        "Lakes and Waterfalls Retreat",
+        "Wine Country Exploration",
+        "Coastal Road Trip",
+        "Mountain Biking Challenge",
+        "Winter Wonderland Escape",
+        "Sunset Sailing Cruise",
+        "Ancient Temples Trail",
+        "National Parks Grand Tour",
+        "Hot Springs Relaxation",
+        "Cultural Capitals Tour",
+        "Photography Expedition",
+        "Adventure Sports Getaway",
     ]
     return random.choice(trip_names)
 
