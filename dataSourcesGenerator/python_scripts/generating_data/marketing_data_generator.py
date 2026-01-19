@@ -61,11 +61,11 @@ def random_date(start: datetime, end: datetime) -> datetime:
     return start+ datetime.timedelta(days=random.randint(0,delta.days))
 
 def format_float(value: float) -> str:
-    """Format float to string with 2 decimal places and replace dot with comma"""
-    return f"{value:.2f}".replace(".", ",")
+    """Format float to 2 decimal places (for display), but return as float for CSV export."""
+    return round(value, 2)
 
 def random_conversion_rate() -> str:
-    """Generate a random conversion rate between 0 and 30%"""
+    """Generate a random conversion rate between 0 and 30% as float"""
     return format_float(random.uniform(0, 30))
 
 def random_number(min_value: int, max_value: int) -> int:
@@ -73,7 +73,7 @@ def random_number(min_value: int, max_value: int) -> int:
     return random.randint(min_value, max_value)
 
 def random_cost(min_value: float, max_value: float) -> str:
-    """Generate a random cost between min_value and max_value"""
+    """Generate a random cost between min_value and max_value as float"""
     return format_float(random.uniform(min_value, max_value))
 
 
@@ -123,8 +123,8 @@ if __name__ == "__main__":
             ad_group,
             trip_id,
             keyword,
-            str(impressions),
-            str(clicks),
+            impressions,
+            clicks,
             ctr,
             cost,
             conversion_rate,
