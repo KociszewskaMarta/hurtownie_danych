@@ -1,4 +1,4 @@
-USE go_explore_travel_agency;
+USE database_travel_agency;
 GO
 
 BULK INSERT dbo.Worker FROM 'C:\Users\kocis\Desktop\SEM_5\Hurtownie_danych\Labolatoria\repo\hurtownie_danych\dataSourcesGenerator\python_scripts\generating_data\generating_bulk_files\data\workers.bulk'
