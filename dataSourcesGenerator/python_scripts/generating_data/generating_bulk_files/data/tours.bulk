@@ -1,30 +1,60 @@
-1|Historic Castles and Palaces|Bali, Indonesia|Family|Food Tours, Cooking Classes, Local Restaurants
-2|Cultural Capitals Tour|Maldives|Relax|Castles, Monuments, Heritage Sites
-3|Ancient Temples Trail|Barcelona, Spain|City-break|Food Tours, Cooking Classes, Local Restaurants
-4|Photography Expedition|Barcelona, Spain|City-break|Food Tours, Cooking Classes, Local Restaurants
-5|Scenic Nature Trails|Cairo, Egypt|Relax|Hiking Trails, Mountain Peaks, Scenic Views
-6|Desert Discovery Expedition|Cairo, Egypt|Active|City Landmarks, Nightlife Spots, Shopping Districts
-7|Hot Springs Relaxation|Cairo, Egypt|Relax|City Landmarks, Nightlife Spots, Shopping Districts
-8|National Parks Grand Tour|Paris, France|City-break|Ancient Ruins, Museums, Local Markets
-9|Tropical Paradise Getaway|Serengeti, Tanzania|Relax|City Landmarks, Nightlife Spots, Shopping Districts
-10|Gastronomic Delights Tour|Serengeti, Tanzania|City-break|Resorts, Spas, Beach Activities
-11|City Lights Exploration|Rome, Italy|City-break|Food Tours, Cooking Classes, Local Restaurants
-12|Winter Wonderland Escape|Paris, France|Relax|Art Galleries, Architectural Tours, Street Art
-13|Sunset Sailing Cruise|Serengeti, Tanzania|Relax|City Landmarks, Nightlife Spots, Shopping Districts
-14|Beachside Relaxation Retreat|Kyoto, Japan|Relax|Historical Sites, Cultural Festivals, Local Cuisine
-15|Discover the Ancient Ruins|Maldives|Active|Castles, Monuments, Heritage Sites
-16|Island Hopping Experience|Rome, Italy|City-break|Art Galleries, Architectural Tours, Street Art
-17|Mountain Biking Challenge|Bali, Indonesia|Relax|Wildlife Reserves, Safari Drives, Bird Watching
-18|Rainforest Wildlife Safari|Swiss Alps, Switzerland|Active|Resorts, Spas, Beach Activities
-19|Art and Architecture Walk|Bali, Indonesia|Relax|City Landmarks, Nightlife Spots, Shopping Districts
-20|Mediterranean Culinary Journey|Serengeti, Tanzania|Family|Wildlife Reserves, Safari Drives, Bird Watching
-21|Northern Lights Adventure|New York City, USA|City-break|Resorts, Spas, Beach Activities
-22|Coastal Road Trip|Paris, France|Relax|Wildlife Reserves, Safari Drives, Bird Watching
-23|Volcano Explorer Tour|Rome, Italy|Family|Art Galleries, Architectural Tours, Street Art
-24|Wine Country Exploration|Swiss Alps, Switzerland|Family|Beaches, Coral Reefs, Tropical Forests
-25|Cultural Heritage Tour|Serengeti, Tanzania|Family|Castles, Monuments, Heritage Sites
-26|Adventure Sports Getaway|Serengeti, Tanzania|Relax|Hiking Trails, Mountain Peaks, Scenic Views
-27|Historical Landmarks Journey|Cairo, Egypt|City-break|Beaches, Coral Reefs, Tropical Forests
-28|Lakes and Waterfalls Retreat|Paris, France|Active|Beaches, Coral Reefs, Tropical Forests
-29|Wildlife Safari Experience|Barcelona, Spain|Family|Castles, Monuments, Heritage Sites
-30|Mountain Adventure Expedition|Barcelona, Spain|Family|Beaches, Coral Reefs, Tropical Forests
+1|Cultural Heritage Tour|Swiss Alps, Switzerland|City-break|City Landmarks, Nightlife Spots, Shopping Districts
+2|Historical Landmarks Journey|Barcelona, Spain|City-break|Ancient Ruins, Museums, Local Markets
+3|Art and Architecture Walk|Swiss Alps, Switzerland|City-break|City Landmarks, Nightlife Spots, Shopping Districts
+4|Cultural Capitals Tour|Barcelona, Spain|City-break|Hiking Trails, Mountain Peaks, Scenic Views
+5|Wildflower Meadow Hike|Cairo, Egypt|Relax|Castles, Monuments, Heritage Sites
+6|Scenic Railway Journey|New York City, USA|Relax|Wildlife Reserves, Safari Drives, Bird Watching
+7|Wine Country Exploration|Cairo, Egypt|Active|Hiking Trails, Mountain Peaks, Scenic Views
+8|Historic Castles and Palaces|Rome, Italy|City-break|Wildlife Reserves, Safari Drives, Bird Watching
+9|Sun-Kissed Shores Journey|Barcelona, Spain|Family|Historical Sites, Cultural Festivals, Local Cuisine
+10|Northern Lights Adventure|Swiss Alps, Switzerland|City-break|Beaches, Coral Reefs, Tropical Forests
+11|Underwater Wonders Dive Tour|Kyoto, Japan|Active|Wildlife Reserves, Safari Drives, Bird Watching
+12|Adventure Sports Getaway|Bali, Indonesia|Active|Art Galleries, Architectural Tours, Street Art
+13|Cave and Cavern Adventure|Bali, Indonesia|Active|Ancient Ruins, Museums, Local Markets
+14|Desert Discovery Expedition|Bali, Indonesia|Family|City Landmarks, Nightlife Spots, Shopping Districts
+15|Treetop Canopy Walk|Rome, Italy|City-break|Castles, Monuments, Heritage Sites
+16|Nature and Wildlife Expedition|Cairo, Egypt|Relax|Art Galleries, Architectural Tours, Street Art
+17|Volcano Explorer Tour|Maldives|Family|Castles, Monuments, Heritage Sites
+18|Island Paradise Exploration|New York City, USA|City-break|Food Tours, Cooking Classes, Local Restaurants
+19|Winter Wonderland Escape|Rome, Italy|Family|Castles, Monuments, Heritage Sites
+20|Photography Expedition|Barcelona, Spain|Active|Castles, Monuments, Heritage Sites
+21|Island Adventure Escape|Serengeti, Tanzania|Family|Castles, Monuments, Heritage Sites
+22|Discover the Ancient Ruins|Maldives|Relax|Ancient Ruins, Museums, Local Markets
+23|Cultural Immersion Journey|Serengeti, Tanzania|Active|Historical Sites, Cultural Festivals, Local Cuisine
+24|Countryside Cycling Tour|Cairo, Egypt|Relax|Beaches, Coral Reefs, Tropical Forests
+25|Gastronomic Delights Tour|Kyoto, Japan|Active|Beaches, Coral Reefs, Tropical Forests
+26|Seaside Village Exploration|Serengeti, Tanzania|City-break|Food Tours, Cooking Classes, Local Restaurants
+27|Hot Springs Relaxation|New York City, USA|City-break|Hiking Trails, Mountain Peaks, Scenic Views
+28|City Lights Exploration|Kyoto, Japan|Relax|Historical Sites, Cultural Festivals, Local Cuisine
+29|Wildlife Safari Experience|Kyoto, Japan|Relax|Art Galleries, Architectural Tours, Street Art
+30|Cultural Capitals of the World|Maldives|Active|Hiking Trails, Mountain Peaks, Scenic Views
+31|Safari in the Heart of Africa|Cairo, Egypt|City-break|Historical Sites, Cultural Festivals, Local Cuisine
+32|National Parks Grand Tour|Kyoto, Japan|Active|Hiking Trails, Mountain Peaks, Scenic Views
+33|Tropical Island Escape|Swiss Alps, Switzerland|Relax|Historical Sites, Cultural Festivals, Local Cuisine
+34|Coastal Road Trip|Rome, Italy|Active|Art Galleries, Architectural Tours, Street Art
+35|Tropical Paradise Getaway|Cairo, Egypt|Relax|Art Galleries, Architectural Tours, Street Art
+36|Scenic Nature Trails|Serengeti, Tanzania|Family|Food Tours, Cooking Classes, Local Restaurants
+37|Cultural Festivals Experience|Swiss Alps, Switzerland|City-break|Castles, Monuments, Heritage Sites
+38|Heritage and History Expedition|Rome, Italy|Family|Beaches, Coral Reefs, Tropical Forests
+39|Architectural Marvels Tour|Kyoto, Japan|Family|City Landmarks, Nightlife Spots, Shopping Districts
+40|Mountain Biking Challenge|Maldives|Family|Castles, Monuments, Heritage Sites
+41|Mountain Majesty Tour|Paris, France|Active|Hiking Trails, Mountain Peaks, Scenic Views
+42|City of Angels Experience|Paris, France|Active|Ancient Ruins, Museums, Local Markets
+43|Island Hopping Experience|Kyoto, Japan|City-break|Castles, Monuments, Heritage Sites
+44|Mediterranean Culinary Journey|Swiss Alps, Switzerland|City-break|Art Galleries, Architectural Tours, Street Art
+45|Cultural Odyssey Experience|Paris, France|Family|Castles, Monuments, Heritage Sites
+46|Fjord Exploration Journey|New York City, USA|Active|Castles, Monuments, Heritage Sites
+47|Gourmet Food and Wine Tour|New York City, USA|Relax|Art Galleries, Architectural Tours, Street Art
+48|Beachside Relaxation Retreat|Maldives|City-break|Wildlife Reserves, Safari Drives, Bird Watching
+49|Lakes and Waterfalls Retreat|Barcelona, Spain|City-break|City Landmarks, Nightlife Spots, Shopping Districts
+50|Mountain Adventure Expedition|Kyoto, Japan|Relax|Ancient Ruins, Museums, Local Markets
+51|Cultural Treasures of Europe|Maldives|Relax|Hiking Trails, Mountain Peaks, Scenic Views
+52|Ancient Temples Trail|Paris, France|Relax|Hiking Trails, Mountain Peaks, Scenic Views
+53|Epic Road Trip Across Continents|Swiss Alps, Switzerland|Active|Resorts, Spas, Beach Activities
+54|Rainforest Wildlife Safari|Serengeti, Tanzania|Relax|Beaches, Coral Reefs, Tropical Forests
+55|Ancient Wonders of the World|Serengeti, Tanzania|Family|Resorts, Spas, Beach Activities
+56|Luxury Spa Retreat|New York City, USA|Active|Wildlife Reserves, Safari Drives, Bird Watching
+57|Historic Battlefields Tour|Bali, Indonesia|Active|Food Tours, Cooking Classes, Local Restaurants
+58|Jungle Trekking Adventure|Maldives|Family|Hiking Trails, Mountain Peaks, Scenic Views
+59|Sunset Sailing Cruise|Swiss Alps, Switzerland|Active|Hiking Trails, Mountain Peaks, Scenic Views
+60|Historic City Exploration|Paris, France|City-break|City Landmarks, Nightlife Spots, Shopping Districts
