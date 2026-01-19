@@ -50,3 +50,7 @@ NOTE: Again, you need to change path to `marketing_data.csv` file in `load_marke
 
 3. Load fact table:
 
+- `ETL\task\sql_queries\loading_tables\fact\load_rezerwacja_fact_corrected.sql`
+
+- `ETL\task\sql_queries\loading_tables\fact\load_kampania_fact.sql`
+
