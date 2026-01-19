@@ -5,11 +5,12 @@ from helper_functions import *
 fake = Faker('pl_PL')
 
 number_of_tour = 30
-number_of_tour_editions=500
-number_of_workers=100
-number_of_clients=1000
+number_of_tour_editions=1000
+number_of_workers=500
+number_of_clients=100000
 number_of_reservations=1000000
 number_of_payments=900000
+
 number_of_new_reservations=5000
 number_of_new_clients=1000
 number_of_new_workers=10
@@ -44,9 +45,20 @@ def export_objects_to_delimited_file(path, field_names, objects_iterable, delimi
 
 
 
-def generate_worker_obj():
+def generate_worker_obj(existing_pesels=None):
+    """Generate a worker with unique PESEL"""
+    if existing_pesels is None:
+        existing_pesels = set()
+    
+    # Keep generating until we get a unique PESEL
+    while True:
+        pesel = fake.pesel()
+        if pesel not in existing_pesels:
+            existing_pesels.add(pesel)
+            break
+    
     return {
-        'pesel': fake.pesel(),
+        'pesel': pesel,
         'first_name': fake.first_name(),
         'last_name': fake.last_name(),
         'email': fake.email(),
@@ -54,9 +66,20 @@ def generate_worker_obj():
         'role': generate_worker_role()
     }
 
-def generate_client_obj():
+def generate_client_obj(existing_pesels=None):
+    """Generate a client with unique PESEL"""
+    if existing_pesels is None:
+        existing_pesels = set()
+    
+    # Keep generating until we get a unique PESEL
+    while True:
+        pesel = fake.pesel()
+        if pesel not in existing_pesels:
+            existing_pesels.add(pesel)
+            break
+    
     return {
-        'pesel': fake.pesel(),
+        'pesel': pesel,
         'first_name': fake.first_name(),
         'last_name': fake.last_name(),
         'email': fake.email(),
@@ -77,10 +100,13 @@ def generate_tour_edition_obj(_id):
         'available_seats': generate_available_slots(),
         'tour_id': random.randint(1, number_of_tour)
     }
-def generate_reservation_obj(_id,  tour_editions_count):
+def generate_reservation_obj(_id, tour_editions_count, reservation_date=None):
+    """Generate a reservation with optional specific date"""
+    if reservation_date is None:
+        reservation_date = fake.date_between_dates(date(2010,1,1), date(2025,12,31)).isoformat()
     return {
         'id': _id,
-        'reservation_date': fake.date_between_dates(date(2015,1,1), date(2025,7,1)).isoformat(),
+        'reservation_date': reservation_date,
         'status': generate_reservation_status(),
         'tour_edition_id': random.randint(1, tour_editions_count)
     }
@@ -89,32 +115,28 @@ def generate_payment_obj(_id):
         'id': _id,
         'amount': generate_price(),
         'payment_method': generate_payment_form(),
-        'payment_date': fake.date_between_dates(date(2015,1,1), date(2025,7,1)).isoformat(),
+        'payment_date': fake.date_between_dates(date(2010,1,1), date(2025,12,31)).isoformat(),
         'reservation_id': random.randint(1, number_of_reservations)
     }
 
 def generate_unique_reservation_client_objs(_clients_pesels, _number_of_reservations):
-    unique_pairs = set()
+    """Generate reservation-client pairs with even distribution across clients"""
     objs = []
-    while len(objs) < _number_of_reservations:
-        reservation_id = random.randint(1, _number_of_reservations)
-        client_pesel = random.choice(_clients_pesels)
-        pair = (reservation_id, client_pesel)
-        if pair not in unique_pairs:
-            unique_pairs.add(pair)
-            objs.append({'reservation_id': reservation_id, 'client_pesel': client_pesel})
+    # Evenly distribute reservations across clients using round-robin
+    for i in range(_number_of_reservations):
+        reservation_id = i + 1
+        client_pesel = _clients_pesels[i % len(_clients_pesels)]
+        objs.append({'reservation_id': reservation_id, 'client_pesel': client_pesel})
     return objs
 
 def generate_unique_reservation_worker_objs(_workers_pesels, _number_of_reservations):
-    unique_pairs = set()
+    """Generate reservation-worker pairs with even distribution across workers"""
     objs = []
-    while len(objs) < _number_of_reservations:
-        reservation_id = random.randint(1, _number_of_reservations)
-        worker_pesel = random.choice(_workers_pesels)
-        pair = (reservation_id, worker_pesel)
-        if pair not in unique_pairs:
-            unique_pairs.add(pair)
-            objs.append({'reservation_id': reservation_id, 'worker_pesel': worker_pesel})
+    # Evenly distribute reservations across workers using round-robin
+    for i in range(_number_of_reservations):
+        reservation_id = i + 1
+        worker_pesel = _workers_pesels[i % len(_workers_pesels)]
+        objs.append({'reservation_id': reservation_id, 'worker_pesel': worker_pesel})
     return objs
 
 def generate_unique_new_reservation_client_objs(_clients_pesels, _number_of_reservations):
@@ -144,23 +166,29 @@ def generate_unique_new_reservation_worker_objs(_workers_pesels, _number_of_rese
 def generate_new_reservation_obj(_id,  tour_editions_count):
     return {
         'id': _id,
-        'reservation_date': fake.date_between_dates(date(2025,7,2), date(2025,10,28)).isoformat(),
+        'reservation_date': fake.date_between_dates(date(2026,1,1), date(2026,12,31)).isoformat(),
         'status': generate_reservation_status(),
         'tour_edition_id': random.randint(1, tour_editions_count)
     }
 
 if __name__ == '__main__':
+    # Track all generated PESELs to ensure uniqueness
+    all_pesels = set()
+    
+    # Generate workers with unique PESELs
     export_objects_to_delimited_file(
         path='data/workers.bulk',
         field_names=['pesel','first_name','last_name','email','phone_number','role'],
-        objects_iterable=(generate_worker_obj() for _ in range(number_of_workers)),
+        objects_iterable=(generate_worker_obj(all_pesels) for _ in range(number_of_workers)),
         include_header=False
     )
     workers_pesels = extract_pesels('data/workers.bulk')
+    
+    # Generate clients with unique PESELs (separate from workers)
     export_objects_to_delimited_file(
         path='data/clients.bulk',
         field_names=['pesel', 'first_name', 'last_name', 'email', 'phone_number'],
-        objects_iterable=(generate_client_obj() for _ in range(number_of_clients)),
+        objects_iterable=(generate_client_obj(all_pesels) for _ in range(number_of_clients)),
         include_header=False
     )
     clients_pesels = extract_pesels('data/clients.bulk')
@@ -222,10 +250,30 @@ if __name__ == '__main__':
         objects_iterable=(generate_tour_edition_obj(k + 1) for k in range(number_of_tour_editions)),
         include_header=False
     )
+    # Generate evenly distributed dates for reservations
+    from datetime import datetime, timedelta
+    start_date = datetime(2010, 1, 1)
+    end_date = datetime(2025, 12, 31)
+    total_days = (end_date - start_date).days
+    
+    # Create a list of evenly distributed dates
+    date_list = []
+    days_per_reservation = total_days / number_of_reservations
+    for i in range(number_of_reservations):
+        offset_days = int(i * days_per_reservation)
+        reservation_date = (start_date + timedelta(days=offset_days)).strftime('%Y-%m-%d')
+        date_list.append(reservation_date)
+    
+    # Shuffle dates to add some randomness while keeping them evenly distributed
+    random.shuffle(date_list)
+    
+    def reservation_with_date(i):
+        return generate_reservation_obj(i + 1, number_of_tour_editions, date_list[i])
+    
     export_objects_to_delimited_file(
         path='data/reservations.bulk',
         field_names=['id', 'reservation_date', 'status', 'tour_edition_id'],
-        objects_iterable=(generate_reservation_obj(i + 1, number_of_tour_editions) for i in range(number_of_reservations)),
+        objects_iterable=(reservation_with_date(i) for i in range(number_of_reservations)),
         include_header=False
     )
     export_objects_to_delimited_file(
@@ -252,17 +300,18 @@ if __name__ == '__main__':
         objects_iterable=(generate_new_reservation_obj(i+number_of_reservations + 1, number_of_tour_editions) for i in range(number_of_new_reservations)),
         include_header=False
     )
+    # Generate new workers and clients with unique PESELs (continuing from existing set)
     export_objects_to_delimited_file(
         path='data/new_workers.bulk',
         field_names=['pesel','first_name','last_name','email','phone_number','role'],
-        objects_iterable=(generate_worker_obj() for _ in range(number_of_new_workers)),
+        objects_iterable=(generate_worker_obj(all_pesels) for _ in range(number_of_new_workers)),
         include_header=False
     )
     new_workers_pesels = extract_pesels('data/new_workers.bulk')
     export_objects_to_delimited_file(
         path='data/new_clients.bulk',
         field_names=['pesel', 'first_name', 'last_name', 'email', 'phone_number'],
-        objects_iterable=(generate_client_obj() for _ in range(number_of_new_clients)),
+        objects_iterable=(generate_client_obj(all_pesels) for _ in range(number_of_new_clients)),
         include_header=False
     )
     new_clients_pesels = extract_pesels('data/new_clients.bulk')
