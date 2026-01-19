@@ -89,7 +89,7 @@ def generate_available_slots(min_slots=5, max_slots=30):
     return random.randint(min_slots, max_slots)
 
 def generate_payment_form():
-    payment_forms = ['Paid', 'Unpaid', 'Processing']
+    payment_forms = ['Credit Card', 'Transfer', 'Cash']
     return random.choice(payment_forms)
 
 def generate_reservation_status():
