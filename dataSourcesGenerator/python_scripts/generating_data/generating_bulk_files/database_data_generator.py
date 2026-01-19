@@ -7,7 +7,7 @@ fake = Faker('pl_PL')
 number_of_tour = 30
 number_of_tour_editions=1000
 number_of_workers=500
-number_of_clients=100000
+number_of_clients=120000
 number_of_reservations=1000000
 number_of_payments=900000
 
