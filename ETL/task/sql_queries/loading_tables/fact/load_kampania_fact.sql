@@ -1,4 +1,4 @@
-USE sample_warehouse;
+USE warehouse_travel_agency
 GO
 
 -- TRUNCATE TABLE dbo.Kampania_F;

@@ -1,3 +1,5 @@
+USE database_travel_agency
+
 DELETE FROM dbo.Payment;
 DELETE FROM dbo.ReservationClient;
 DELETE FROM dbo.ReservationWorker;
