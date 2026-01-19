@@ -4,12 +4,12 @@ from helper_functions import *
 
 fake = Faker('pl_PL')
 
-number_of_tour = 30
+number_of_tour = 60
 number_of_tour_editions=1000
 number_of_workers=500
-number_of_clients=120000
-number_of_reservations=1000000
-number_of_payments=900000
+number_of_clients=210000
+number_of_reservations=800000
+number_of_payments=700000
 
 number_of_new_reservations=5000
 number_of_new_clients=1000
@@ -226,6 +226,36 @@ if __name__ == '__main__':
         "Cultural Capitals Tour",
         "Photography Expedition",
         "Adventure Sports Getaway",
+        "Luxury Spa Retreat",
+        "Fjord Exploration Journey",
+        "Countryside Cycling Tour",
+        "Cave and Cavern Adventure",
+        "Historic Battlefields Tour",
+        "Treetop Canopy Walk",
+        "Wildflower Meadow Hike",
+        "Cultural Festivals Experience",
+        "Architectural Marvels Tour",
+        "Seaside Village Exploration",
+        "Island Adventure Escape",
+        "Cultural Immersion Journey",
+        "Historic City Exploration",
+        "Nature and Wildlife Expedition",
+        "Gourmet Food and Wine Tour",
+        "City of Angels Experience",
+        "Safari in the Heart of Africa",
+        "Ancient Wonders of the World",
+        "Tropical Island Escape",
+        "Cultural Treasures of Europe",
+        "Mountain Majesty Tour",
+        "Sun-Kissed Shores Journey",
+        "Heritage and History Expedition",
+        "Jungle Trekking Adventure",
+        "Cultural Capitals of the World",
+        "Island Paradise Exploration",
+        "Epic Road Trip Across Continents",
+        "Underwater Wonders Dive Tour",
+        "Cultural Odyssey Experience",
+        "Scenic Railway Journey",
     ]
     assert len(trip_names) == number_of_tour, "Trip names count must match number_of_tour!"
     random.shuffle(trip_names)
