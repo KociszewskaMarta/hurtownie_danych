@@ -87,7 +87,7 @@ def generate_attractions():
     ]
     return random.choice(attractions_list)
 
-def generate_start_end_dates(start_year=2010, end_year=2025, min_days=5, max_days=20):
+def generate_start_end_dates(start_year=2000, end_year=2025, min_days=5, max_days=20):
     if start_year > end_year:
         raise ValueError("start_year must be <= end_year")
 

@@ -103,7 +103,7 @@ def generate_tour_edition_obj(_id):
 def generate_reservation_obj(_id, tour_editions_count, reservation_date=None):
     """Generate a reservation with optional specific date"""
     if reservation_date is None:
-        reservation_date = fake.date_between_dates(date(2010,1,1), date(2025,12,31)).isoformat()
+        reservation_date = fake.date_between_dates(date(2000,1,1), date(2025,12,31)).isoformat()
     return {
         'id': _id,
         'reservation_date': reservation_date,
@@ -115,7 +115,7 @@ def generate_payment_obj(_id):
         'id': _id,
         'amount': generate_price(),
         'payment_method': generate_payment_form(),
-        'payment_date': fake.date_between_dates(date(2010,1,1), date(2025,12,31)).isoformat(),
+        'payment_date': fake.date_between_dates(date(2000,1,1), date(2025,12,31)).isoformat(),
         'reservation_id': random.randint(1, number_of_reservations)
     }
 
@@ -252,7 +252,7 @@ if __name__ == '__main__':
     )
     # Generate evenly distributed dates for reservations
     from datetime import datetime, timedelta
-    start_date = datetime(2010, 1, 1)
+    start_date = datetime(2000, 1, 1)
     end_date = datetime(2025, 12, 31)
     total_days = (end_date - start_date).days
     
