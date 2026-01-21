@@ -22,7 +22,7 @@ SourceClients AS (
 )
 UPDATE dwh
 SET dwh.data_wygasniecia = GETDATE() -- set expiration date to now
-FROM sample_warehouse.dbo.Klient_D dwh 
+FROM warehouse_travel_agency.dbo.Klient_D dwh 
 JOIN SourceClients sc ON dwh.pesel_klienta = sc.client_pesel 
 WHERE dwh.czy_nowy <> sc.czy_nowy AND dwh.data_wygasniecia IS NULL;
 
@@ -45,14 +45,14 @@ SourceClients AS (
     LEFT JOIN ClientReservations cr ON c.client_pesel = cr.client_pesel
     WHERE c.client_pesel <> '00000000000'
 )
-INSERT INTO sample_warehouse.dbo.Klient_D (pesel_klienta, czy_nowy, data_wpisania, data_wygasniecia)
+INSERT INTO warehouse_travel_agency.dbo.Klient_D (pesel_klienta, czy_nowy, data_wpisania, data_wygasniecia)
 SELECT 
     sc.client_pesel,
     sc.czy_nowy,
     GETDATE(), -- for new records, set entry date to now
     NULL -- for new records, expiration date is null
 FROM SourceClients sc
-LEFT JOIN sample_warehouse.dbo.Klient_D dwh
+LEFT JOIN warehouse_travel_agency.dbo.Klient_D dwh
     ON sc.client_pesel = dwh.pesel_klienta 
     AND dwh.data_wygasniecia IS NULL
 WHERE dwh.pesel_klienta IS NULL -- new client
