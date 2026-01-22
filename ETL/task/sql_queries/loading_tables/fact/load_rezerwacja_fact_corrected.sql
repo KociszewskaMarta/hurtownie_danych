@@ -43,14 +43,14 @@ INSERT INTO Rezerwacja_F (
     kwota_transakcji,
     cena_turnusu
 )
-SELECT DISTINCT
+SELECT
     ISNULL(wyc.id_wycieczki, (SELECT TOP 1 id_wycieczki FROM Wycieczka_D WHERE nazwa_wycieczki = 'UNKNOWN')),
     ISNULL(kamp.id_nazwy_kampanii, (SELECT TOP 1 id_nazwy_kampanii FROM Nazwa_kampanii_D WHERE nazwa_kampanii = 'UNKNOWN')),
     ISNULL(kl.id_klienta, (SELECT TOP 1 id_klienta FROM Klient_D WHERE pesel_klienta = 'UNKNOWN')),
     ISNULL(dat.id_daty, (SELECT TOP 1 id_daty FROM Data_D WHERE rok = 'UNK' AND miesiac = 'UNK' AND dzien = 'UNK')),
     ISNULL(junk.id_junk, (SELECT TOP 1 id_junk FROM Junk_D WHERE status_oplacenia = 'UNKNOWN')),
-    ISNULL(p.amount, 0) AS kwota_transakcji,  -- Jeśli brak płatności, wartość 0
-    te.price AS cena_turnusu
+    SUM(ISNULL(p.amount, 0)) AS kwota_transakcji,  -- Sumujemy płatności dla duplikatów
+    MAX(te.price) AS cena_turnusu  -- Bierzemy max cenę (powinny być takie same)
 FROM database_travel_agency.dbo.Reservation r
 LEFT JOIN database_travel_agency.dbo.ReservationClient rc 
     ON rc.reservation_id = r.reservation_id
@@ -87,6 +87,12 @@ LEFT JOIN Junk_D junk
         ELSE 'Nie'
     END
 WHERE rc.reservation_id IS NOT NULL
+GROUP BY 
+    wyc.id_wycieczki,
+    kamp.id_nazwy_kampanii,
+    kl.id_klienta,
+    dat.id_daty,
+    junk.id_junk
 GO
 
 -- Sprawdzenie liczby załadowanych rekordów

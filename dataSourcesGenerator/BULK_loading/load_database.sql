@@ -28,6 +28,7 @@ WITH (
 BULK INSERT dbo.Reservation FROM 'C:\Users\kocis\Desktop\SEM_5\Hurtownie_danych\Labolatoria\repo\hurtownie_danych\dataSourcesGenerator\python_scripts\generating_data\generating_bulk_files\data\reservations.bulk'
 WITH (
     FIELDTERMINATOR = '|',
+	ROWTERMINATOR = '\n',
     CODEPAGE = '65001',
     DATAFILETYPE = 'char'
 );
