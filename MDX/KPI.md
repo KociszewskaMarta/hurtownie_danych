@@ -1,11 +1,5 @@
 # KPI i zapytania MDX dla hurtowni danych
 
-[x] calculated member
-[] where clause
-[x] mdx function operating on dimension hierarchy (e.g., PrevMember, NextMember)
-[x] numerical operation (e.g., +, -, *, /)
-[] TOP or BOTTOM function
-
 ## 1. KPI: Liczba rezerwacji – wzrost o co najmniej 0,5% miesięcznie
 
 Wykorzystuje: funkcję hierarchii (PrevMember), operację numeryczną (*1,005)

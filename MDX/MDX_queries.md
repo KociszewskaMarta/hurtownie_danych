@@ -2,7 +2,7 @@
 
 Użyte kolumny z hurtowni: Rezerwacja_F (id_wycieczki, id_junk), Wycieczka_D (typ), Data_D (miesiac), Junk_D (status_oplacenia)
 
-Użycie: WHERE (opłacona), MDX function na hierarchii, operacja COUNT
+Użycie: WHERE (opłacona), operacja COUNT
 
 ```mdx
 SELECT
@@ -34,7 +34,7 @@ WHERE ([Junk D].[Status Oplacenia].&[Tak])
 
 Użyte kolumny z hurtowni: Rezerwacja_F (id_wycieczki), Wycieczka_D (destynacja), Data_D (miesiac)
 
-Użycie: MDX function na hierarchii (Members), operacja COUNT
+Użycie:
 
 ```mdx
 SELECT
@@ -90,8 +90,6 @@ FROM [Warehouse Travel Agency]
 WHERE ([Junk D].[Status Oplacenia].&[Tak])
 ```
 
-Użycie: TopCount (funkcja Top), WHERE clause, MDX function na hierarchii (Members)
-
 ## 6. Które kampanie reklamowe przyniosły najwyższy współczynnik konwersji (Conversion Rate)
 
 Użyte kolumny z hurtowni: Kampania_F (liczba_rezerwacji), Nazwa_kampanii_D (nazwa_kampanii)
@@ -141,7 +139,7 @@ FROM [Warehouse Travel Agency]
 
 Użyte kolumny z hurtowni: Kampania_F (koszt_kampanii, id_wycieczki), Nazwa_kampanii_D (nazwa_kampanii)
 
-Użycie: WHERE clause, MDX function na hierarchii (Members), operacja dzielenia
+Użycie: MDX function na hierarchii
 
 ```mdx
 SELECT
@@ -154,7 +152,7 @@ FROM [Warehouse Travel Agency]
 
 Użyte kolumny z hurtowni: Wycieczka_D (typ), Kampania_F (wspolczynnik_konwersji)
 
-Użycie: WHERE clause, MDX function na hierarchii (Members)
+Użycie: MDX function na hierarchii (Members)
 
 ```mdx
 SELECT
