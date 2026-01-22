@@ -2,45 +2,45 @@
 
 Użyte kolumny z hurtowni: Rezerwacja_F (id_wycieczki, id_junk), Wycieczka_D (typ), Data_D (miesiac), Junk_D (status_oplacenia)
 
-Użycie: WHERE (opłacona), MDX function na hierarchii 
+Użycie: WHERE (opłacona), MDX function na hierarchii, operacja COUNT
 
-```
-([Wycieczka_D].[typ].Members), operacja COUNT
+```mdx
 SELECT
-  [Measures].[Liczba Sprzedanych Wycieczek] ON COLUMNS,
-  [Wycieczka_D].[typ].Members ON ROWS
-FROM [Rezerwacja_F]
-WHERE ([Junk_D].[status_oplacenia].&[Tak], [Data_D].[Miesiac].CurrentMember, [Data_D].[Miesiac].CurrentMember.PrevMember)``
+  [Measures].[Rezerwacja F Count] ON COLUMNS,
+  [Wycieczka D].[Typ].[Typ].Members ON ROWS
+FROM [Warehouse Travel Agency]
+WHERE ([Junk D].[Status Oplacenia].&[Tak])
 ```
 
-## 2. Porównanie średniej ceny sprzedanych turnusów
+## 2. Porównanie średniej ceny sprzedanych turnusów w bieżącym i poprzednim miesiącu
 
 Użyte kolumny z hurtowni: Rezerwacja_F (cena_turnusu, id_junk), Data_D (miesiac), Junk_D (status_oplacenia)
 
-Użycie: calculated member ([Measures].[Średnia Cena Turnusu]), WHERE (opłacona), MDX function na hierarchii ([Data_D].[Miesiac].CurrentMember), operacja Avg
+Użycie: calculated member, WHERE (opłacona), MDX function na hierarchii (PrevMember)
 
-```
-WITH MEMBER [Measures].[Średnia Cena Turnusu] AS
-  Avg([Rezerwacja_F].[id_wycieczki].Members, [Measures].[cena_turnusu])
+```mdx
+WITH 
+MEMBER [Measures].[Cena Poprzedni Miesiac] AS
+  ([Measures].[Średnia Cena Turnusu], [Data D].[Miesiac].CurrentMember.PrevMember)
+
 SELECT
-  [Measures].[Średnia Cena Turnusu] ON COLUMNS,
-  ([Data_D].[Miesiac].CurrentMember, [Data_D].[Miesiac].CurrentMember.PrevMember) ON ROWS
-FROM [Rezerwacja_F]
-WHERE ([Junk_D].[status_oplacenia].&[Tak])
+  {[Measures].[Średnia Cena Turnusu], [Measures].[Cena Poprzedni Miesiac]} ON COLUMNS,
+  [Data D].[Hierarchy].[Miesiac].Members ON ROWS
+FROM [Warehouse Travel Agency]
+WHERE ([Junk D].[Status Oplacenia].&[Tak])
 ```
 
 ## 3. Analiza liczby zarezerwowanych wycieczek według destynacji (kraje / regiony)
 
 Użyte kolumny z hurtowni: Rezerwacja_F (id_wycieczki), Wycieczka_D (destynacja), Data_D (miesiac)
 
-Użycie: MDX function na hierarchii ([Wycieczka_D].[destynacja].Members), operacja COUNT
+Użycie: MDX function na hierarchii (Members), operacja COUNT
 
-```
+```mdx
 SELECT
-  [Measures].[Liczba Rezerwacji] ON COLUMNS,
-  [Wycieczka_D].[destynacja].Members ON ROWS
-FROM [Rezerwacja_F]
-WHERE ([Data_D].[Miesiac].CurrentMember, [Data_D].[Miesiac].CurrentMember.PrevMember)
+  [Measures].[Rezerwacja F Count] ON COLUMNS,
+  [Wycieczka D].[Destynacja].[Destynacja].Members ON ROWS
+FROM [Warehouse Travel Agency]
 ```
 
 ## 4. Porównanie liczby nowych klientów (pierwsza rezerwacja) i powracających klientów
@@ -48,106 +48,117 @@ WHERE ([Data_D].[Miesiac].CurrentMember, [Data_D].[Miesiac].CurrentMember.PrevMe
 Użyte kolumny z hurtowni: Klient_D (czy_nowy), Rezerwacja_F (id_klienta), Data_D (miesiac)
 
 Użycie: calculated member ([Measures].[Liczba Nowych Klientów], [Measures].[Liczba Powracających Klientów]), operacja COUNT, FILTER
+, WHERE clause, operacja COUNT
 
-```
-WITH MEMBER [Measures].[Liczba Nowych Klientów] AS
-  COUNT(FILTER([Klient_D].[id_klienta].Members, [Klient_D].[czy_nowy] = "Tak"))
-WITH MEMBER [Measures].[Liczba Powracających Klientów] AS
-  COUNT(FILTER([Klient_D].[id_klienta].Members, [Klient_D].[czy_nowy] = "Nie"))
+```mdx
+WITH 
+MEMBER [Measures].[Liczba Nowych Klientow] AS
+  ([Measures].[Rezerwacja F Count], [Klient D].[Czy Nowy].&[Tak])
+
+MEMBER [Measures].[Liczba Powracajacych Klientow] AS
+  ([Measures].[Rezerwacja F Count], [Klient D].[Czy Nowy].&[Nie])
+
 SELECT
-  {[Measures].[Liczba Nowych Klientów], [Measures].[Liczba Powracających Klientów]} ON COLUMNS,
-  ([Data_D].[Miesiac].CurrentMember, [Data_D].[Miesiac].CurrentMember.PrevMember) ON ROWS
-FROM [Rezerwacja_F]
+  {[Measures].[Liczba Nowych Klientow], [Measures].[Liczba Powracajacych Klientow]} ON COLUMNS,
+  [Data D].[Hierarchy].[Miesiac].Members ON ROWS
+FROM [Warehouse Travel Agency]
 ```
+
+W przypadku braku nowych klientów w danym miesiącu, wynik będzie NULL dla [Measures].[Liczba Nowych Klientow].
 
 ## 5. Porównanie całkowitych przychodów z rezerwacji w bieżącym i poprzednim miesiącu
 
 Użyte kolumny z hurtowni: Rezerwacja_F (kwota_transakcji, id_junk), Data_D (miesiac), Junk_D (status_oplacenia)
 
-Użycie: calculated member ([Measures].[Suma Przychodu], [Measures].[Średnia Wartość Rezerwacji]), WHERE (opłacona), operacje SUM, Avg
+Użycie: calculated member, WHERE (opłacona), MDX function na hierarchii (PrevMember), operacja odejmowania
 
-```
-WITH MEMBER [Measures].[Suma Przychodu] AS
-  SUM([Rezerwacja_F].[id_wycieczki].Members, [Measures].[kwota_transakcji])
-WITH MEMBER [Measures].[Średnia Wartość Rezerwacji] AS
-  Avg([Rezerwacja_F].[id_wycieczki].Members, [Measures].[kwota_transakcji])
+```mdx
+WITH 
+MEMBER [Measures].[Przychod Poprzedni Miesiac] AS
+  ([Measures].[Kwota Transakcji], [Data D].[Miesiac].CurrentMember.PrevMember)
+
+MEMBER [Measures].[Zmiana Przychodu] AS
+  [Measures].[Kwota Transakcji] - [Measures].[Przychod Poprzedni Miesiac]
+
 SELECT
-  {[Measures].[Suma Przychodu], [Measures].[Średnia Wartość Rezerwacji]} ON COLUMNS,
-  ([Data_D].[Miesiac].CurrentMember, [Data_D].[Miesiac].CurrentMember.PrevMember) ON ROWS
-FROM [Rezerwacja_F]
-WHERE ([Junk_D].[status_oplacenia].&[Tak])
+  {[Measures].[Kwota Transakcji], 
+   [Measures].[Przychod Poprzedni Miesiac],
+   [Measures].[Zmiana Przychodu],
+   [Measures].[Srednia Wartość Rezerwacji]} ON COLUMNS,
+  [Data D].[Hierarchy].[Miesiac].Members ON ROWS
+FROM [Warehouse Travel Agency]
+WHERE ([Junk D].[Status Oplacenia].&[Tak])
 ```
 
-## 6. Które kampanie reklamowe (Campaign Name) przyniosły najwyższy współczynnik konwersji
+Użycie: TopCount (funkcja Top), WHERE clause, MDX function na hierarchii (Members)
 
-Użyte kolumny z hurtowni: Kampania_F (wspolczynnik_konwersji), Nazwa_kampanii_D (nazwa_kampanii), Data_D (miesiac)
+## 6. Które kampanie reklamowe przyniosły najwyższy współczynnik konwersji (Conversion Rate)
+
+Użyte kolumny z hurtowni: Kampania_F (liczba_rezerwacji), Nazwa_kampanii_D (nazwa_kampanii)
 
 Użycie: TopCount (funkcja Top), WHERE clause, MDX function na hierarchii ([Nazwa_kampanii_D].[nazwa_kampanii].Members)
 
-```
+```mdx
 SELECT
-  [Measures].[wspolczynnik_konwersji] ON COLUMNS,
-  TopCount([Nazwa_kampanii_D].[nazwa_kampanii].Members, 3, [Measures].[wspolczynnik_konwersji]) ON ROWS
-FROM [Kampania_F]
-WHERE ([Data_D].[Miesiac].CurrentMember)
+  [Measures].[Wspolczynnik Konwersji] ON COLUMNS,
+  TOPCOUNT([Nazwa Kampanii D].[Nazwa Kampanii].[Nazwa Kampanii].Members, 5, [Measures].[Wspolczynnik Konwersji]) ON ROWS
+FROM [Warehouse Travel Agency]
 ```
 
-## 7. Jak zmienia się koszt pozyskania klienta (CAC) w poszczególnych kampaniach
+## 7. Jak zmienia się koszt na kliknięcie w poszczególnych kampaniach w ujęciu miesięcznym?
 
-Użyte kolumny z hurtowni: Kampania_F (koszt_kampanii, wspolczynnik_konwersji), Nazwa_kampanii_D (nazwa_kampanii), Data_D (miesiac)
+Użyte kolumny z hurtowni: Kampania_F (koszt_klikniecia), Nazwa_kampanii_D (nazwa_kampanii), Data_D (miesiac)
 
-Użycie: calculated member ([Measures].[Koszt Pozyskania Klienta]), WHERE clause, operacja dzielenia
+Użycie: WHERE clause, MDX function na hierarchii (Members), CROSSJOIN, NONEMPTY
 
-```
-WITH MEMBER [Measures].[Koszt Pozyskania Klienta] AS
-  [Measures].[koszt_kampanii] / [Measures].[wspolczynnik_konwersji]
+```mdx
 SELECT
-  [Measures].[Koszt Pozyskania Klienta] ON COLUMNS,
-  [Nazwa_kampanii_D].[nazwa_kampanii].Members ON ROWS
-WHERE ([Data_D].[Miesiac].CurrentMember)
-FROM [Kampania_F]
+  [Measures].[Koszt Na Klikniecie] ON COLUMNS,
+  NONEMPTY(
+    CROSSJOIN(
+      [Nazwa Kampanii D].[Nazwa Kampanii].[Nazwa Kampanii].Members,
+      [Data D].[Hierarchy].[Miesiac].Members
+    )
+  ) ON ROWS
+FROM [Warehouse Travel Agency]
+WHERE ([Data D].[Rok].&[2025])
 ```
 
-## 8. Jakie słowa kluczowe (Keyword) generują największą liczbę kliknięć i najwyższy współczynnik konwersji
+## 8. Jakie słowa kluczowe (Keyword) generują największą liczbę kliknięć i najwyższy współczynnik konwersji?
 
-Użyte kolumny z hurtowni: Kampania_F (liczba_klikniec, wspolczynnik_konwersji), Slowo_kluczowe_D (slowo_kluczowe), Data_D (miesiac)
+Użyte kolumny z hurtowni: Keyword_D (keyword), Kampania_F (liczba_klikniec, wspolczynnik_konwersji)
 
-Użycie: TopCount (funkcja Top), MDX function na hierarchii ([Slowo_kluczowe_D].[slowo_kluczowe].Members)
+Użycie: TopCount (funkcja Top), MDX function na hierarchii ([Keyword D].[Keyword].[Keyword].Members)
 
-```
+```mdx
 SELECT
-  {[Measures].[liczba_klikniec], [Measures].[wspolczynnik_konwersji]} ON COLUMNS,
-  TopCount([Slowo_kluczowe_D].[slowo_kluczowe].Members, 3, [Measures].[liczba_klikniec]) ON ROWS
-FROM [Kampania_F]
-WHERE ([Data_D].[Miesiac].CurrentMember)
+  [Measures].[Liczba Klikniec] ON COLUMNS,
+  TOPCOUNT([Slowo Kluczowe D].[Slowo Kluczowe].[Slowo Kluczowe].Members, 5, [Measures].[Wspolczynnik Konwersji]) ON ROWS
+FROM [Warehouse Travel Agency]
 ```
 
-## 9. Które kampanie reklamowe generują najwyższe koszty w przeliczeniu na wycieczkę
+## 9. Które kampanie reklamowe generują najwyższe koszty w przeliczeniu na wycieczkę (Id wycieczki)?
 
-Użyte kolumny z hurtowni: Kampania_F (koszt_kampanii, id_wycieczki), Nazwa_kampanii_D (nazwa_kampanii), Data_D (miesiac)
+Użyte kolumny z hurtowni: Kampania_F (koszt_kampanii, id_wycieczki), Nazwa_kampanii_D (nazwa_kampanii)
 
-Użycie: calculated member ([Measures].[Koszt Na Wycieczkę]), TopCount (funkcja Top), operacja dzielenia
+Użycie: WHERE clause, MDX function na hierarchii (Members), operacja dzielenia
 
-```
-WITH MEMBER [Measures].[Koszt Na Wycieczkę] AS
-  [Measures].[koszt_kampanii] / COUNT([Kampania_F].[id_wycieczki].Members)
+```mdx
 SELECT
-  [Measures].[Koszt Na Wycieczkę] ON COLUMNS,
-  TopCount([Nazwa_kampanii_D].[nazwa_kampanii].Members, 3, [Measures].[Koszt Na Wycieczkę]) ON ROWS
-FROM [Kampania_F]
-WHERE ([Data_D].[Miesiac].CurrentMember)
+  [Measures].[Koszt Kampanii] ON COLUMNS,
+  [Nazwa Kampanii D].[Nazwa Kampanii].[Nazwa Kampanii].Members ON ROWS
+FROM [Warehouse Travel Agency]
 ```
 
-## 10. Które typy wycieczek (relaks, aktywnie, rodzinnie, city-break) generują najwyższy współczynnik konwersji (Conversion Rate) w Google Ads
+## 10. Które typy wycieczek (relaks, aktywnie, rodzinnie, city-break) generują najwyższy współczynnik konwersji
 
-Użyte kolumny z hurtowni: Kampania_F (wspolczynnik_konwersji, id_wycieczki), Wycieczka_D (typ), Data_D (miesiac)
+Użyte kolumny z hurtowni: Wycieczka_D (typ), Kampania_F (wspolczynnik_konwersji)
 
-Użycie: TopCount (funkcja Top), MDX function na hierarchii ([Wycieczka_D].[typ].Members)
+Użycie: WHERE clause, MDX function na hierarchii (Members)
 
-```
+```mdx
 SELECT
-  [Measures].[wspolczynnik_konwersji] ON COLUMNS,
-  TopCount([Wycieczka_D].[typ].Members, 3, [Measures].[wspolczynnik_konwersji]) ON ROWS
-FROM [Kampania_F]
-WHERE ([Data_D].[Miesiac].CurrentMember)
+  [Measures].[Wspolczynnik Konwersji] ON COLUMNS,
+  [Wycieczka D].[Typ].[Typ].Members ON ROWS
+FROM [Warehouse Travel Agency]
 ```
