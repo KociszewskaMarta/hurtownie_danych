@@ -5,7 +5,7 @@ import secrets
 import string
 from typing import Any
 
-number_of_tour = 30
+number_of_tour = 60
 
 HEADER = [
     "Date",
@@ -29,7 +29,18 @@ CAMPAIGNS=[
     "Egzotyczne destynacje",
     "Relaks i wellness",
     "Wakacje dla seniorów",
-    "Wakacje z dziećmi"
+    "Wakacje z dziećmi",
+    "Promocje sezonowe",
+    "Podróże last minute",
+    "Podróże all inclusive",
+    "City Breaks",
+    "Ekoturystyka",
+    "Kultura i historia",
+    "Gastronomia i wino",
+    "Sporty wodne",
+    "Turystyka górska",
+    "Safari i dzika przyroda",
+    "Rejsy i żeglarstwo"
 ]
 
 AD_GROUPS = [
@@ -50,7 +61,18 @@ KEYWORDS_FOR_CAMPAIGNS = [
     ["egzotyczne destynacje", "przygoda", "eksploracja", "dzika przyroda", "plaże", "nieodkryte miejsca"], # Egzotyczne destynacje
     ["relaks i wellness", "dla seniorów", "joga", "spa", "zdrowie"], # Relaks i wellness
     ["dla seniorów", "relaks i wellness", "spokojne wakacje"], # Wakacje dla seniorów
-    ["dla dzieci", "rodzinne wakacje", "animacje dla dzieci"] # Wakacje z dziećmi
+    ["dla dzieci", "rodzinne wakacje", "animacje dla dzieci"], # Wakacje z dziećmi
+    ["promocje sezonowe", "oferty specjalne", "zniżki"], # Promocje sezonowe
+    ["last minute", "oferty specjalne", "szybkie rezerwacje"], # Podróże last minute
+    ["all inclusive", "pakiety wakacyjne", "bez trosk"], # Podróże all inclusive
+    ["city breaks", "krótkie wycieczki", "zwiedzanie miast"], # City Breaks
+    ["ekoturystyka", "zielone podróże", "natura"], # Ekoturystyka
+    ["kultura i historia", "zwiedzanie zabytków", "muzea"], # Kultura i historia
+    ["gastronomia i wino", "kulinarne podróże", "degustacje"], # Gastronomia i wino
+    ["sporty wodne", "nurkowanie", "żeglarstwo"], # Sporty wodne
+    ["turystyka górska", "wędrówki", "trekking"], # Turystyka górska
+    ["safari", "dzika przyroda", "afrykańskie podróże"], # Safari i dzika przyroda
+    ["rejsy", "żeglarstwo", "podróże morskie"] # Rejsy i żeglarstwo
 ]
 
 def random_date(start: datetime, end: datetime) -> datetime:
@@ -105,7 +127,7 @@ def extract_year_from_date(date_str: str) -> int:
 if __name__ == "__main__":
     existing_ids = set()
     rows=[]
-    for _ in range(1000):
+    for _ in range(500):
         date = random_date(datetime.datetime(2015, 1, 1), datetime.datetime(2024, 12, 31)).strftime("%Y-%m-%d")
         campaign_name = random.choice(CAMPAIGNS)
         ad_group = f'{random.choice(AD_GROUPS)+" "+str(extract_year_from_date(date))}'
