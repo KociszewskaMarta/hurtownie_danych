@@ -1,4 +1,4 @@
-﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="b4c32d0f-af35-4e5a-b7a6-de23b1692342" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="f203942a-9362-44ee-9cd6-0c5cd5561104" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Sample Warehouse</ID>
   <Name>Sample Warehouse</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -8,7 +8,7 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="18" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="1998" scrolltop="-1691" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="6112" y="17198" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="36" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="1998" scrolltop="-1691" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="7355" y="7805" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
               <ddsxmlobjectstreamwrapper binary="01ee0000900144420100065461686f6d61" />
             </font>
@@ -19,7 +19,7 @@
           <layoutmanager>
             <ddsxmlobj />
           </layoutmanager>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Slowo_kluczowe_D" left="8978" top="6395" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3969" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Slowo_kluczowe_D" left="8978" top="6395" logicalid="18" controlid="1" masterid="0" hint1="0" hint2="0" width="3969" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobjectstreaminitwrapper binary="000e0000810f000057070000" />
             </control>
@@ -30,7 +30,7 @@
             </layoutobject>
             <shape groupshapeid="0" groupnode="0" />
           </ddscontrol>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Junk_D" left="6062" top="17069" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="3334" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Junk_D" left="6062" top="17069" logicalid="19" controlid="2" masterid="0" hint1="0" hint2="0" width="3334" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobjectstreaminitwrapper binary="000e0000060d000057070000" />
             </control>
@@ -41,7 +41,7 @@
             </layoutobject>
             <shape groupshapeid="0" groupnode="0" />
           </ddscontrol>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Kampania_F" left="5833" top="0" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="4207" height="3995" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Kampania_F" left="5833" top="0" logicalid="20" controlid="3" masterid="0" hint1="0" hint2="0" width="4207" height="3995" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobjectstreaminitwrapper binary="000e00006f1000009b0f0000" />
             </control>
@@ -52,7 +52,7 @@
             </layoutobject>
             <shape groupshapeid="0" groupnode="0" />
           </ddscontrol>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Wycieczka_D" left="20" top="635" logicalid="4" controlid="4" masterid="0" hint1="0" hint2="0" width="3413" height="2725" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Wycieczka_D" left="20" top="635" logicalid="21" controlid="4" masterid="0" hint1="0" hint2="0" width="3413" height="2725" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobjectstreaminitwrapper binary="000e0000550d0000a50a0000" />
             </control>
@@ -63,7 +63,7 @@
             </layoutobject>
             <shape groupshapeid="0" groupnode="0" />
           </ddscontrol>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Data_D" left="12440" top="423" logicalid="5" controlid="5" masterid="0" hint1="0" hint2="0" width="3000" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Data_D" left="12440" top="423" logicalid="22" controlid="5" masterid="0" hint1="0" hint2="0" width="3000" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobjectstreaminitwrapper binary="000e0000b80b00004d0c0000" />
             </control>
@@ -74,7 +74,7 @@
             </layoutobject>
             <shape groupshapeid="0" groupnode="0" />
           </ddscontrol>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Klient_D" left="11955" top="11097" logicalid="6" controlid="6" masterid="0" hint1="0" hint2="0" width="3466" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Klient_D" left="11955" top="11097" logicalid="23" controlid="6" masterid="0" hint1="0" hint2="0" width="3466" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobjectstreaminitwrapper binary="000e00008a0d00004d0c0000" />
             </control>
@@ -85,7 +85,7 @@
             </layoutobject>
             <shape groupshapeid="0" groupnode="0" />
           </ddscontrol>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Nazwa_kampanii_D" left="2927" top="6395" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="3651" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Nazwa_kampanii_D" left="2927" top="6395" logicalid="24" controlid="7" masterid="0" hint1="0" hint2="0" width="3651" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobjectstreaminitwrapper binary="000e0000430e000057070000" />
             </control>
@@ -96,7 +96,7 @@
             </layoutobject>
             <shape groupshapeid="0" groupnode="0" />
           </ddscontrol>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Rezerwacja_F" left="5904" top="10674" logicalid="8" controlid="8" masterid="0" hint1="0" hint2="0" width="3651" height="3995" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Rezerwacja_F" left="5904" top="10674" logicalid="25" controlid="8" masterid="0" hint1="0" hint2="0" width="3651" height="3995" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobjectstreaminitwrapper binary="000e0000430e00009b0f0000" />
             </control>
@@ -107,7 +107,7 @@
             </layoutobject>
             <shape groupshapeid="0" groupnode="0" />
           </ddscontrol>
-          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="8186" top="3695" logicalid="9" controlid="9" masterid="0" hint1="0" hint2="0" width="3176" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="8186" top="3695" logicalid="26" controlid="9" masterid="0" hint1="0" hint2="0" width="3176" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobj>
                 <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -127,7 +127,7 @@
               <point x="8486" y="3995" />
             </connector>
           </ddscontrol>
-          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="7330" top="14369" logicalid="10" controlid="10" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="7330" top="14369" logicalid="27" controlid="10" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobj>
                 <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -145,7 +145,7 @@
               <point x="7729" y="14669" />
             </connector>
           </ddscontrol>
-          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="9740" top="1598" logicalid="11" controlid="11" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="9740" top="1598" logicalid="28" controlid="11" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobj>
                 <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -163,7 +163,7 @@
               <point x="10040" y="1997" />
             </connector>
           </ddscontrol>
-          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="4353" top="3695" logicalid="12" controlid="12" masterid="0" hint1="0" hint2="0" width="2783" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="4353" top="3695" logicalid="29" controlid="12" masterid="0" hint1="0" hint2="0" width="2783" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobj>
                 <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -183,7 +183,7 @@
               <point x="6836" y="3995" />
             </connector>
           </ddscontrol>
-          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="3133" top="1598" logicalid="13" controlid="13" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="3133" top="1598" logicalid="30" controlid="13" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobj>
                 <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -201,7 +201,7 @@
               <point x="5833" y="1997" />
             </connector>
           </ddscontrol>
-          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="1327" top="2861" logicalid="14" controlid="14" masterid="0" hint1="0" hint2="0" width="5602" height="8113" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="1327" top="2861" logicalid="31" controlid="14" masterid="0" hint1="0" hint2="0" width="5602" height="8113" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobj>
                 <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -221,7 +221,7 @@
               <point x="6629" y="10674" />
             </connector>
           </ddscontrol>
-          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="9079" top="3073" logicalid="15" controlid="15" masterid="0" hint1="0" hint2="0" width="5261" height="7901" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="9079" top="3073" logicalid="32" controlid="15" masterid="0" hint1="0" hint2="0" width="5261" height="7901" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobj>
                 <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -241,7 +241,7 @@
               <point x="9379" y="10674" />
             </connector>
           </ddscontrol>
-          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="9255" top="12272" logicalid="16" controlid="16" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="9255" top="12272" logicalid="33" controlid="16" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobj>
                 <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -259,7 +259,7 @@
               <point x="9555" y="12671" />
             </connector>
           </ddscontrol>
-          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="4353" top="7775" logicalid="17" controlid="17" masterid="0" hint1="0" hint2="0" width="3676" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="4353" top="7775" logicalid="34" controlid="17" masterid="0" hint1="0" hint2="0" width="3676" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobj>
                 <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -318,116 +318,116 @@
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
   <Dimensions>
-    <Dimension dwd:design-time-name="e2e3edc6-37c0-4b0e-8509-674d48639d24">
+    <Dimension dwd:design-time-name="7f302b0b-6cfb-434a-a2ab-9aee964a8f1b">
       <ID>Data D</ID>
       <Name>Data D</Name>
       <DimensionID>Data D</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="17b76a0d-adb2-4b7a-baf7-4c81de50443d">
+        <Attribute dwd:design-time-name="ad1cee9f-8e07-4233-af01-db018d2443ba">
           <AttributeID>Id Daty</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="2db87c23-16f6-4b74-9a69-efd0f8165845">
+        <Attribute dwd:design-time-name="7cc52e5e-e89f-4d7b-9363-cbfb2469d193">
           <AttributeID>Rok</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="9e8d8917-24c0-430e-8457-0380a8423504">
+        <Attribute dwd:design-time-name="5c62fd3d-320f-4eeb-b3ea-9921c8ef4b32">
           <AttributeID>Pora Roku</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="8787e1d7-34a3-4659-bd34-abce8551b47f">
+        <Attribute dwd:design-time-name="4ca0bd33-81ce-4db8-93e6-e95a79edfd7a">
           <AttributeID>Miesiac</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="662b37e2-0da7-4d7a-b69c-1768defe7a58">
+        <Attribute dwd:design-time-name="984058d2-80b6-49aa-bfe7-df4cd496ed90">
           <AttributeID>Dzien</AttributeID>
         </Attribute>
       </Attributes>
       <Hierarchies>
-        <Hierarchy dwd:design-time-name="0d67043a-1aee-4118-9023-1832b4f00416">
+        <Hierarchy dwd:design-time-name="440496c7-f8dd-42e7-9178-e3235723f24f">
           <HierarchyID>Hierarchy</HierarchyID>
         </Hierarchy>
       </Hierarchies>
     </Dimension>
-    <Dimension dwd:design-time-name="96905451-5c6c-4060-8553-17e03dfa7d4e">
+    <Dimension dwd:design-time-name="4e4b28c1-6680-4977-9722-1a21d6513852">
       <ID>Nazwa Kampanii D</ID>
       <Name>Nazwa Kampanii D</Name>
       <DimensionID>Nazwa Kampanii D</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="31621e38-f117-4843-b6c4-26501679bb53">
+        <Attribute dwd:design-time-name="6dce5478-37d2-4c72-aafa-3147c2d69594">
           <AttributeID>Id Nazwy Kampanii</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="8485efaa-7e05-4a1f-ba32-75fbc453906f">
+        <Attribute dwd:design-time-name="f8541eaf-5c1e-411d-b51a-3bbbd9d3914d">
           <AttributeID>Nazwa Kampanii</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="b12c66cb-2ac8-4a44-9e80-d1ce9f769c47">
+    <Dimension dwd:design-time-name="02cfd891-10fd-43b5-9dcc-61d300c22686">
       <ID>Wycieczka D</ID>
       <Name>Wycieczka D</Name>
       <DimensionID>Wycieczka D</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="af6e6538-edcc-4c0a-88ad-ab5cf2322c79">
+        <Attribute dwd:design-time-name="967a611a-d8b4-44fc-9255-addd020f1f0b">
           <AttributeID>Id Wycieczki</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="5cb42b64-08b8-4614-bb54-0686e7bc0764">
+        <Attribute dwd:design-time-name="af32b59c-5cfe-4e26-87e5-2b6361711118">
           <AttributeID>Nazwa Wycieczki</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="0df28b9a-c399-475f-ba36-f33da16b58d1">
+        <Attribute dwd:design-time-name="eda41f73-7479-414b-9557-8f475a0831e6">
           <AttributeID>Destynacja</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="9d780367-bba8-4f80-a913-69363ac54290">
+        <Attribute dwd:design-time-name="66da4da0-f6e0-4e14-80fc-71ad5ac3c1d8">
           <AttributeID>Typ</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="43503e4b-ade1-4eae-95e8-564eebdbcba1">
+    <Dimension dwd:design-time-name="b0abaefc-a6bd-4589-8cc2-b8cfb66d05ce">
       <ID>Slowo Kluczowe D</ID>
       <Name>Slowo Kluczowe D</Name>
       <DimensionID>Slowo Kluczowe D</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="d64db95f-21cf-45af-97e2-d5f0c4b230c2">
+        <Attribute dwd:design-time-name="b39e77bd-99b6-4b8d-b7d1-a1a04436a350">
           <AttributeID>Id Slowa Kluczowego</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="c5aec895-0267-46e4-8ced-1de0416fec93">
+        <Attribute dwd:design-time-name="c82c907c-8dda-48c1-825e-3f4f2841196e">
           <AttributeID>Slowo Kluczowe</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="3d610c67-1972-4648-9e4f-860f1092de29">
+    <Dimension dwd:design-time-name="282e85d7-1247-4340-aac3-ac463e4a442b">
       <ID>Junk D</ID>
       <Name>Junk D</Name>
       <DimensionID>Junk D</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="f69d17a5-2985-4c3d-ab94-6eafc3e7362e">
+        <Attribute dwd:design-time-name="8c7659ae-b125-417c-a329-73bb04722b0e">
           <AttributeID>Id Junk</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="dcac10a6-820e-49c0-8d8e-21345b0864b3">
+        <Attribute dwd:design-time-name="0f18e485-6dc2-4cfd-9f75-e4bafcc10677">
           <AttributeID>Status Oplacenia</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="b517a9c7-21a9-4028-8469-658f9fc02bbd">
+    <Dimension dwd:design-time-name="0478f2b0-8671-4053-8b80-c6179e7ddcbc">
       <ID>Klient D</ID>
       <Name>Klient D</Name>
       <DimensionID>Klient D</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="c3de093d-546a-4d49-930a-ea156a2891bb">
+        <Attribute dwd:design-time-name="a0cdd7cb-a2da-4528-9594-e5a6b4dbe9c4">
           <AttributeID>Id Klienta</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="7c9c34c6-5789-4fef-bb5d-dd5da764f9fc">
+        <Attribute dwd:design-time-name="a8d7676e-2f79-4ed8-b396-21ee1283691f">
           <AttributeID>Pesel Klienta</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="d69da704-0ef3-4672-9b47-c16fe5cfeb40">
+        <Attribute dwd:design-time-name="2d747bab-1b9f-4697-8761-bc33dc7a50ed">
           <AttributeID>Czy Nowy</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="0e327afb-e8df-4f5d-8d31-47de5d0c3a45">
+        <Attribute dwd:design-time-name="b3ba329f-3c27-467c-a57e-59f1cb5f36d3">
           <AttributeID>Data Wpisania</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="12f72d65-e15e-45d2-9f5f-fccc4b41897a">
+        <Attribute dwd:design-time-name="76ef0643-5d6f-4790-9aef-e7aadb1edfc9">
           <AttributeID>Data Wygasniecia</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
   </Dimensions>
   <MeasureGroups>
-    <MeasureGroup dwd:design-time-name="a11b12f2-2df0-4f7e-b3b3-436892043098">
+    <MeasureGroup dwd:design-time-name="7af9a394-ac21-4ad3-b1e5-fd8fbe1db415">
       <ID>Kampania F</ID>
       <Name>Kampania F</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -435,48 +435,48 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="70c3016b-d4d2-4e18-a181-2a1fcf731258">
+        <Measure dwd:design-time-name="6d99c4b0-b0b2-4dd2-82cc-ebf469dd3cef">
           <ID>Wspolczynnik Konwersji</ID>
           <Name>Wspolczynnik Konwersji</Name>
           <AggregateFunction>AverageOfChildren</AggregateFunction>
-          <Source dwd:design-time-name="ef4ba3ea-b6cc-4604-b5d9-a214b6dff6d9">
+          <Source dwd:design-time-name="8066f435-105b-41cd-acca-1533dcae68e1">
             <DataType>Double</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="7159304a-f85f-4f2a-a7ec-55317ec28585">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="9ee0ec6c-2aa3-4f9e-b3f3-42ff21a44de3">
               <TableID>dbo_Kampania_F</TableID>
               <ColumnID>wspolczynnik_konwersji</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="7872c751-84c2-49d4-8fc6-217a291723e6">
+        <Measure dwd:design-time-name="b60ecdf4-438f-4a64-bf3b-32040c8b4852">
           <ID>Koszt Kampanii</ID>
           <Name>Koszt Kampanii</Name>
-          <Source dwd:design-time-name="0ef05171-9954-4717-b71b-ce22b139dc37">
+          <Source dwd:design-time-name="4580ad17-0ff9-409a-b086-dc3799ed33df">
             <DataType>Double</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="e5c5454d-7594-469b-b4df-a6cea292ca2e">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b4f76b99-4647-4426-88bd-80ff02064d0b">
               <TableID>dbo_Kampania_F</TableID>
               <ColumnID>koszt_kampanii</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="509bbbfb-63b6-40a6-a77d-7f8d4ff53499">
+        <Measure dwd:design-time-name="a3dba792-45cc-4ea2-8ea7-a82450a9942e">
           <ID>Liczba Klikniec</ID>
           <Name>Liczba Klikniec</Name>
-          <Source dwd:design-time-name="a572ca19-5583-41a6-91c7-159607b4cb31">
+          <Source dwd:design-time-name="e761975c-eabe-4a65-a9f0-1220efba025b">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="b4bf4e77-6eb5-4b23-8bea-516d238c95ea">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="cb724c8a-b124-429e-8c8b-cdeca0db4bd3">
               <TableID>dbo_Kampania_F</TableID>
               <ColumnID>liczba_klikniec</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="d635f307-359e-4046-8427-9d7bf24b4653">
+        <Measure dwd:design-time-name="01cc3b19-fc83-4db3-907e-702fd6cea117">
           <ID>Kampania F Count</ID>
           <Name>Kampania F Count</Name>
           <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="26a97eeb-60e1-4680-aaf1-1afc622d15ee">
+          <Source dwd:design-time-name="c2397fb1-7941-4847-b7ea-34fe7a008c36">
             <DataType>Integer</DataType>
             <DataSize>4</DataSize>
-            <Source xsi:type="RowBinding" dwd:design-time-name="7c3dd99f-f058-47d5-afb9-a8eb83042281">
+            <Source xsi:type="RowBinding" dwd:design-time-name="05bd428e-14cd-4f7b-a1ed-707ffdb48e82">
               <TableID>dbo_Kampania_F</TableID>
             </Source>
           </Source>
@@ -485,15 +485,15 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="6128a728-2bb4-4c3a-8ebe-56d0b3cc8301">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ead3e3d4-550d-4139-b880-0e3be8836e5f">
           <CubeDimensionID>Data D</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="d47571c9-d876-4f4b-aab5-1fe1c6927b39">
+            <Attribute dwd:design-time-name="68fe51ad-71e9-442d-9e72-b841ee44863c">
               <AttributeID>Id Daty</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="0005dc31-d51c-4acc-9746-bdafeb76b140">
+                <KeyColumn dwd:design-time-name="b7d99cac-2a5d-4b94-80fe-ac6ad546bcc8">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="1c3027a4-332f-42cf-84fb-ebf2c523c3a4">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="f0637d5e-363a-4a94-8ad5-85c4184310f6">
                     <TableID>dbo_Kampania_F</TableID>
                     <ColumnID>id_daty</ColumnID>
                   </Source>
@@ -503,15 +503,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="c7b47be4-52d1-480b-b992-922046ce4ca4">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="f49f1209-c588-45e2-891d-a10266c110ea">
           <CubeDimensionID>Nazwa Kampanii D</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="673b0ff6-917f-44d2-a88f-3aaed2f3fd43">
+            <Attribute dwd:design-time-name="fd77e4a0-6723-4029-b7bf-58eee3d00f0f">
               <AttributeID>Id Nazwy Kampanii</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="5337be05-2f93-4941-88cc-075be1814969">
+                <KeyColumn dwd:design-time-name="f45efad3-52a9-411f-a491-42cd4d05ef57">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="b1448b57-2df5-4fa9-a066-a45ee36af012">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="72499af8-802c-4b78-9861-c5ce7350055a">
                     <TableID>dbo_Kampania_F</TableID>
                     <ColumnID>id_nazwy_kampanii</ColumnID>
                   </Source>
@@ -521,15 +521,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="4f6d33a3-47fb-4b68-a6e6-441d876801de">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ec735f7c-cee7-4222-9203-9a5160d473dd">
           <CubeDimensionID>Wycieczka D</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="19bab9c6-660c-4cfc-94fa-d435a79dd77d">
+            <Attribute dwd:design-time-name="6dd4a7c7-aa64-4fad-a520-c20c818276dd">
               <AttributeID>Id Wycieczki</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="077d8976-2955-4b66-bed8-1afbca7e6b7a">
+                <KeyColumn dwd:design-time-name="16acbddf-4396-4d91-b6a2-9325d7540ab9">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="033b4733-376f-404d-86a7-ff9552fdb4cf">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="8b67fcde-f6bf-4a51-8fd3-26b557afdcaf">
                     <TableID>dbo_Kampania_F</TableID>
                     <ColumnID>id_wycieczki</ColumnID>
                   </Source>
@@ -539,15 +539,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="5070666d-8305-4748-810c-2eb0c0e27259">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="636ae1d7-a39f-4db1-b55f-73b23d8ef812">
           <CubeDimensionID>Slowo Kluczowe D</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="ea5b7f1b-f626-4bc2-b9c9-86bd69a8f642">
+            <Attribute dwd:design-time-name="b3794fee-14e4-47ad-92d6-f1751b69f9b6">
               <AttributeID>Id Slowa Kluczowego</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="ee794966-3221-40cd-8356-5e4f1516576e">
+                <KeyColumn dwd:design-time-name="961f1d9b-774b-47c2-be39-7781456c6dfd">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="35cc9200-2d43-4c42-ab65-e6b062baaccd">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="674cbc5c-e28f-4010-a39e-02c26b17ec4d">
                     <TableID>dbo_Kampania_F</TableID>
                     <ColumnID>id_slowa_kluczowego</ColumnID>
                   </Source>
@@ -560,7 +560,7 @@
       </Dimensions>
       <Partitions />
     </MeasureGroup>
-    <MeasureGroup dwd:design-time-name="b359b62f-5d79-48b6-816f-385a1126a797">
+    <MeasureGroup dwd:design-time-name="b5c13bb9-a324-4594-9152-abb8e7d60e43">
       <ID>Rezerwacja F</ID>
       <Name>Rezerwacja F</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -568,36 +568,36 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="9fb84e96-02b2-458a-9c11-8f877beba3fd">
+        <Measure dwd:design-time-name="69365762-6d1d-432f-8c0c-f1c5025aa3d6">
           <ID>Kwota Transakcji</ID>
           <Name>Kwota Transakcji</Name>
-          <Source dwd:design-time-name="87c7a4db-0b57-480f-91db-aaffe21ee804">
+          <Source dwd:design-time-name="51ee8a19-7137-4f4b-9915-7ffe8c3b5ae0">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="238dc1a2-d232-4010-ab61-aa517e41d6c7">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="42b6c4ec-b7fc-42e7-b987-42785a50893a">
               <TableID>dbo_Rezerwacja_F</TableID>
               <ColumnID>kwota_transakcji</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="18fe95e6-b5fb-45ce-8f4f-8e22ff8044a8">
+        <Measure dwd:design-time-name="6b3486a9-fc7c-498f-a7e6-46a0d0c666c4">
           <ID>Cena Turnusu</ID>
           <Name>Cena Turnusu</Name>
-          <Source dwd:design-time-name="0d441bef-a5de-4aa2-8321-29ce59782e96">
+          <Source dwd:design-time-name="b7e567c7-41c5-4ad0-87e5-22af43295504">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="c193b973-29ac-4481-a92f-7bfabe83c8f8">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="512492e3-4d95-4447-8332-92e49e3d1830">
               <TableID>dbo_Rezerwacja_F</TableID>
               <ColumnID>cena_turnusu</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="79836d00-7013-482b-b170-c58f4dc43189">
+        <Measure dwd:design-time-name="de133f63-eb4d-46fc-b1fe-e953dab83cb0">
           <ID>Rezerwacja F Count</ID>
           <Name>Rezerwacja F Count</Name>
           <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="ecd77b54-df99-4810-a005-7e2df9a9e9df">
+          <Source dwd:design-time-name="bf123418-ae1a-4cc8-a75f-0c3a1fc3fd96">
             <DataType>Integer</DataType>
             <DataSize>4</DataSize>
-            <Source xsi:type="RowBinding" dwd:design-time-name="1527d34c-e63f-496d-bd06-7b6d58f6f2ae">
+            <Source xsi:type="RowBinding" dwd:design-time-name="0c627b94-95d2-4f69-b053-e74110dcdb22">
               <TableID>dbo_Rezerwacja_F</TableID>
             </Source>
           </Source>
@@ -606,15 +606,15 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="98a1d76d-8c5e-48e3-926a-b3a3d8c53b31">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="0834abe7-b981-4896-aa37-b26d66e34605">
           <CubeDimensionID>Junk D</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="aced682c-2a58-40a7-8483-4e15226a43ba">
+            <Attribute dwd:design-time-name="16075d41-eec3-4425-adf2-5170f3b5674c">
               <AttributeID>Id Junk</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="035d68ea-5259-48c6-a862-a08a46930b99">
+                <KeyColumn dwd:design-time-name="b046a599-0465-4b26-b33f-92c9b4b14b9e">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c03c2dc1-2e95-4e06-bf23-5e771e6d9ddc">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="2ba85459-554b-45c3-a52b-2011c6050e11">
                     <TableID>dbo_Rezerwacja_F</TableID>
                     <ColumnID>id_junk</ColumnID>
                   </Source>
@@ -624,15 +624,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="8475b52a-81c7-44f1-b41f-0e7356779bdc">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="9fb28c44-1407-4b82-8eca-0b70d76d4b9f">
           <CubeDimensionID>Data D</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="77a56de7-bc70-463f-a380-0de5e44d2673">
+            <Attribute dwd:design-time-name="e501df01-6181-4f21-9ea5-fef7a6111305">
               <AttributeID>Id Daty</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="58816bc7-9122-477d-9369-a848d34b62fb">
+                <KeyColumn dwd:design-time-name="21d4ba4c-7870-4aa0-bb8a-88f1a483713e">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="f0bb6f10-65a2-4b14-a0eb-c230d068ea38">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c12b5295-bddf-41c7-b2dd-3d30eb3a2022">
                     <TableID>dbo_Rezerwacja_F</TableID>
                     <ColumnID>id_daty</ColumnID>
                   </Source>
@@ -642,15 +642,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="0ab38613-c336-4c12-b4bd-cbd642bace4c">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ae3ff930-a7ce-4108-90a3-22bea2b02e33">
           <CubeDimensionID>Wycieczka D</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="c4097f79-1f5c-4925-a865-d718601a1754">
+            <Attribute dwd:design-time-name="a7a93edc-e593-4f8b-bc30-ca546791353d">
               <AttributeID>Id Wycieczki</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="4912d8d9-b589-4809-938d-70a50bdfa834">
+                <KeyColumn dwd:design-time-name="0fa6c95f-d87f-49cc-ab33-94fbd6689d74">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="fe4705da-a858-4a40-9dad-a5f3c1dd35ea">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="9c6390cd-276f-463c-9b38-3590c59292f6">
                     <TableID>dbo_Rezerwacja_F</TableID>
                     <ColumnID>id_wycieczki</ColumnID>
                   </Source>
@@ -660,15 +660,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="279a9177-51b9-46e7-bce1-5106ce78348d">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="72f99e09-6f5a-455a-a4d7-ff7a5a281347">
           <CubeDimensionID>Klient D</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="549bf9ef-a282-4473-84f9-bd28753e0723">
+            <Attribute dwd:design-time-name="099a1a89-544b-4773-becc-9da7116fa73a">
               <AttributeID>Id Klienta</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="0d907a54-dd10-419f-a79f-df1b7ac16cf8">
+                <KeyColumn dwd:design-time-name="fe16e84e-8dd2-42d2-89f4-5fc40edc20ca">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="70f419d5-e061-4d39-b72d-35d6bbf1368f">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e5eb40cd-3e5f-42b8-aebc-3ae782f5bcc2">
                     <TableID>dbo_Rezerwacja_F</TableID>
                     <ColumnID>id_klienta</ColumnID>
                   </Source>
@@ -678,15 +678,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="9f57e036-b881-4859-b045-0a0b69ff9c10">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="2fbd544e-9990-4089-b956-48a7a4911907">
           <CubeDimensionID>Nazwa Kampanii D</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="d49cd475-d0e0-4c04-a392-7c4acbfb3dcf">
+            <Attribute dwd:design-time-name="92808850-b485-4c5a-a3e0-6fc4d84776aa">
               <AttributeID>Id Nazwy Kampanii</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="1337cce3-2bc4-4b66-878e-e194478b21f5">
+                <KeyColumn dwd:design-time-name="d16fa181-2e04-45fe-8d3d-61eaf9616b3d">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="bd4a02d3-5459-41a3-935c-46d4593d6c7e">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="a3db998d-c68f-4bf8-8d71-84b34585e50c">
                     <TableID>dbo_Rezerwacja_F</TableID>
                     <ColumnID>id_nazwy_kampanii</ColumnID>
                   </Source>
@@ -700,11 +700,11 @@
       <Partitions />
     </MeasureGroup>
   </MeasureGroups>
-  <Source dwd:design-time-name="1c68f423-146f-4193-b31d-3692dafba1f4">
+  <Source dwd:design-time-name="4bfea603-ea8f-46d5-aecc-d6c57e263fa6">
     <DataSourceViewID>Sample Warehouse</DataSourceViewID>
   </Source>
   <MdxScripts>
-    <MdxScript dwd:design-time-name="d875113e-6226-4e05-8aca-295d49a5d165">
+    <MdxScript dwd:design-time-name="f75914c3-1010-428c-9548-0774a980231e">
       <ID>MdxScript</ID>
       <Name>MdxScript</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -733,4 +733,14 @@ VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Kampania F'  ; </Text>
       </Commands>
     </MdxScript>
   </MdxScripts>
+  <Kpis>
+    <Kpi dwd:design-time-name="b3035fb9-95bc-449e-8237-1f212baf4b93">
+      <ID>KPI</ID>
+      <Name>Liczba rezerwacji</Name>
+      <AssociatedMeasureGroupID>Rezerwacja F</AssociatedMeasureGroupID>
+      <Value>[Measures].[Rezerwacja F Count]</Value>
+      <TrendGraphic>Standard Arrow</TrendGraphic>
+      <StatusGraphic>Gauge - Ascending</StatusGraphic>
+    </Kpi>
+  </Kpis>
 </Cube>

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "HD_warehouse", "HD_warehouse.dwproj", "{F8B058B3-7ACA-41A9-92B3-25E2361EC680}"
 EndProject
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "Integration Services Project1", "..\Integration Services Project1\Integration Services Project1.dtproj", "{D38BBA0A-B69A-4E1F-90C3-9CE155790F37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
@@ -13,6 +15,8 @@ Global
 		{F8B058B3-7ACA-41A9-92B3-25E2361EC680}.Development|Default.ActiveCfg = Development
 		{F8B058B3-7ACA-41A9-92B3-25E2361EC680}.Development|Default.Build.0 = Development
 		{F8B058B3-7ACA-41A9-92B3-25E2361EC680}.Development|Default.Deploy.0 = Development
+		{D38BBA0A-B69A-4E1F-90C3-9CE155790F37}.Development|Default.ActiveCfg = Development
+		{D38BBA0A-B69A-4E1F-90C3-9CE155790F37}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

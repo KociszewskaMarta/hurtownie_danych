@@ -75,7 +75,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>wrXU9XXc80T29r5x+Y59gaTH6sE=21.01.2026 23:24:3921.01.2026 23:14:56AvnAdXw/+lYvBl4kHcZo9XVszj8=21.01.2026 23:14:5621.01.2026 23:14:56</TimeStamp>
+        <TimeStamp>W8g2mS3AEoELyqYkjLSbGHa0OeQ=22.01.2026 01:55:3421.01.2026 23:14:56AvnAdXw/+lYvBl4kHcZo9XVszj8=21.01.2026 23:14:5621.01.2026 23:14:56</TimeStamp>
         <ID>
           <String>Warehouse Travel Agency</String>
         </ID>
@@ -92,5 +92,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2026-01-21T22:28:29.483333Z</LastDeployed>
+  <LastDeployed>2026-01-22T00:55:43.383333Z</LastDeployed>
 </DeploymentSnapshot>
