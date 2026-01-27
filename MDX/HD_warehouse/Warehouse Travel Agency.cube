@@ -1,4 +1,4 @@
-﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="26813596-29e3-4e55-8867-25b4cdfb7176" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="eb8f75f6-334f-4226-b9c5-d44f3525ab30" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Warehouse Travel Agency</ID>
   <Name>Warehouse Travel Agency</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -329,116 +329,116 @@
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
   <Dimensions>
-    <Dimension dwd:design-time-name="1246ed64-d5db-4650-94c4-82d746146908">
+    <Dimension dwd:design-time-name="92f081eb-efd6-47ef-b189-8bbf68aa6f81">
       <ID>Nazwa Kampanii D</ID>
       <Name>Nazwa Kampanii D</Name>
       <DimensionID>Nazwa Kampanii D</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="43e7e2bb-5f81-44b9-8b46-21e657dd5fca">
+        <Attribute dwd:design-time-name="42f99c87-4c00-4b3d-87ab-2084fb2f6510">
           <AttributeID>Id Nazwy Kampanii</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="8d986974-4d86-43a4-9a6e-3f730463b5df">
+        <Attribute dwd:design-time-name="af78802e-221a-4faf-a30a-44f7ce921e47">
           <AttributeID>Nazwa Kampanii</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="85f83561-0d05-472d-9ad2-3c9a11f308ef">
+    <Dimension dwd:design-time-name="8b7ba25c-ab68-471e-920d-4cf4f64c2179">
       <ID>Wycieczka D</ID>
       <Name>Wycieczka D</Name>
       <DimensionID>Wycieczka D</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="61dd6598-e5f9-4b8f-baa6-f9d8c4ac50f5">
+        <Attribute dwd:design-time-name="7f9025f0-f9fc-49e8-9160-4381b6618aae">
           <AttributeID>Id Wycieczki</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="0bd8c9d8-137c-4f2d-8715-e82cbaad4f55">
+        <Attribute dwd:design-time-name="2d7e200c-41bc-4a4c-a070-a33319ad6eb9">
           <AttributeID>Nazwa Wycieczki</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="cea62e6a-5996-40ac-abfc-2f823c441f96">
+        <Attribute dwd:design-time-name="d01215fb-11ab-4560-af85-ba9f2ab694f5">
           <AttributeID>Destynacja</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="2a706e6c-9d75-4379-b2f9-0490f8330686">
+        <Attribute dwd:design-time-name="f937608d-1941-44d2-97dc-de95835c9bac">
           <AttributeID>Typ</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="642a511f-2c2f-411e-b5ff-db6c18568443">
+    <Dimension dwd:design-time-name="2a0fb2e5-20b4-4e53-b8ce-ce6ba39cb429">
       <ID>Slowo Kluczowe D</ID>
       <Name>Slowo Kluczowe D</Name>
       <DimensionID>Slowo Kluczowe D</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="2dc3cbb2-199d-4f41-8dc1-f43567114636">
+        <Attribute dwd:design-time-name="96275ab4-c08d-4e75-8a94-349bd4774374">
           <AttributeID>Id Slowa Kluczowego</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="95c0ff50-f602-4835-960a-17cfc79cc7e9">
+        <Attribute dwd:design-time-name="f0b631ca-3d4d-402e-9c3a-cf801ff8ab6f">
           <AttributeID>Slowo Kluczowe</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="00d42ad6-b969-4b01-aebc-4233831fb5ad">
+    <Dimension dwd:design-time-name="30692fe9-4aec-4ab9-a05a-f865cc0d147d">
       <ID>Data D</ID>
       <Name>Data D</Name>
       <DimensionID>Data D</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="2a0447ef-2399-49bf-8403-dec6eeebad9d">
+        <Attribute dwd:design-time-name="56393a4a-0063-4184-82b8-2e2c30e7e84a">
           <AttributeID>Id Daty</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="954305b6-8021-4108-a4ac-da4600825c12">
+        <Attribute dwd:design-time-name="263fc9c3-cdc4-438d-9a97-6e4a67891abb">
           <AttributeID>Rok</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="cc464d9a-eb2b-4f48-b1ad-c0e285a681e1">
+        <Attribute dwd:design-time-name="87f33ec4-b074-4be0-8004-0efd8627a5a2">
           <AttributeID>Pora Roku</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="d37b7f6d-fa2b-4292-8da7-2cfbf0156f21">
+        <Attribute dwd:design-time-name="5270d823-3dea-4ad4-a068-7bf83554a05d">
           <AttributeID>Miesiac</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="1ac83a85-ae46-49fe-9a9b-8e782e5e32c3">
+        <Attribute dwd:design-time-name="eacc125e-e69a-4133-af09-5e9c91baa175">
           <AttributeID>Dzien</AttributeID>
         </Attribute>
       </Attributes>
       <Hierarchies>
-        <Hierarchy dwd:design-time-name="70d63de7-0ec9-419a-9280-d67b115407f1">
+        <Hierarchy dwd:design-time-name="cffbe8dc-bc51-4639-a356-81c047df18a4">
           <HierarchyID>Hierarchy</HierarchyID>
         </Hierarchy>
       </Hierarchies>
     </Dimension>
-    <Dimension dwd:design-time-name="e3961a4b-8578-46ed-8880-8738b10f4237">
+    <Dimension dwd:design-time-name="6386e54c-30a7-49e8-a9ef-684c88226c91">
       <ID>Klient D</ID>
       <Name>Klient D</Name>
       <DimensionID>Klient D</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="0dd0d0b6-26f8-4c9b-9970-d6f615292725">
+        <Attribute dwd:design-time-name="66d0324f-10ff-40d3-bd2a-f0f77f0ac148">
           <AttributeID>Id Klienta</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="2fec0420-ee33-486a-b666-0f65d0c82b2d">
+        <Attribute dwd:design-time-name="f81856cc-0dc5-4e8e-8f87-72d1a4f1e612">
           <AttributeID>Pesel Klienta</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="1097fe3a-7927-4edd-a7bd-0565fbb1727b">
+        <Attribute dwd:design-time-name="d9cb06b1-b0b8-426f-887b-bb5c58563ff2">
           <AttributeID>Czy Nowy</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="084bdf82-de61-4791-a0f9-bceec0282f57">
+        <Attribute dwd:design-time-name="16ee096b-c220-4406-b7e9-8241700284b7">
           <AttributeID>Data Wpisania</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="974b2e7c-9c4a-493b-9646-190fefaea5b8">
+        <Attribute dwd:design-time-name="e79185d1-81a8-4f34-af1e-2d729a08ccde">
           <AttributeID>Data Wygasniecia</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="dfff1530-24bf-4af2-a1c3-8c1e96487e2f">
+    <Dimension dwd:design-time-name="c7455326-c4f2-48d5-9074-f9067b13d4b8">
       <ID>Junk D</ID>
       <Name>Junk D</Name>
       <DimensionID>Junk D</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="7d427669-ad2f-4809-ad9a-57158072fcb6">
+        <Attribute dwd:design-time-name="c18b9f99-ebc8-41c1-b44f-33ebbdaaac13">
           <AttributeID>Id Junk</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="5efcf6a2-5fa3-45e6-b7d1-c6f6c2941bd3">
+        <Attribute dwd:design-time-name="f8a0fa61-472e-4c75-b3e6-5d37d9632526">
           <AttributeID>Status Oplacenia</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
   </Dimensions>
   <MeasureGroups>
-    <MeasureGroup dwd:design-time-name="9a746214-91a4-431a-95a7-65094a85ccd5">
+    <MeasureGroup dwd:design-time-name="ae6b7bf8-3c9d-4d25-a030-20be63c1d067">
       <ID>Kampania F</ID>
       <Name>Kampania F</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -446,47 +446,47 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="51c8d8cd-dc4b-427e-adf3-8af5cb66ee0b">
+        <Measure dwd:design-time-name="52c8f472-7f3a-404e-b645-222067cf6764">
           <ID>Wspolczynnik Konwersji</ID>
           <Name>Wspolczynnik Konwersji</Name>
-          <Source dwd:design-time-name="df7e321d-78c1-47f9-aaf8-79e279849dc8">
+          <Source dwd:design-time-name="5e1afe1d-94f0-474e-a9c2-ba1e2a9806dd">
             <DataType>Double</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="dd19af56-0567-4e08-96d7-f0f450d72b47">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="d7f4e5ad-3107-40a8-b193-38a80f1835fe">
               <TableID>dbo_Kampania_F</TableID>
               <ColumnID>wspolczynnik_konwersji</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="9bc5d9d6-9bd7-4c8d-9f71-b0223a2aeed4">
+        <Measure dwd:design-time-name="6eaf3b58-3d7f-40e8-b1f0-8bf3b9f334e6">
           <ID>Koszt Kampanii</ID>
           <Name>Koszt Kampanii</Name>
-          <Source dwd:design-time-name="93767a5b-668f-4e7b-87fd-f8e35e29a925">
+          <Source dwd:design-time-name="f28992d6-c83c-4926-8100-179da062af78">
             <DataType>Double</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="ac956409-2e6c-4f0d-8673-b112438d95f4">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="45b093a0-8792-423f-8787-5030b27eabaa">
               <TableID>dbo_Kampania_F</TableID>
               <ColumnID>koszt_kampanii</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="3453a6ef-7d1a-4422-b7fe-4e9fed1ef37e">
+        <Measure dwd:design-time-name="799ed206-2319-420f-a91c-ab34a2a90ae3">
           <ID>Liczba Klikniec</ID>
           <Name>Liczba Klikniec</Name>
-          <Source dwd:design-time-name="9e1f5d0b-a383-4385-b59e-1e44c7f8759a">
+          <Source dwd:design-time-name="2cebe929-088b-404e-8cb9-570b5f02906a">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="9707912e-0e47-498f-acf7-fdba4ffaff2e">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="d2d76d48-a07f-4b2f-a3b2-3a685b3607d8">
               <TableID>dbo_Kampania_F</TableID>
               <ColumnID>liczba_klikniec</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="be86dd3a-5d57-4937-9772-8638cc917b8a">
+        <Measure dwd:design-time-name="455c919b-edb0-4f43-9d2c-d82e7bec4716">
           <ID>Kampania F Count</ID>
           <Name>Kampania F Count</Name>
           <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="6ff64759-edd6-4633-b29e-9d3430dc4593">
+          <Source dwd:design-time-name="92321d1a-138c-4c1b-ad02-4e6b0ecf5881">
             <DataType>Integer</DataType>
             <DataSize>4</DataSize>
-            <Source xsi:type="RowBinding" dwd:design-time-name="78a4d9b0-d85c-4d6d-80a7-3dfdc9394470">
+            <Source xsi:type="RowBinding" dwd:design-time-name="b470f381-7b5b-486a-b8c2-aa42dea55947">
               <TableID>dbo_Kampania_F</TableID>
             </Source>
           </Source>
@@ -495,15 +495,15 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="672f1389-310d-43b1-aad4-bd8d22aa5e4c">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="aee10474-12bd-4b18-9de8-8e3e2f93b10b">
           <CubeDimensionID>Nazwa Kampanii D</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="9e2b6130-d824-4b2c-9ec0-952d9d3141f2">
+            <Attribute dwd:design-time-name="0c8f9055-a95c-45df-933c-12995b9b2606">
               <AttributeID>Id Nazwy Kampanii</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="9f5258ba-db3b-4339-9168-f33325d99396">
+                <KeyColumn dwd:design-time-name="297219be-657c-4309-bc2b-2314f29ae2f4">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="cb591bac-c79c-45e4-8ce9-28328a6ae551">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="8fba57c6-1c98-4d08-b2ec-ed17ee7c5810">
                     <TableID>dbo_Kampania_F</TableID>
                     <ColumnID>id_nazwy_kampanii</ColumnID>
                   </Source>
@@ -513,15 +513,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="6b27d23d-e009-445c-88ef-d70c488d29bb">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="3adbf45a-5381-4cc5-9128-50bcdb2e2766">
           <CubeDimensionID>Wycieczka D</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="592931ba-f2d0-4dd8-ae00-40e9dcbbcb07">
+            <Attribute dwd:design-time-name="d9a9014b-f164-445c-9a77-c57d1b0f5564">
               <AttributeID>Id Wycieczki</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="55ea72de-a444-4a1e-a248-b0013dcb4ebe">
+                <KeyColumn dwd:design-time-name="8fe959cb-f194-426e-a683-7c7ebeb54f71">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="1490c68d-09ca-43eb-825e-0bc42ddec596">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="a70228c3-ae7e-4205-bc03-0694d2c0e529">
                     <TableID>dbo_Kampania_F</TableID>
                     <ColumnID>id_wycieczki</ColumnID>
                   </Source>
@@ -531,15 +531,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="aca8b4ef-ca95-4609-9952-a2268d93d387">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="34d1e8ae-7b23-4aaf-855d-2388a5a035fa">
           <CubeDimensionID>Slowo Kluczowe D</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="93c57440-178a-42b3-b1aa-e1b7cb9485a2">
+            <Attribute dwd:design-time-name="5714085b-432a-448c-aa5a-7778eeed4436">
               <AttributeID>Id Slowa Kluczowego</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="6d045550-2a0f-424b-9bfe-5f19d4291170">
+                <KeyColumn dwd:design-time-name="e6882faa-2974-4716-bd2d-cdaf5ac1a5e3">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="13498399-6c17-4f60-94e3-ee6422f9d8a9">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="4bfd8b48-af6c-4583-aeb9-ec367b4369ed">
                     <TableID>dbo_Kampania_F</TableID>
                     <ColumnID>id_slowa_kluczowego</ColumnID>
                   </Source>
@@ -549,15 +549,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="11838c09-e67c-4660-99b8-c4c44414a9ac">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="c574f327-2cea-4179-9003-bc07da04e43d">
           <CubeDimensionID>Data D</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="8e864154-423e-4072-9083-e43e252a2c92">
+            <Attribute dwd:design-time-name="b3df64cc-9fe7-462e-9c9c-b5a8f9a77321">
               <AttributeID>Id Daty</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="d8436bc0-82ae-4a67-a7d8-68294ae85505">
+                <KeyColumn dwd:design-time-name="c18e2bc5-3af5-471d-b11e-4be3cecd8af2">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d27519ef-b28d-4f23-8a2f-36c0d1d18bc8">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="293fc1e2-9850-4582-8186-5d50f77c8567">
                     <TableID>dbo_Kampania_F</TableID>
                     <ColumnID>id_daty</ColumnID>
                   </Source>
@@ -570,7 +570,7 @@
       </Dimensions>
       <Partitions />
     </MeasureGroup>
-    <MeasureGroup dwd:design-time-name="42493972-bde0-495a-86f8-0d11b39fe7b9">
+    <MeasureGroup dwd:design-time-name="95143435-ed41-4f15-896f-5feef97840ff">
       <ID>Rezerwacja F</ID>
       <Name>Rezerwacja F</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -578,36 +578,36 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="74d8da7f-2206-4cb1-bbdd-445390184322">
+        <Measure dwd:design-time-name="c9357da8-a582-4a43-9273-4ac8368688bc">
           <ID>Kwota Transakcji</ID>
           <Name>Kwota Transakcji</Name>
-          <Source dwd:design-time-name="b4e3907e-c287-40c4-82b7-d539311d5c70">
+          <Source dwd:design-time-name="3ed4e150-f1b7-40e6-8b8a-4bb919944394">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="a5d61ea9-80ac-48a4-a42a-09a4a65e63a7">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="8f2d0904-f17a-4902-afb9-b528fb0dc857">
               <TableID>dbo_Rezerwacja_F</TableID>
               <ColumnID>kwota_transakcji</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="77380d93-a888-4ee6-930a-2b6c52dfb3db">
+        <Measure dwd:design-time-name="80f4a3b1-c288-4c4e-858e-0bb84a434b24">
           <ID>Cena Turnusu</ID>
           <Name>Cena Turnusu</Name>
-          <Source dwd:design-time-name="9308dbf3-bcc8-4ce4-9ab5-5c5696f6d81d">
+          <Source dwd:design-time-name="19bd2d42-f75a-44a2-82dc-2f2e2b85aa79">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="4219a737-e284-43f9-b36e-d15cacb0b780">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ddef8470-b2c6-4c1a-b9b3-8f76d6c8514d">
               <TableID>dbo_Rezerwacja_F</TableID>
               <ColumnID>cena_turnusu</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="c67ebdec-b4bb-4c89-b2e5-aa7697259a76">
+        <Measure dwd:design-time-name="6158c5e9-e654-4e90-8c5f-33b0712a6eae">
           <ID>Rezerwacja F Count</ID>
           <Name>Rezerwacja F Count</Name>
           <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="2936f412-5f84-49a6-ba74-93b25bdf501f">
+          <Source dwd:design-time-name="46ac2a61-c5dd-4d8d-89a3-bb99b580acf3">
             <DataType>Integer</DataType>
             <DataSize>4</DataSize>
-            <Source xsi:type="RowBinding" dwd:design-time-name="25cb9f94-30e1-4817-bd62-0146c15d1d50">
+            <Source xsi:type="RowBinding" dwd:design-time-name="61e30fd8-9000-4af4-9227-182512129ffd">
               <TableID>dbo_Rezerwacja_F</TableID>
             </Source>
           </Source>
@@ -616,15 +616,15 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="2076a7bf-3c12-4a3e-80c9-e8ed4eb4972c">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="28ec641f-58e4-4c90-af2f-bebc6b9b001e">
           <CubeDimensionID>Nazwa Kampanii D</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="18cda289-4858-47ea-8605-71fe071454f8">
+            <Attribute dwd:design-time-name="9f7014d5-5ddc-445b-9bee-1b2cdaeafcaa">
               <AttributeID>Id Nazwy Kampanii</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="9477c75b-865b-4387-8c54-4ccd93c28012">
+                <KeyColumn dwd:design-time-name="33afc756-11fd-42e4-9466-ff3e3585552f">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="5828a470-acf8-4b4c-a122-9b3a8899876d">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e3afc43d-e9b6-4a6e-9f07-d29d27a4725c">
                     <TableID>dbo_Rezerwacja_F</TableID>
                     <ColumnID>id_nazwy_kampanii</ColumnID>
                   </Source>
@@ -634,15 +634,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="1323c736-1f6b-4556-ba55-ac3412aab190">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="a50bc552-9a09-4274-80cd-9cdaa1427890">
           <CubeDimensionID>Klient D</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="ce4673b6-41b8-485a-9f73-fe073b9704b8">
+            <Attribute dwd:design-time-name="10bcaf3c-5cf5-499d-9f91-1ba696e2a6df">
               <AttributeID>Id Klienta</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="4854d8b9-1200-4d3f-b795-6eced780680f">
+                <KeyColumn dwd:design-time-name="24b08157-c152-4e50-93ca-0007104acd7a">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d7dbf6d9-956e-43c2-8c40-c4a00af393ae">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="73d74f2f-b304-4287-bf90-fad7c1cbefcd">
                     <TableID>dbo_Rezerwacja_F</TableID>
                     <ColumnID>id_klienta</ColumnID>
                   </Source>
@@ -652,15 +652,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="05c41bdc-622a-4263-891f-773e1c8ccc1a">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="0e410ba1-6113-4f26-a177-6c90c3171de5">
           <CubeDimensionID>Data D</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="d7da323e-be95-4081-ae1a-7b6eb3f5c9ff">
+            <Attribute dwd:design-time-name="1a958604-9fc8-42cc-b33e-d31931443e92">
               <AttributeID>Id Daty</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="b53557da-7cb1-4f21-920d-717ca03dc5a3">
+                <KeyColumn dwd:design-time-name="d2604b4b-b756-4476-bbd6-db90e548d42f">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e56d461a-27c6-4e3a-a854-ed04f4d5b71e">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c358481f-5dbe-4ade-a836-b533033973d7">
                     <TableID>dbo_Rezerwacja_F</TableID>
                     <ColumnID>id_daty</ColumnID>
                   </Source>
@@ -670,15 +670,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="8f69fc14-88fe-41ea-bd0f-0a2af4a040c7">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="c92e10ee-dec3-4734-bdf5-761fc4217b64">
           <CubeDimensionID>Junk D</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="ca7fd420-cf61-4d86-a710-3536ce3f5ad9">
+            <Attribute dwd:design-time-name="cb61ab0f-9b67-4288-8c1d-4986671cbe3e">
               <AttributeID>Id Junk</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="0475e00e-982e-44a4-a755-5ad597ad0b6a">
+                <KeyColumn dwd:design-time-name="9596e911-a9a7-4923-8f64-44ca24fdb863">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="66a5da87-e60f-4894-9935-e0967f1216bb">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="ee44977f-7d7e-45d7-a41d-3081a0ec8d43">
                     <TableID>dbo_Rezerwacja_F</TableID>
                     <ColumnID>id_junk</ColumnID>
                   </Source>
@@ -688,15 +688,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="6fa93b82-ebcf-4d3f-8761-5694b554043e">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="11683116-2fa4-4671-8121-6906a3c79518">
           <CubeDimensionID>Wycieczka D</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="693a0ce8-a743-49cb-a61c-c54c9ee32106">
+            <Attribute dwd:design-time-name="bf763607-76f9-4534-b252-c68cc2ac5dc9">
               <AttributeID>Id Wycieczki</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="29aaf987-90fc-440d-b882-81ee1042a462">
+                <KeyColumn dwd:design-time-name="558aed6e-966e-4d2f-b1a6-242995e25e2a">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="854d39ef-4427-4b5f-810d-6468398ad25a">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="43879796-7c9e-418d-9dea-7df0ea16e4dc">
                     <TableID>dbo_Rezerwacja_F</TableID>
                     <ColumnID>id_wycieczki</ColumnID>
                   </Source>
@@ -710,11 +710,11 @@
       <Partitions />
     </MeasureGroup>
   </MeasureGroups>
-  <Source dwd:design-time-name="b901ea90-1790-4883-8a5e-851fd0b98319">
+  <Source dwd:design-time-name="5745c77f-6c70-457d-9563-31eba257e988">
     <DataSourceViewID>Warehouse Travel Agency</DataSourceViewID>
   </Source>
   <MdxScripts>
-    <MdxScript dwd:design-time-name="06881402-c506-4ad0-895a-3cc900316ab5">
+    <MdxScript dwd:design-time-name="6f16a925-9fcf-4d5b-9b4e-c787f9e2b598">
       <ID>MdxScript</ID>
       <Name>MdxScript</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -744,7 +744,7 @@ VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Kampania F'  ; </Text>
     </MdxScript>
   </MdxScripts>
   <Kpis>
-    <Kpi dwd:design-time-name="f20b3c69-f279-4ee1-93e5-2345e6934715">
+    <Kpi dwd:design-time-name="21f079e8-9be4-4a5d-a1da-a159c4ff8e2d">
       <ID>KPI</ID>
       <Name>Liczba rezerwacji</Name>
       <AssociatedMeasureGroupID>Rezerwacja F</AssociatedMeasureGroupID>
@@ -755,7 +755,7 @@ VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Kampania F'  ; </Text>
       <TrendGraphic>Standard Arrow</TrendGraphic>
       <StatusGraphic>Gauge - Ascending</StatusGraphic>
     </Kpi>
-    <Kpi dwd:design-time-name="7ad641b0-beb8-443c-b5ac-397b27708e66">
+    <Kpi dwd:design-time-name="a016308b-ca0a-47d5-b39e-84647d64c647">
       <ID>KPI 1</ID>
       <Name>Średnia wartość rezerwacji</Name>
       <AssociatedMeasureGroupID>Rezerwacja F</AssociatedMeasureGroupID>
@@ -765,13 +765,6 @@ VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Kampania F'  ; </Text>
              IIF([Measures].[Średnia Wartość Rezerwacji] &gt;= 4500, 0, -1))</Status>
       <Trend>[Measures].[Średnia Wartość Rezerwacji] - 
            ([Measures].[Średnia Wartość Rezerwacji], [Data D].[Miesiac].CurrentMember.PrevMember)</Trend>
-      <TrendGraphic>Standard Arrow</TrendGraphic>
-      <StatusGraphic>Gauge - Ascending</StatusGraphic>
-    </Kpi>
-    <Kpi dwd:design-time-name="2f2ddb96-83af-4586-a5ea-a968e982c582">
-      <ID>KPI 2</ID>
-      <Name>Top 5 kampanii</Name>
-      <AssociatedMeasureGroupID>Kampania F</AssociatedMeasureGroupID>
       <TrendGraphic>Standard Arrow</TrendGraphic>
       <StatusGraphic>Gauge - Ascending</StatusGraphic>
     </Kpi>

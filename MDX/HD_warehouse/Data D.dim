@@ -1,4 +1,4 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="023c97ed-357b-4a38-8d55-0ddda9d7293d" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="4b078ec2-87a4-474d-8b2f-7e08a113889e" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Data D</ID>
   <Name>Data D</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -8,7 +8,7 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4512" scrolltop="-4789" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="12065" y="9657" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4512" scrolltop="-4789" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="4366" y="9790" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
               <ddsxmlobjectstreamwrapper binary="01ee0000900144420100065461686f6d61" />
             </font>
@@ -107,31 +107,31 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="c10fcc6b-a33b-42eb-b6c9-8fe223cb80fd">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="dbf3e391-a446-47f3-8bdf-15a41ce50fe3">
     <DataSourceViewID>Warehouse Travel Agency</DataSourceViewID>
   </Source>
-  <ErrorConfiguration dwd:design-time-name="868f248a-5a9e-4e29-9d75-5f1dc29eb313">
+  <ErrorConfiguration dwd:design-time-name="0f7d8fae-12f2-49e6-b4af-4f8deec0549c">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="ff5b7a73-3df9-41ab-b3ab-c06134e89608">
+    <Attribute dwd:design-time-name="6663503d-4b96-4080-a3b4-565dfb2a39b2">
       <ID>Id Daty</ID>
       <Name>Id Daty</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="1b303fdf-bd2e-4077-ac59-b686a17763b7">
+        <KeyColumn dwd:design-time-name="52dba40c-fba2-4c26-9f6d-a010c840844c">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="0f5d2830-b7ab-41b5-a703-5abcef7710b3">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5d2b300a-5488-44a3-84b3-cdd740229f3f">
             <TableID>dbo_Data_D</TableID>
             <ColumnID>id_daty</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="92c12066-cf0d-465f-b635-447a7ae7b0f1">
+        <AttributeRelationship dwd:design-time-name="c81df2c2-6cd2-41b7-b236-e5b14b80491d">
           <AttributeID>Dzien</AttributeID>
           <Name>Dzien</Name>
         </AttributeRelationship>
@@ -140,23 +140,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="f461dc64-4003-403c-b9ca-e6a3c99cc6aa">
+    <Attribute dwd:design-time-name="db5c1e2e-c1ae-4a73-b373-6d7d8a28c459">
       <ID>Rok</ID>
       <Name>Rok</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="fbc87c5b-1815-4a8c-ab3f-69559ca506f7">
+        <KeyColumn dwd:design-time-name="490ce554-7bd9-4a5f-a7e6-2c34c3acb006">
           <DataType>WChar</DataType>
           <DataSize>4</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="b2518c2d-f9b7-4a77-a877-b72be77a08d7">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="51d4f0ac-9d5d-489b-89c6-251f6aaddbb5">
             <TableID>dbo_Data_D</TableID>
             <ColumnID>rok</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="b52e0007-187c-46f2-8667-3623314733a4">
+      <NameColumn dwd:design-time-name="1783c4ce-6675-4d3a-92a1-2cdd30005a51">
         <DataType>WChar</DataType>
         <DataSize>4</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="513e12a7-de0b-4c34-84eb-e5ada3147a3d">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="3dff4837-06c0-4795-a416-42b0bae37bab">
           <TableID>dbo_Data_D</TableID>
           <ColumnID>rok</ColumnID>
         </Source>
@@ -164,37 +164,37 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="12ba4cea-7fa3-4af0-baac-c310dcadf60b">
+    <Attribute dwd:design-time-name="e0eb953a-9ff9-40a4-b387-39a82031f33b">
       <ID>Pora Roku</ID>
       <Name>Pora Roku</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="6ff383ba-3006-4bb3-9773-fd21df2f5a9b">
+        <KeyColumn dwd:design-time-name="f7c14a9e-d317-4ac1-9c3a-5cc1bf115ff0">
           <DataType>WChar</DataType>
           <DataSize>4</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="2a3d4264-c580-480c-a426-595592a0a561">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9e7bc070-d7da-4a96-ad72-90ab5bff6a02">
             <TableID>dbo_Data_D</TableID>
             <ColumnID>rok</ColumnID>
           </Source>
         </KeyColumn>
-        <KeyColumn dwd:design-time-name="278a64f8-5c3f-464a-bb81-bf1855435041">
+        <KeyColumn dwd:design-time-name="a66719eb-9783-4b91-99ca-ba8be0fdac9b">
           <DataType>WChar</DataType>
           <DataSize>20</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="6b16ca1b-821a-4279-8a1b-ba58541dd9df">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="457a12cf-c8d4-4013-a513-5cb7bbab5474">
             <TableID>dbo_Data_D</TableID>
             <ColumnID>pora_roku</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="48ceab9c-f25c-46e0-8453-cf8356a291d3">
+      <NameColumn dwd:design-time-name="3f637d98-9751-489b-ad6e-9f24889fd4ac">
         <DataType>WChar</DataType>
         <DataSize>20</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="7a1d3299-4a49-454c-b099-ad243524230f">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="b967f7fc-d432-43af-9ec8-3e9f2d7410fd">
           <TableID>dbo_Data_D</TableID>
           <ColumnID>pora_roku</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="e1d85da3-5dd2-4623-a0af-6738ea010810">
+        <AttributeRelationship dwd:design-time-name="d62ff3fe-2c16-4fd8-b8f3-597e60d1fe0a">
           <AttributeID>Rok</AttributeID>
           <Name>Rok</Name>
         </AttributeRelationship>
@@ -202,83 +202,83 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="891f1554-542c-48d9-8b1b-133255e46418">
+    <Attribute dwd:design-time-name="f9e9fa7b-7676-4a59-b078-0cd6bbeaff6f">
       <ID>Miesiac</ID>
       <Name>Miesiac</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="126725dd-5615-4d94-8d01-19598f466921">
+        <KeyColumn dwd:design-time-name="2f050453-77e0-4676-bfa4-b18f0ac484ed">
           <DataType>WChar</DataType>
           <DataSize>4</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="9ee8e20f-9b91-40c2-8afa-7edbfe51162c">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="48f44ec8-4593-432c-9b93-f508cf77ee8f">
             <TableID>dbo_Data_D</TableID>
             <ColumnID>rok</ColumnID>
           </Source>
         </KeyColumn>
-        <KeyColumn dwd:design-time-name="9a3bd7da-339e-4f6d-8a0a-05b21921988a">
-          <DataType>WChar</DataType>
-          <DataSize>10</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="1ca64b10-8361-49ea-8885-025dc3defdcc">
+        <KeyColumn dwd:design-time-name="e58278fc-c695-4e5b-a501-4f76a6c17858">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9c03a7ac-57d9-4d42-9e22-c191948e3f73">
             <TableID>dbo_Data_D</TableID>
-            <ColumnID>miesiac</ColumnID>
+            <ColumnID>NrMiesiac</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="a5b007e5-c154-4610-974f-bfe6c87ee54b">
+      <NameColumn dwd:design-time-name="225e4784-abc6-4b5b-8670-c74eed8e7d72">
         <DataType>WChar</DataType>
         <DataSize>10</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="b73ed438-f7c3-4335-b659-6fd53423d5bd">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="c85ea676-a213-4f59-8b51-6574a2caac5b">
           <TableID>dbo_Data_D</TableID>
           <ColumnID>miesiac</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="530f2cac-8b2f-4731-9b07-99101ff550aa">
+        <AttributeRelationship dwd:design-time-name="6f43bdf1-9655-490d-a4bb-fbde9133dd39">
           <AttributeID>Pora Roku</AttributeID>
           <Name>Pora Roku</Name>
         </AttributeRelationship>
       </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="51197b55-dda6-4252-9c50-4f97dcd9478a">
+    <Attribute dwd:design-time-name="8303a940-679f-43b5-9d68-f9b8eb089ce5">
       <ID>Dzien</ID>
       <Name>Dzien</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="22ec02eb-cfa2-4c35-af87-fac89916ba9e">
+        <KeyColumn dwd:design-time-name="fc4f32fe-9c02-48f0-89d3-20e376f24ad5">
           <DataType>WChar</DataType>
           <DataSize>4</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="32df2e7e-d8fa-40a6-bee2-5cb4974cbcf6">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5a38e88c-6430-41f7-a88d-59bbfbe6d240">
             <TableID>dbo_Data_D</TableID>
             <ColumnID>rok</ColumnID>
           </Source>
         </KeyColumn>
-        <KeyColumn dwd:design-time-name="9132284f-363c-4333-87c0-e60db3c792eb">
+        <KeyColumn dwd:design-time-name="418aa25f-ef84-47aa-8b22-e4ba7361546c">
           <DataType>WChar</DataType>
           <DataSize>10</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="8f8c2906-1de0-47b9-9f2d-11b25807723a">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5dc22a16-a8ef-4440-a4fb-f0b22f7e28a8">
             <TableID>dbo_Data_D</TableID>
             <ColumnID>miesiac</ColumnID>
           </Source>
         </KeyColumn>
-        <KeyColumn dwd:design-time-name="878a63a7-2622-48f9-bba5-b151e4742ea2">
+        <KeyColumn dwd:design-time-name="eb08027c-a743-4194-b9fe-bc47cdb8a215">
           <DataType>WChar</DataType>
           <DataSize>10</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="55797707-cc7a-48a1-9d02-b6d2c1b61e77">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="38e6df7c-139f-46d3-ae0b-f5d52b6af2fe">
             <TableID>dbo_Data_D</TableID>
             <ColumnID>dzien</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="35ab48fe-d037-43a8-a3c4-cef69b9e24d4">
+      <NameColumn dwd:design-time-name="fe1e7b3c-042f-4977-a92b-9db64950a7b0">
         <DataType>WChar</DataType>
         <DataSize>10</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="873ed4a2-d73d-456c-8c1f-9689d3b2193b">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="a82b9366-5d0b-4412-b461-976a71054030">
           <TableID>dbo_Data_D</TableID>
           <ColumnID>dzien</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="ff4dacda-25ae-494a-81ff-3155e0c08cd1">
+        <AttributeRelationship dwd:design-time-name="44ad88f2-a9ec-47e5-b5d2-205480d4d131">
           <AttributeID>Miesiac</AttributeID>
           <Name>Miesiac</Name>
         </AttributeRelationship>
@@ -288,26 +288,26 @@
     </Attribute>
   </Attributes>
   <Hierarchies>
-    <Hierarchy dwd:design-time-name="d382cbe2-f97a-49a1-bff4-3621257c8035">
+    <Hierarchy dwd:design-time-name="9415e5ee-6b42-4461-8462-68a1384bfc3e">
       <ID>Hierarchy</ID>
       <Name>Hierarchy</Name>
       <Levels>
-        <Level dwd:design-time-name="a1784cc1-71da-4b04-a098-e1b172fde350">
+        <Level dwd:design-time-name="e2978ae1-fc74-416b-9a4b-afec982af89f">
           <ID>Rok</ID>
           <Name>Rok</Name>
           <SourceAttributeID>Rok</SourceAttributeID>
         </Level>
-        <Level dwd:design-time-name="009e60bc-0402-4e0c-ad97-225e87c11d13">
+        <Level dwd:design-time-name="0dd95543-b905-4466-a4cc-733bb03f5901">
           <ID>Pora Roku</ID>
           <Name>Pora Roku</Name>
           <SourceAttributeID>Pora Roku</SourceAttributeID>
         </Level>
-        <Level dwd:design-time-name="3b17342b-cbbb-49a8-84dc-d9ac07c9ed44">
+        <Level dwd:design-time-name="02758a35-c4bf-48ce-b08b-0f5bac9c6e1a">
           <ID>Miesiac</ID>
           <Name>Miesiac</Name>
           <SourceAttributeID>Miesiac</SourceAttributeID>
         </Level>
-        <Level dwd:design-time-name="6e63c6f6-b451-4ef4-8b23-97e4d0f7ff79">
+        <Level dwd:design-time-name="c64b95a9-4e52-4728-8e71-82a0810a4112">
           <ID>Dzien</ID>
           <Name>Dzien</Name>
           <SourceAttributeID>Dzien</SourceAttributeID>

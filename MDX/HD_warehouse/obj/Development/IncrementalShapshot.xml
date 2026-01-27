@@ -8,7 +8,7 @@
     <TransactionalDeployment>false</TransactionalDeployment>
     <PartitionDeployment>DeployPartitions</PartitionDeployment>
     <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
-    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <ProcessingOption>Default</ProcessingOption>
     <OutputScript></OutputScript>
     <ImpactAnalysisFile></ImpactAnalysisFile>
     <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
@@ -26,7 +26,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>9/aGT2o03UV9HjxwumeAVbFjPmc=21.01.2026 23:14:1321.01.2026 23:14:13</TimeStamp>
+        <TimeStamp>K4T2dZ6z8J6msGX5XMf7qP2N6o0=27.01.2026 14:54:5021.01.2026 23:14:13</TimeStamp>
         <ID>
           <String>Warehouse Travel Agency</String>
         </ID>
@@ -54,7 +54,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>3lPfEUEWuijiLcsrKRbx0/ZZ3Kw=21.01.2026 23:28:2221.01.2026 23:14:56</TimeStamp>
+        <TimeStamp>iAzJjG9EPRk5O58VTKhn/OKgIcM=27.01.2026 14:52:4921.01.2026 23:14:56</TimeStamp>
         <ID>
           <String>Data D</String>
         </ID>
@@ -75,7 +75,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>W8g2mS3AEoELyqYkjLSbGHa0OeQ=22.01.2026 01:55:3421.01.2026 23:14:56AvnAdXw/+lYvBl4kHcZo9XVszj8=21.01.2026 23:14:5621.01.2026 23:14:56</TimeStamp>
+        <TimeStamp>VaVu/d+VRBAumuu8wtJ6Dq0Db2I=22.01.2026 09:21:3821.01.2026 23:14:56AvnAdXw/+lYvBl4kHcZo9XVszj8=21.01.2026 23:14:5621.01.2026 23:14:56</TimeStamp>
         <ID>
           <String>Warehouse Travel Agency</String>
         </ID>
@@ -92,5 +92,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2026-01-22T00:55:43.383333Z</LastDeployed>
+  <LastDeployed>2026-01-27T13:54:54.313333Z</LastDeployed>
 </DeploymentSnapshot>
